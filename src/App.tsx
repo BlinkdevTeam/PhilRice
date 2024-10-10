@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Hero from "./Hero/Hero";
+import TimeModal from "./Modal/TimeModal";
+import About from "./About/About";
+import Speaker from "./Speaker/Speaker";
+import Conference from "./Conference/Conference";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="flex flex-col justify-center items-center py-10">
+        <Hero />
+        <div className="mt-6">
+          {/* Centering TimeModal below the banner */}
+          <TimeModal />
+        </div>
+        <About />
+        <div className="w-[1488px] h-[2px] bg-[#0E9046] my-[24px]" />
+        <Speaker />
+        <Conference />
+      </div>
+    </>
   );
 }
-
-export default App;
