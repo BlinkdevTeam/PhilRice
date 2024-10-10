@@ -5,6 +5,9 @@ import About from "./About/About";
 import Speaker from "./Speaker/Speaker";
 import Conference from "./Conference/Conference";
 import Location from "./Location/Location";
+import StratPlan from "./StrategicPlanning/StrategicPlanning";
+import FAQ from "./FAQ/FAQ";
+import Footer from "./Footer/Footer";
 
 export default function App() {
   return (
@@ -20,6 +23,11 @@ export default function App() {
         <Speaker />
         <Conference />
         <Location />
+        <StratPlan />
+        <div className="w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
+        <FAQ />
+        <div className="w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
+        <Footer />
       </div>
     </>
   );

@@ -4,14 +4,6 @@ import LeafDivider from "../Assets/leaf.png";
 import { ReactComponent as MyIcon } from "../Assets/Icons/download.svg";
 
 export default function Location() {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = ""; // Update with the actual file URL
-    link.setAttribute("download", "location-map.pdf"); // Set the file name for download
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-  };
   return (
     <>
       <div className="flex flex-col justify-center items-center w-[1728px] h-[974px] relative">
@@ -29,8 +21,13 @@ export default function Location() {
         </div>
         <button
           type="button"
-          onClick={handleDownload}
           className="flex flex-row justify-center items-center px-32 py-2 bg-white border-x-2 border-y-2 border-[#0E9046] rounded-md text-[#0E9046]"
+          onClick={() =>
+            window.open(
+              "https://github.com/blinkcreativestudio/PhilRice/blob/main/src/Assets/Map.jpg?raw=true",
+              "_blank"
+            )
+          }
         >
           <div className="flex items-center justify-center">
             <MyIcon className="w-10 h-10" />
