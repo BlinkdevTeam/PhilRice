@@ -4,6 +4,7 @@ import TimeModal from "./Modal/TimeModal";
 import About from "./About/About";
 import Speaker from "./Speaker/Speaker";
 import Conference from "./Conference/Conference";
+import Location from "./Location/Location";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <div className="w-[1488px] h-[2px] bg-[#0E9046] my-[24px]" />
         <Speaker />
         <Conference />
+        <Location />
       </div>
     </>
   );
