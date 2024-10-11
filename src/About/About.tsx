@@ -7,12 +7,12 @@ import ImageCollection from "./ImageSection/ImageCollection";
 export default function About() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center text-center w-[1484px] h-auto">
-        <div className="text-[#0E9046]">
+      <div className="flex flex-col justify-center items-center text-center w-[1484px] h-auto bg-orange-100 py-10">
+        <div className="text-[#0E9046] text-6xl font-bold">
           About the <span className="text-[#F3B71C]">Conference</span>
         </div>
         <img src={LeafDivider} alt="Leaf Divider" />
-        <div>
+        <div className="text-xl px-8 bg-red-200">
           The 
           <span className="text-[#0E9046] font-bold">
             36th Ugnay Palay National Rice R4D Conference 
@@ -49,50 +49,58 @@ export default function About() {
         </div>
         <button
           type="button"
-          className="px-32 py-2 text-white rounded-md bg-[#0E9046]"
+          className="px-16 py-4 text-[#0E9046] text-3xl font-bold rounded-xl bg-white border-[2px] border-[#0E9046] my-12"
         >
           Register
         </button>
         <ImageCollection />
-        <div className="flex justify-center items-center overflow-hidden w-[1500px] h-[632px] bg-gray-500">
+        <div className="flex justify-start items-start gap-9 overflow-hidden w-[1500px] h-auto bg-gray-500 mt-12 py-40">
           <div className="flex flex-col justify-start items-start">
-            <div className="text-[#0E9046]">
-              About <span className="text-[#F3B71C]">DA-PihlRice</span>
+            <div className="text-[#0E9046] text-start font-bold text-6xl">
+              About{" "}
+              <span className="text-[#F3B71C]">
+                <br />
+                DA-PihlRice
+              </span>
             </div>
-            <img src={LeafDivider2} alt="Divider" />
-            <img src={DOA} alt="DOA Logo" className="" />
+            <div className="relative mt-8">
+              <img src={DOA} alt="DOA Logo" className="ml-12 mt-4" />
+              <img
+                src={LeafDivider2}
+                alt="Divider"
+                className="absolute top-0 left-0 -mt-11"
+              />
+            </div>
           </div>
-          <div className="flex flex-col overflow-hidden text-start bg-red-200">
-            <div className="w-[1005px]">
-              The <span className="text-[#0E9046]">DA-PhilRice charter</span>{" "}
-              established by Executive Order No. 1061 in November 1985, mandates
-              the Institute to lead the national rice research for development
-              and extension (R4DE) program. This initiative has been crucial in
-              enhancing and sustaining rice production across the Philippines.
-              Over the years, DA-PhilRice has worked closely with the Department
-              of Agriculture (DA) and a broad network of collaborators—including
-              state colleges and universities, local government units, the
-              private sector, non-governmental organizations, and farmer
-              groups—to uplift the nation’s rice farming communities. <br />
-              <br />
-              During the implementation of its Strategic Plan 2017-2022,
-              DA-PhilRice successfully navigated numerous challenges and played
-              a key role in the rollout of the Rice Competitiveness Enhancement
-              Fund (RCEF). This initiative provided Filipino rice farmers with
-              access to high-quality seeds, advanced farming technologies,
-              mechanization, and comprehensive training programs. These measures
-              were pivotal in modernizing rice farming practices, reducing
-              production costs, and increasing yields, thereby enhancing the
-              competitiveness of Filipino farmers in the global market. <br />
-              <br />
-              Building on these successes, DA-PhilRice is now set to implement
-              its 2023-2028 Strategic Plan, which focuses on leveraging advanced
-              science and technology to create more prosperous and resilient
-              rice farming communities. Central to this plan is a people-centric
-              approach, aimed at improving the productivity, profitability, and
-              well-being of farmers while ensuring the long-term sustainability
-              and competitiveness of the rice industry.
-            </div>
+          <div className="w-[1005px] h-[632px] bg-orange-50 text-xl text-start">
+            The <span className="text-[#0E9046]">DA-PhilRice charter</span>{" "}
+            established by Executive Order No. 1061 in November 1985, mandates
+            the Institute to lead the national rice research for development and
+            extension (R4DE) program. This initiative has been crucial in
+            enhancing and sustaining rice production across the Philippines.
+            Over the years, DA-PhilRice has worked closely with the Department
+            of Agriculture (DA) and a broad network of collaborators—including
+            state colleges and universities, local government units, the private
+            sector, non-governmental organizations, and farmer groups—to uplift
+            the nation’s rice farming communities. <br />
+            <br />
+            During the implementation of its Strategic Plan 2017-2022,
+            DA-PhilRice successfully navigated numerous challenges and played a
+            key role in the rollout of the Rice Competitiveness Enhancement Fund
+            (RCEF). This initiative provided Filipino rice farmers with access
+            to high-quality seeds, advanced farming technologies, mechanization,
+            and comprehensive training programs. These measures were pivotal in
+            modernizing rice farming practices, reducing production costs, and
+            increasing yields, thereby enhancing the competitiveness of Filipino
+            farmers in the global market. <br />
+            <br />
+            Building on these successes, DA-PhilRice is now set to implement its
+            2023-2028 Strategic Plan, which focuses on leveraging advanced
+            science and technology to create more prosperous and resilient rice
+            farming communities. Central to this plan is a people-centric
+            approach, aimed at improving the productivity, profitability, and
+            well-being of farmers while ensuring the long-term sustainability
+            and competitiveness of the rice industry.
           </div>
         </div>
       </div>

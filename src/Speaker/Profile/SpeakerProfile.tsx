@@ -30,14 +30,14 @@ const speakersData = [
     image: Speaker1, // Replace with different images if needed
   },
   {
-    id: 4,
+    id: 5,
     name: "More Names D. Surname",
     address:
       "More addresses Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: Speaker1, // Replace with different images if needed
   },
   {
-    id: 4,
+    id: 6,
     name: "More Names D. Surname",
     address:
       "More addresses Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -50,13 +50,14 @@ const SpeakerProfile = ({ speaker }: any) => {
   return (
     <div className="flex">
       <div className="w-[450px] h-[545px] bg-red-500 flex flex-col justify-end m-4">
-        <div className="w-[450px] h-[515px] bg-[#f0f0f0] rounded-tr-[100px] flex flex-col justify-end">
+        <div className="relative w-[450px] h-[515px] bg-[#f0f0f0] rounded-tr-[100px] flex flex-col justify-end">
           <img
             src={speaker.image}
             alt={speaker.name}
             className="w-full h-auto"
           />
-          <div className="absolute w-[450px] h-[144px] py-4 bg-[#0E9046] flex flex-col text-center justify-center">
+          <div className="absolute botoom-4 left-4 w-40 h-2 bg-[#EFB71E]"></div>
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[450px] h-[144px] py-4 bg-[#0E9046] flex flex-col text-center justify-center">
             <div className="font-bold">{speaker.name}</div>
             <div>{speaker.address}</div>
           </div>
@@ -68,7 +69,7 @@ const SpeakerProfile = ({ speaker }: any) => {
 
 const SpeakerProfiles = () => {
   return (
-    <div className="flex flex-wrap justify-center w-[1491px]">
+    <div className="flex flex-wrap justify-center w-[1491px] py-20 bg-yellow-100">
       {speakersData.map((speaker) => (
         <div
           className="flex-shrink-0"

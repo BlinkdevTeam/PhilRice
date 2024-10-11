@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="flex flex-col justify-center items-center">
         <img
           src={HeroBanner}
-          className="h-auto max-w-full"
+          className="h-auto w-screen"
           alt="Ugnay Palay Banner"
         />
       </div>

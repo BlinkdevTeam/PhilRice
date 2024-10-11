@@ -12,10 +12,9 @@ import Footer from "./Footer/Footer";
 export default function App() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center py-10">
+      <div className="flex flex-col justify-center items-center py-10 bg-slate-500">
         <Hero />
-        <div className="mt-6">
-          {/* Centering TimeModal below the banner */}
+        <div className="-mt-[100px]">
           <TimeModal />
         </div>
         <About />
@@ -28,6 +27,10 @@ export default function App() {
         <FAQ />
         <div className="w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
         <Footer />
+        <div className="">
+          <div>PHILRICE © 2023. All rights reserved.</div>
+          <div>Powered by BLINK CREATIVE STUDIO</div>
+        </div>
       </div>
     </>
   );
