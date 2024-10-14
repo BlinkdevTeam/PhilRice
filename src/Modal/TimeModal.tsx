@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-const TimeUnit = ({ value, label }:any) => (
+const TimeUnit = ({ value, label }: any) => (
   <div className="flex flex-col items-center mx-2">
-    <p className="font-bold text-7xl text-white">{value}</p>
-    <p className="text-white text-lg">{label}</p>
+    <p className="font-bold text-4xl md:text-6xl lg:text-7xl text-white">
+      {value}
+    </p>
+    <p className="text-white text-md md:text-lg">{label}</p>
   </div>
 );
 
@@ -40,23 +42,29 @@ const TimeCount = () => {
   }, [targetDate]);
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 bg-green-700 rounded-lg w-[1026px] h-25">
-      <h1 className="text-center text-white text-3xl font-bold mb-4">
+    <div className="flex flex-col items-center justify-center p-4 bg-green-700 rounded-lg w-full max-w-[1026px] mx-auto">
+      <h1 className="text-center text-white text-xl md:text-2xl lg:text-3xl font-bold mb-4">
         Event Starts On
       </h1>
       <div className="flex flex-row justify-center">
         <TimeUnit value={timeRemaining.days} label="Days" />
-        <p className="font-bold text-6xl text-white mx-4">:</p>
+        <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mx-4 md:mx-10 lg:mx-16">
+          :
+        </p>
         <TimeUnit
           value={String(timeRemaining.hours).padStart(2, "0")}
           label="Hours"
         />
-        <p className="font-bold text-6xl text-white mx-4">:</p>
+        <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mx-4 md:mx-10 lg:mx-16">
+          :
+        </p>
         <TimeUnit
           value={String(timeRemaining.minutes).padStart(2, "0")}
           label="Minutes"
         />
-        <p className="font-bold text-6xl text-white mx-4">:</p>
+        <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mx-4 md:mx-10 lg:mx-16">
+          :
+        </p>
         <TimeUnit
           value={String(timeRemaining.seconds).padStart(2, "0")}
           label="Seconds"

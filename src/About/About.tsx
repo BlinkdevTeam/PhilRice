@@ -7,12 +7,12 @@ import ImageCollection from "./ImageSection/ImageCollection";
 export default function About() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center text-center w-[1484px] h-auto bg-orange-100 py-10">
-        <div className="text-[#0E9046] text-6xl font-bold">
+      <div className="flex flex-col justify-center items-center text-center w-full max-w-[1484px] py-16 px-4 md:px-8">
+        <div className="text-[#0E9046] text-3xl md:text-4xl lg:text-6xl font-bold">
           About the <span className="text-[#F3B71C]">Conference</span>
         </div>
-        <img src={LeafDivider} alt="Leaf Divider" />
-        <div className="text-xl px-8 bg-red-200">
+        <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
+        <div className="text-sm md:text-lg lg:text-xl px-4 md:px-8 leading-relaxed">
           The 
           <span className="text-[#0E9046] font-bold">
             36th Ugnay Palay National Rice R4D Conference 
@@ -49,30 +49,34 @@ export default function About() {
         </div>
         <button
           type="button"
-          className="px-16 py-4 text-[#0E9046] text-3xl font-bold rounded-xl bg-white border-[2px] border-[#0E9046] my-12"
+          className="px-8 md:px-12 lg:px-16 py-2 md:py-3 lg:py-4 text-[#0E9046] text-xl md:text-2xl lg:text-3xl font-bold rounded-xl bg-white border-[2px] border-[#0E9046] my-6 md:my-8 lg:my-12"
         >
           Register
         </button>
         <ImageCollection />
-        <div className="flex justify-start items-start gap-9 overflow-hidden w-[1500px] h-auto bg-gray-500 mt-12 py-40">
-          <div className="flex flex-col justify-start items-start">
-            <div className="text-[#0E9046] text-start font-bold text-6xl">
+        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-24 overflow-hidden w-full max-w-[1500px] mt-12 py-12 lg:py-40 ">
+          <div className="flex flex-col justify-start items-start w-full lg:w-auto">
+            <div className="text-[#0E9046] text-start font-bold text-4xl md:text-5xl lg:text-6xl">
               About{" "}
               <span className="text-[#F3B71C]">
                 <br />
-                DA-PihlRice
+                DA-PhilRice
               </span>
             </div>
             <div className="relative mt-8">
-              <img src={DOA} alt="DOA Logo" className="ml-12 mt-4" />
+              <img
+                src={DOA}
+                alt="DOA Logo"
+                className="ml-0 md:ml-8 lg:ml-12 mt-4"
+              />
               <img
                 src={LeafDivider2}
                 alt="Divider"
-                className="absolute top-0 left-0 -mt-11"
+                className="absolute top-0 left-0 -mt-11 "
               />
             </div>
           </div>
-          <div className="w-[1005px] h-[632px] bg-orange-50 text-xl text-start">
+          <div className="w-full lg:w-[1005px] h-auto text-sm md:text-lg lg:text-xl text-start leading-relaxed p-4 md:p-8">
             The <span className="text-[#0E9046]">DA-PhilRice charter</span>{" "}
             established by Executive Order No. 1061 in November 1985, mandates
             the Institute to lead the national rice research for development and

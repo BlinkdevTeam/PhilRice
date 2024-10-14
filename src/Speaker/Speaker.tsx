@@ -5,12 +5,12 @@ import SpeakerProfile from "./Profile/SpeakerProfile";
 export default function Speaker() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center">
-        <div className="text-[#0E9046] text-6xl font-bold">
+      <div className="flex flex-col justify-center items-center px-4">
+        <div className="text-[#0E9046] text-6xl font-bold text-center">
           Speaker and <span className="text-[#F3B71C]">Panelists</span>
         </div>
-        <img src={LeafDivider} alt="Leaf Divider" />
-        <div className="text-center w-[866px] text-xl">
+        <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
+        <div className="text-center w-full max-w-[866px] text-xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
           vulputate eros, et <br />
           faucibus velit. Donec sed elit tellus.

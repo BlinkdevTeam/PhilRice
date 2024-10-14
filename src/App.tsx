@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Hero from "./Hero/Hero";
 import TimeModal from "./Modal/TimeModal";
 import About from "./About/About";
@@ -8,28 +8,67 @@ import Location from "./Location/Location";
 import StratPlan from "./StrategicPlanning/StrategicPlanning";
 import FAQ from "./FAQ/FAQ";
 import Footer from "./Footer/Footer";
+import Navbar from "./Header/Navbar";
 
 export default function App() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const speakerRef = useRef(null);
+  const conferenceRef = useRef(null);
+  const locationRef = useRef(null);
+  const faqRef = useRef(null);
+
+  const scrollToSection = (ref: any) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
-      <div className="flex flex-col justify-center items-center py-10 bg-slate-500">
-        <Hero />
-        <div className="-mt-[100px]">
-          <TimeModal />
+      <div className="flex flex-col justify-center items-center pt-[72px]">
+        <Navbar
+          scrollToSection={scrollToSection}
+          refs={{
+            homeRef,
+            aboutRef,
+            speakerRef,
+            conferenceRef,
+            locationRef,
+            faqRef,
+          }}
+        />
+        <div ref={homeRef}>
+          <Hero />
         </div>
-        <About />
-        <div className="w-[1488px] h-[2px] bg-[#0E9046] my-[24px]" />
-        <Speaker />
-        <Conference />
-        <Location />
-        <StratPlan />
-        <div className="w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
-        <FAQ />
-        <div className="w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
+        {/* <div className="-mt-[100px]">
+          <TimeModal />
+        </div> */}
+        <div ref={aboutRef}>
+          <About />
+        </div>
+        <div className="w-full max-w-[1488px] h-[2px] bg-[#0E9046] my-[24px]" />
+        <div ref={speakerRef}>
+          <Speaker />
+        </div>
+        <div ref={conferenceRef}>
+          <Conference />
+        </div>
+        <div ref={locationRef}>
+          <Location />
+        </div>
+        <div className="mt-28">
+          <StratPlan />
+        </div>
+        <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
+        <div ref={faqRef}>
+          <FAQ />
+        </div>
+        <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
         <Footer />
-        <div className="">
+        <div className="mt-4 text-center px-4">
           <div>PHILRICE © 2023. All rights reserved.</div>
-          <div>Powered by BLINK CREATIVE STUDIO</div>
+          <div>Powered by BLINK CREATIVE STUDIO</div>
         </div>
       </div>
     </>
