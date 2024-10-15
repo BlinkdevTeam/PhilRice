@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 
 const TimeUnit = ({ value, label }: any) => (
   <div className="flex flex-col items-center mx-2">
-    <p className="font-bold text-4xl md:text-6xl lg:text-7xl text-white">
+    <p className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white">
       {value}
     </p>
-    <p className="text-white text-md md:text-lg">{label}</p>
+    <p className="text-white text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl">
+      {label}
+    </p>
   </div>
 );
 
@@ -42,7 +44,7 @@ const TimeCount = () => {
   }, [targetDate]);
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 bg-green-700 rounded-lg w-full max-w-[1026px] mx-auto">
+    <div className="flex flex-col items-center justify-center py-4 px-12 lg:px-24 bg-green-700 rounded-lg w-full max-w-[1026px] mx-auto">
       <h1 className="text-center text-white text-xl md:text-2xl lg:text-3xl font-bold mb-4">
         Event Starts On
       </h1>

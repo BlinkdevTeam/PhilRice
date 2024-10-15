@@ -56,7 +56,7 @@ const SpeakerProfile = ({ speaker }: any) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-yellow-100">
       <div
         className="w-[450px] h-[545px] flex flex-col justify-end m-4"
         onMouseEnter={() => setHovered(true)}
