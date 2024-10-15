@@ -94,10 +94,10 @@ const SpeakerProfile = ({ speaker }: any) => {
 
 const SpeakerProfiles = () => {
   return (
-    <div className="flex flex-wrap justify-center w-full max-w-[1491px] py-20">
+    <div className="flex flex-wrap justify-center w-full py-20">
       {speakersData.map((speaker) => (
         <div
-          className="flex-shrink-0 w-full sm:w-[calc(70%-16px)] md:w-[calc(66.66%-16px)] lg:w-[calc(33.33%-16px)] p-2"
+          className="flex-shrink-0 w-full sm:w-[calc(70%-16px)] md:w-[calc(66.66%-16px)] lg:w-[calc(44.33%-16px) xl:w-[calc(25.33%+64px)] p-2"
           key={speaker.id}
         >
           <SpeakerProfile speaker={speaker} />
