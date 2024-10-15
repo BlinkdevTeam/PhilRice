@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import Logo from "../Assets/PhilsanLogoWhite.png";
 
 const Navbar = ({ scrollToSection, refs }: any) => {
-  // State to track the active button
+  // State to track the active button and mobile menu visibility
   const [activeButton, setActiveButton] = useState("home");
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Function to handle button click and update the active state
-  const handleButtonClick = (ref: any, section: string) => {
+  const handleButtonClick = (ref: any, section: any) => {
     scrollToSection(ref);
-    setActiveButton(section); // Update the active button
+    setActiveButton(section);
+    setMobileMenuOpen(false); // Close mobile menu after selection
+  };
+
+  // Function to toggle mobile menu visibility
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -19,78 +26,82 @@ const Navbar = ({ scrollToSection, refs }: any) => {
           <img src={Logo} alt="PhilRice Logo" className="h-10" />
         </div>
 
-        {/* Right side - Nav Links and Register button */}
+        {/* Right side - Register button and Hamburger Button for mobile view */}
         <div className="flex items-center space-x-8 ml-auto">
-          <div className="hidden md:flex space-x-8">
-            <button
-              onClick={() => handleButtonClick(refs.homeRef, "home")}
-              className={`${
-                activeButton === "home"
-                  ? "text-[#F3B71C] font-bold"
-                  : "text-white"
-              }`}
-            >
-              HOME
-            </button>
-            <button
-              onClick={() => handleButtonClick(refs.aboutRef, "about")}
-              className={`${
-                activeButton === "about"
-                  ? "text-[#F3B71C] font-bold"
-                  : "text-white"
-              }`}
-            >
-              ABOUT
-            </button>
-            <button
-              onClick={() => handleButtonClick(refs.speakerRef, "speakers")}
-              className={`${
-                activeButton === "speakers"
-                  ? "text-[#F3B71C] font-bold"
-                  : "text-white"
-              }`}
-            >
-              SPEAKERS
-            </button>
-            <button
-              onClick={() => handleButtonClick(refs.conferenceRef, "program")}
-              className={`${
-                activeButton === "program"
-                  ? "text-[#F3B71C] font-bold"
-                  : "text-white"
-              }`}
-            >
-              PROGRAM
-            </button>
-            <button
-              onClick={() => handleButtonClick(refs.locationRef, "venue")}
-              className={`${
-                activeButton === "venue"
-                  ? "text-[#F3B71C] font-bold"
-                  : "text-white"
-              }`}
-            >
-              VENUE
-            </button>
-            <button
-              onClick={() => handleButtonClick(refs.faqRef, "faqs")}
-              className={`${
-                activeButton === "faqs"
-                  ? "text-[#F3B71C] font-bold"
-                  : "text-white"
-              }`}
-            >
-              FAQS
-            </button>
-          </div>
-
-          {/* Register button */}
+          {/* Register button moved above Hamburger menu */}
           <a
             href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-            className="bg-yellow-400 text-green-700 font-bold py-2 px-4 rounded-md"
+            className="bg-yellow-400 text-green-700 font-bold py-2 px-4 rounded-md md:block"
           >
             REGISTER
           </a>
+
+          {/* Hamburger Button for mobile view */}
+          <button
+            className="md:hidden flex items-center"
+            onClick={toggleMobileMenu}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="absolute top-16 right-0 bg-green-700 w-full shadow-lg md:hidden">
+              <div className="flex flex-col items-center">
+                {["home", "about", "speakers", "program", "venue", "faqs"].map(
+                  (section) => (
+                    <button
+                      key={section}
+                      onClick={() =>
+                        handleButtonClick(refs[`${section}Ref`], section)
+                      }
+                      className={`${
+                        activeButton === section
+                          ? "text-[#F3B71C] font-bold"
+                          : "text-white"
+                      } py-2 px-4`}
+                    >
+                      {section.toUpperCase()}
+                    </button>
+                  )
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex space-x-8">
+            {["home", "about", "speaker", "conference", "location", "faq"].map(
+              (section) => (
+                <button
+                  key={section}
+                  onClick={() =>
+                    handleButtonClick(refs[`${section}Ref`], section)
+                  }
+                  className={`${
+                    activeButton === section
+                      ? "text-[#F3B71C] font-bold"
+                      : "text-white"
+                  }`}
+                >
+                  {section.toUpperCase()}
+                </button>
+              )
+            )}
+          </div>
         </div>
       </div>
     </nav>

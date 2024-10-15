@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import Hero from "./Hero/Hero";
-import TimeModal from "./Modal/TimeModal";
 import About from "./About/About";
 import Speaker from "./Speaker/Speaker";
 import Conference from "./Conference/Conference";
