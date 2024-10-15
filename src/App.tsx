@@ -66,9 +66,11 @@ export default function App() {
         </div>
         <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
         <Footer />
-        <div className="mt-4 text-center px-4">
+        <div className="flex justify-center items-center gap-4 lg:gap-[870px] w-full text-xl px-4 py-4 bg-[#343434]">
           <div>PHILRICE © 2023. All rights reserved.</div>
-          <div>Powered by BLINK CREATIVE STUDIO</div>
+          <div>
+            Powered by <span className="font-bold">BLINK</span> CREATIVE STUDIO
+          </div>
         </div>
       </div>
     </>

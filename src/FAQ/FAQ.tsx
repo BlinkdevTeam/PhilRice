@@ -1,25 +1,10 @@
+// FAQ.tsx
 import React, { useState } from "react";
 import LeafDivider from "../Assets/leaf.png";
+import { questions } from "./questions"; // Adjust the path based on your file structure
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
-
-  const questions = [
-    {
-      question: "When and where is the conference taking place?",
-      answer:
-        "The conference will take place on November 15, 2024, at the Downtown Convention Center.",
-    },
-    {
-      question: "What is the conference agenda?",
-      answer:
-        "The agenda will be released closer to the date. Please check back for updates.",
-    },
-    {
-      question: "How can I register for the conference?",
-      answer: "You can register online through our website.",
-    },
-  ];
 
   const toggleAccordion = (index: any) => {
     setOpenIndex(openIndex === index ? null : index);
