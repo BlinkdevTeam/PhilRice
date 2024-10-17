@@ -26,30 +26,6 @@ const speakersData = [
     imageBW: Speaker1BW,
     imageColor: Speaker1,
   },
-  {
-    id: 4,
-    name: "More Names D. Surname",
-    address:
-      "More addresses Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    imageBW: Speaker1BW,
-    imageColor: Speaker1,
-  },
-  {
-    id: 5,
-    name: "More Names D. Surname",
-    address:
-      "More addresses Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    imageBW: Speaker1BW,
-    imageColor: Speaker1,
-  },
-  {
-    id: 6,
-    name: "More Names D. Surname",
-    address:
-      "More addresses Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    imageBW: Speaker1BW,
-    imageColor: Speaker1,
-  },
 ];
 
 const SpeakerProfile = ({ speaker }: any) => {
@@ -58,11 +34,11 @@ const SpeakerProfile = ({ speaker }: any) => {
   return (
     <div className="flex justify-center bg-yellow-100">
       <div
-        className="w-[450px] h-[545px] flex flex-col justify-end m-4"
+        className="w-[450px] h-[515px] flex flex-col justify-end m-4 bg-slate-300"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <div className="relative w-[450px] h-[515px] bg-[#f0f0f0] rounded-tr-[100px] flex flex-col justify-end">
+        <div className="relative w-[450px] h-[515px] bg-custom-gradient rounded-tr-[100px] flex flex-col justify-end">
           {/* Black and White Image */}
           <img
             src={speaker.imageBW}
@@ -80,7 +56,7 @@ const SpeakerProfile = ({ speaker }: any) => {
             }`}
           />
           <div className="absolute bottom-36 left-0 w-40 h-2 bg-[#EFB71E]"></div>
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[450px] h-[144px] py-4 bg-[#0E9046] flex flex-col text-center justify-center">
+          <div className="flex flex-col text-center justify-center absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[450px] h-[144px] py-4 bg-[#0E9046] rounded-bl-[100px]">
             <div className="text-white flex flex-col gap-3">
               <div className="font-bold text-3xl">{speaker.name}</div>
               <div className="text-2xl">{speaker.address}</div>
@@ -97,7 +73,7 @@ const SpeakerProfiles = () => {
     <div className="flex flex-wrap justify-center w-full py-20">
       {speakersData.map((speaker) => (
         <div
-          className="flex-shrink-0 w-full sm:w-[calc(70%-16px)] md:w-[calc(66.66%-16px)] lg:w-[calc(44.33%-16px) xl:w-[calc(25.33%+64px)] p-2"
+          className="flex-shrink-0 w-full xl:w-[calc(33.33%)] p-2"
           key={speaker.id}
         >
           <SpeakerProfile speaker={speaker} />

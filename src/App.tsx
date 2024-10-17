@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center pt-[72px]">
+      <div className="flex flex-col justify-center items-center pt-[72px] overflow-x-hidden">
         <Navbar
           scrollToSection={scrollToSection}
           refs={{
@@ -37,40 +37,38 @@ export default function App() {
             faqRef,
           }}
         />
-        <div ref={homeRef}>
+        <div ref={homeRef} className="bg-red-200">
           <Hero />
         </div>
         {/* <div className="-mt-[100px]">
           <TimeModal />
         </div> */}
-        <div ref={aboutRef}>
+        <div ref={aboutRef} className="bg-red-200">
           <About />
         </div>
-        <div className="w-full max-w-[1488px] h-[2px] bg-[#0E9046] my-[24px]" />
+        <div className="w-full h-[2px] bg-[#0E9046] my-[24px] max-w-[1488px] mx-auto md:my-[16px] lg:my-[32px]" />
         <div ref={speakerRef}>
           <Speaker />
         </div>
-        <div ref={conferenceRef}>
-          <Conference />
+        <div ref={conferenceRef} className="bg-red-200">
+          {/* <Conference /> */}
         </div>
-        <div ref={locationRef}>
-          <Location />
+        <div ref={locationRef} className="bg-red-200">
+          {/* <Location /> */}
         </div>
-        <div className="mt-28">
-          <StratPlan />
+        <div className="mt-28">{/* <StratPlan /> */}</div>
+        {/* <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" /> */}
+        <div ref={faqRef} className="bg-red-200">
+          {/* <FAQ /> */}
         </div>
-        <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
-        <div ref={faqRef}>
-          <FAQ />
-        </div>
-        <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" />
-        <Footer />
-        <div className="flex justify-center items-center gap-4 lg:gap-[870px] w-full text-xl px-4 py-4 bg-[#343434]">
+        {/* <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" /> */}
+        <div className="bg-red-200">{/* <Footer /> */}</div>
+        {/* <div className="flex justify-center items-center gap-4 lg:gap-[870px] w-full text-xl px-4 py-4 bg-[#343434]">
           <div>PHILRICE © 2023. All rights reserved.</div>
           <div>
             Powered by <span className="font-bold">BLINK</span> CREATIVE STUDIO
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

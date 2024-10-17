@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 const TimeUnit = ({ value, label }: any) => (
   <div className="flex flex-col items-center mx-2">
-    <p className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white">
+    <p className="font-bold text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-white">
       {value}
     </p>
-    <p className="text-white text-sm sm:text-md md:text-lg lg:text-xl xl:text-2xl">
+    <p className="text-white text-xs sm:text-md md:text-lg lg:text-xl xl:text-2xl">
       {label}
     </p>
   </div>
@@ -44,27 +44,27 @@ const TimeCount = () => {
   }, [targetDate]);
 
   return (
-    <div className="flex flex-col items-center justify-center py-4 px-12 lg:px-24 bg-green-700 rounded-lg w-full max-w-[1026px] mx-auto">
+    <div className="flex flex-col items-center justify-center py-4 bg-green-700 rounded-lg w-full -px-2 sm:px-6 md:px-8 lg:px-12 xl:px-12 mx-auto">
       <h1 className="text-center text-white text-xl md:text-2xl lg:text-3xl font-bold mb-4">
         Event Starts On
       </h1>
       <div className="flex flex-row justify-center">
         <TimeUnit value={timeRemaining.days} label="Days" />
-        <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mx-4 md:mx-10 lg:mx-16">
+        <p className="font-bold text-4xl md:text-5xl lg:text-6xl px-2 md:px-4 lg:px-6 xl:px-8 text-white">
           :
         </p>
         <TimeUnit
           value={String(timeRemaining.hours).padStart(2, "0")}
           label="Hours"
         />
-        <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mx-4 md:mx-10 lg:mx-16">
+        <p className="font-bold text-4xl md:text-5xl lg:text-6xl px-2 md:px-4 lg:px-6 xl:px-8 text-white">
           :
         </p>
         <TimeUnit
           value={String(timeRemaining.minutes).padStart(2, "0")}
           label="Minutes"
         />
-        <p className="font-bold text-4xl md:text-5xl lg:text-6xl text-white mx-4 md:mx-10 lg:mx-16">
+        <p className="font-bold text-4xl md:text-5xl lg:text-6xl px-2 md:px-4 lg:px-6 xl:px-8 text-white">
           :
         </p>
         <TimeUnit

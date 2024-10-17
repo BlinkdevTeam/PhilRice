@@ -7,12 +7,12 @@ import ImageCollection from "./ImageSection/ImageCollection";
 export default function About() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center text-center w-full  py-16 px-4 md:px-8">
-        <div className="text-[#0E9046] text-6xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-bold">
+      <div className="flex flex-col justify-center items-center text-center py-16">
+        <div className="text-[#0E9046] bg-red-100 text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-bold">
           About the <span className="text-[#F3B71C]">Conference</span>
         </div>
         <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
-        <div className="text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl px-4 md:px-12 w-full sm:w-full md:w-full lg:w-10/12 xl:w-7/12 leading-relaxed">
+        <div className="text-sm sm:text-sm md:text-md lg:text-lg xl:text-xl w-11/12 xl:w-9/12 bg-slate-300 leading-relaxed">
           The 
           <span className="text-[#0E9046] font-bold">
             36th Ugnay Palay National Rice R4D Conference 
@@ -54,9 +54,9 @@ export default function About() {
           Register
         </button>
         <ImageCollection />
-        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-24 overflow-hidden w-full sm:w-full md:w-full lg:w-9/12 xl:w-8/12 mt-12 py-12 lg:py-40">
-          <div className="flex flex-col justify-start items-start w-full lg:w-auto">
-            <div className="text-[#0E9046] text-start font-bold text-6xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl">
+        <div className="flex flex-col xl:flex-row justify-center items-center lg:items-start gap-24 overflow-hidden w-full sm:w-full md:w-full lg:w-9/12 xl:w-8/12 mt-12 py-12 lg:py-40">
+          <div className="flex flex-col justify-center lg:justify-start xl:justify-start items-center lg:items-start xl:items-start w-full lg:w-auto">
+            <div className="text-[#0E9046] bg-red-100 text-center lg:text-start xl:text-start text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-bold">
               About{" "}
               <span className="text-[#F3B71C]">
                 <br />
@@ -72,7 +72,7 @@ export default function About() {
               <img
                 src={LeafDivider2}
                 alt="Divider"
-                className="absolute top-0 left-0 -mt-11 "
+                className="absolute top-0 left-24 xl:left-0 -mt-11 "
               />
             </div>
           </div>

@@ -15,7 +15,7 @@ export default function Conference() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center bg-[#0E9046] px-4 sm:px-[314px] py-[120px]">
+    <div className="flex flex-col justify-center items-center bg-[#0E9046] px-4 py-[120px]">
       <div className="text-white text-4xl sm:text-6xl font-bold text-center">
         Conference <span className="text-[#F3B71C]">Schedule</span>
       </div>

@@ -4,11 +4,11 @@ import MobileHeroBanner from "../Assets/MobileHeroBanner.jpg";
 import TimeCount from "../Modal/TimeModal";
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Set initial state based on current width
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const handleResize = () => {
-      const mobileView = window.innerWidth <= 768;
+      const mobileView = window.innerWidth < 768;
       if (mobileView !== isMobile) {
         setIsMobile(mobileView);
       }
@@ -21,13 +21,13 @@ export default function Hero() {
   }, [isMobile]); // Add isMobile to dependencies to check for changes
 
   return (
-    <div className="flex flex-col justify-center items-center w-full">
+    <div className="flex flex-col w-screen justify-center items-center">
       <img
         src={isMobile ? MobileHeroBanner : HeroBanner}
         alt="Ugnay Palay Banner"
-        className="w-screen h-auto" // Responsive width and height
+        className="w-screen"
       />
-      <div className="mt-[-50px] md:mt-[-80px] lg:mt-[-100px] px-4">
+      <div className="mt-[-50px] md:mt-[-80px] lg:mt-[-100px]">
         <TimeCount />
       </div>
     </div>
