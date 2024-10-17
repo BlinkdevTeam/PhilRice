@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from "react";
-import HeroBanner from "../Assets/36thbanner.jpg";
-import MobileHeroBanner from "../Assets/MobileHeroBanner.jpg";
+import HeroBannerDesktop from "../Assets/Herobanner.jpg";
+import HeroBannerTablet from "../Assets/TabletHerobanner.jpg";
+import HeroBannerMobile from "../Assets/MobileHeroBanner.jpg";
 import TimeCount from "../Modal/TimeModal";
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
-      const mobileView = window.innerWidth < 768;
-      if (mobileView !== isMobile) {
-        setIsMobile(mobileView);
-      }
+      setWindowWidth(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isMobile]); // Add isMobile to dependencies to check for changes
+  }, []);
+
+  // Select the banner based on window width
+  let bannerSrc;
+  if (windowWidth >= 1024) {
+    // Desktop view
+    bannerSrc = HeroBannerDesktop;
+  } else if (windowWidth >= 768) {
+    // Tablet view
+    bannerSrc = HeroBannerTablet;
+  } else {
+    // Mobile view
+    bannerSrc = HeroBannerMobile;
+  }
 
   return (
     <div className="flex flex-col w-screen justify-center items-center">
-      <img
-        src={isMobile ? MobileHeroBanner : HeroBanner}
-        alt="Ugnay Palay Banner"
-        className="w-screen"
-      />
+      <img src={bannerSrc} alt="Ugnay Palay Banner" className="w-screen" />
       <div className="mt-[-50px] md:mt-[-80px] lg:mt-[-100px]">
         <TimeCount />
       </div>

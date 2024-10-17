@@ -20,7 +20,7 @@ const Navbar = ({ scrollToSection, refs }: any) => {
   };
 
   return (
-    <nav className="bg-[#0E9046] p-4 w-full fixed top-0 left-0 z-50">
+    <nav className="bg-[#0E9046] p-4 w-full fixed top-0 left-0 z-50 text-xs lg:text-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left side - Logo */}
         <div className="flex items-center">
@@ -30,12 +30,12 @@ const Navbar = ({ scrollToSection, refs }: any) => {
         {/* Right side - Register button and Hamburger Button for mobile view */}
         <div className="flex items-center space-x-0 gap-8 ml-auto">
           {/* Register button - visible in both mobile and desktop */}
-          {/* <a
+          <a
             href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-            className="bg-[#F3BD1C] text-white font-bold py-2 px-12 rounded-md block md:hidden"
+            className="bg-[#F3BD1C] text-white font-bold py-2 px-6 lg:px-12 rounded-md block md:hidden"
           >
             REGISTER
-          </a> */}
+          </a>
 
           {/* Hamburger Button for mobile view */}
           <button
@@ -49,13 +49,7 @@ const Navbar = ({ scrollToSection, refs }: any) => {
           {isMobileMenuOpen && (
             <div className="absolute top-16 right-0 bg-[#0E9046] w-full shadow-lg md:hidden">
               <div className="flex flex-col items-center">
-                {/* Register button shown first in mobile menu */}
-                <a
-                  href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-                  className="bg-[#F3BD1C] text-white font-bold py-2 px-12 rounded-md mb-4"
-                >
-                  REGISTER
-                </a>
+                {/* Register button shown bottom in mobile menu */}
                 {["home", "about", "speakers", "program", "venue", "faqs"].map(
                   (section) => (
                     <button
@@ -73,6 +67,12 @@ const Navbar = ({ scrollToSection, refs }: any) => {
                     </button>
                   )
                 )}
+                {/* <a
+                  href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
+                  className="bg-[#F3BD1C] text-white font-bold py-2 px-12 rounded-md mb-4"
+                >
+                  REGISTER
+                </a> */}
               </div>
             </div>
           )}

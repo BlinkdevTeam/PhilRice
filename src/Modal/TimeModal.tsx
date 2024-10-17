@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 const TimeUnit = ({ value, label }: any) => (
   <div className="flex flex-col items-center mx-2">
-    <p className="font-bold text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl text-white">
+    <p className="font-bold text-[40px] md:text-[50px] lg:text-[80px] text-white">
       {value}
     </p>
-    <p className="text-white text-xs sm:text-md md:text-lg lg:text-xl xl:text-2xl">
+    <p className="text-white text-[15px] md:text-[15px] lg:text-[18px]">
       {label}
     </p>
   </div>
@@ -44,29 +44,24 @@ const TimeCount = () => {
   }, [targetDate]);
 
   return (
-    <div className="flex flex-col items-center justify-center py-4 bg-green-700 rounded-lg w-full -px-2 sm:px-6 md:px-8 lg:px-12 xl:px-12 mx-auto">
-      <h1 className="text-center text-white text-xl md:text-2xl lg:text-3xl font-bold mb-4">
+    // <div className="flex flex-col items-center justify-center py-4 bg-green-700 rounded-lg w-full -px-2 sm:px-6 md:px-8 lg:px-12 xl:px-12 mx-auto">
+    <div className="flex flex-col items-center justify-center bg-green-700 rounded-lg w-[357px] h-[137px] md:w-[680px] md:h-[161px] lg:w-[1006px] lg:h-[232px]">
+      <h1 className="text-center text-white text-[22px] md:text-[25px] lg:text-[32px] font-bold mb-4">
         Event Starts On
       </h1>
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row justify-center text-[40px] md:text-[50px] lg:text-[80px]">
         <TimeUnit value={timeRemaining.days} label="Days" />
-        <p className="font-bold text-4xl md:text-5xl lg:text-6xl px-2 md:px-4 lg:px-6 xl:px-8 text-white">
-          :
-        </p>
+        <p className="px-2 md:px-4 lg:px-6 xl:px-8 text-white font-bold">:</p>
         <TimeUnit
           value={String(timeRemaining.hours).padStart(2, "0")}
           label="Hours"
         />
-        <p className="font-bold text-4xl md:text-5xl lg:text-6xl px-2 md:px-4 lg:px-6 xl:px-8 text-white">
-          :
-        </p>
+        <p className="px-2 md:px-4 lg:px-6 xl:px-8 text-white font-bold">:</p>
         <TimeUnit
           value={String(timeRemaining.minutes).padStart(2, "0")}
           label="Minutes"
         />
-        <p className="font-bold text-4xl md:text-5xl lg:text-6xl px-2 md:px-4 lg:px-6 xl:px-8 text-white">
-          :
-        </p>
+        <p className="px-2 md:px-4 lg:px-6 xl:px-8 text-white font-bold">:</p>
         <TimeUnit
           value={String(timeRemaining.seconds).padStart(2, "0")}
           label="Seconds"

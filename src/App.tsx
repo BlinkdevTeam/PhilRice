@@ -37,24 +37,24 @@ export default function App() {
             faqRef,
           }}
         />
-        <div ref={homeRef} className="bg-red-200">
+        <div ref={homeRef}>
           <Hero />
         </div>
         {/* <div className="-mt-[100px]">
           <TimeModal />
         </div> */}
-        <div ref={aboutRef} className="bg-red-200">
+        <div ref={aboutRef}>
           <About />
         </div>
-        <div className="w-full h-[2px] bg-[#0E9046] my-[24px] max-w-[1488px] mx-auto md:my-[16px] lg:my-[32px]" />
+        <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[24px] mx-auto md:my-[16px] lg:my-[32px]" />
         <div ref={speakerRef}>
           <Speaker />
         </div>
-        <div ref={conferenceRef} className="bg-red-200">
-          {/* <Conference /> */}
+        <div ref={conferenceRef}>
+          <Conference />
         </div>
         <div ref={locationRef} className="bg-red-200">
-          {/* <Location /> */}
+          <Location />
         </div>
         <div className="mt-28">{/* <StratPlan /> */}</div>
         {/* <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" /> */}
