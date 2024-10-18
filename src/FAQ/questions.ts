@@ -23,7 +23,8 @@ export const questions = [
   {
     question: "How do I register for the conference?",
     answer:
-      "You can register for the Ugnay Palay online, either as participant or paper/poster presenter, via https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI",
+      "You can register for the Ugnay Palay online, either as participant or paper/poster presenter, via",
+    link:"https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI",
   },
   {
     question: "How will I know if my registration is successful?",
@@ -33,7 +34,8 @@ export const questions = [
   {
     question: "How much does it cost to register for the conference?",
     answer:
-      "Attendance to the 36th Ugnay Palay is free of charge. All participants must register and will please arrange and pay for their own accommodation. Nearby accommodation options can be found here https://drive.google.com/file/d/1E_PrvbQpzwDj3ti7RNxiaD6Cg8GcN7wa/view?usp=sharing",
+      "Attendance to the 36th Ugnay Palay is free of charge. All participants must register and will please arrange and pay for their own accommodation. Nearby accommodation options can be found here",
+    link:"https://drive.google.com/file/d/1E_PrvbQpzwDj3ti7RNxiaD6Cg8GcN7wa/view?usp=sharing  ",
   },
   {
     question: "When is the deadline for registration?",
@@ -42,8 +44,8 @@ export const questions = [
   },
   {
     question: "Can I present at the conference?",
-    answer:
-      "Yes. Call for paper and poster https://drive.google.com/file/d/19hkpNdQzX_fxE7XoVe4P3y9BfVsPwdPw/view?usp=sharing",
+    answer: "Yes. Call for paper and poster",
+    link: "https://drive.google.com/file/d/19hkpNdQzX_fxE7XoVe4P3y9BfVsPwdPw/view?usp=sharing",
   },
   {
     question: "Is there a dress code for the conference?",

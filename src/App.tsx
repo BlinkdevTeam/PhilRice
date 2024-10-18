@@ -40,9 +40,6 @@ export default function App() {
         <div ref={homeRef}>
           <Hero />
         </div>
-        {/* <div className="-mt-[100px]">
-          <TimeModal />
-        </div> */}
         <div ref={aboutRef}>
           <About />
         </div>
@@ -53,22 +50,25 @@ export default function App() {
         <div ref={conferenceRef}>
           <Conference />
         </div>
-        <div ref={locationRef} className="bg-red-200">
+        <div ref={locationRef}>
           <Location />
         </div>
-        <div className="mt-28">{/* <StratPlan /> */}</div>
-        {/* <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" /> */}
-        <div ref={faqRef} className="bg-red-200">
-          {/* <FAQ /> */}
+        <div className="mt-28">
+          <StratPlan />
         </div>
-        {/* <div className="w-full max-w-[1488px] h-[2px] bg-[#EEEEEE] my-[40px]" /> */}
-        <div className="bg-red-200">{/* <Footer /> */}</div>
-        {/* <div className="flex justify-center items-center gap-4 lg:gap-[870px] w-full text-xl px-4 py-4 bg-[#343434]">
+        <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[24px] mx-auto md:my-[16px] lg:my-[32px]" />
+        <div ref={faqRef}>
+          <FAQ />
+        </div>
+        <div>
+          <Footer />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center text-white text-center w-full h-[66px] md:h-[108px] lg:h-[58px] text-[13px] md:text-[22px] px-4 bg-[#343434]">
           <div>PHILRICE © 2023. All rights reserved.</div>
           <div>
             Powered by <span className="font-bold">BLINK</span> CREATIVE STUDIO
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   );

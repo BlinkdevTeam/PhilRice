@@ -1,4 +1,3 @@
-// FAQ.tsx
 import React, { useState } from "react";
 import LeafDivider from "../Assets/leaf.png";
 import { questions } from "./questions"; // Adjust the path based on your file structure
@@ -10,9 +9,15 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleLinkClick = (event: any) => {
+    event.preventDefault();
+    console.log("Link clicked:", event.target.href);
+    window.location.href = event.target.href;
+  };
+
   return (
-    <div className="flex flex-col justify-center items-center px-4 sm:px-0">
-      <div className="text-[#0E9046] text-4xl sm:text-6xl font-bold text-center">
+    <div className="flex flex-col justify-center items-center px-4 sm:px-4 lg:px-12">
+      <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold">
         Frequently asked <span className="text-[#F3B71C]">questions</span>
       </div>
       <img
@@ -20,17 +25,17 @@ export default function FAQ() {
         alt="Leaf Divider"
         className="my-4 w-full max-w-[300px]"
       />
-      <div className="text-center text-[22px] w-full max-w-[866px] mb-6">
+      <div className="text-center w-full max-w-[866px] text-[13px] md:text-[18px] lg:text-[22px]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
         vulputate eros, et <br />
         faucibus velit. Donec sed elit tellus.
       </div>
 
-      <div className="w-full">
+      <div className="w-full max-w-[858px]">
         {questions.map((item, index) => (
-          <div key={index} className="w-full max-w-[1108px] my-[12px]">
+          <div key={index} className="my-[12px]">
             <div
-              className={`flex justify-between items-center font-bold text-[25px] cursor-pointer p-4 transition-shadow duration-300 ease-in-out rounded-t-lg ${
+              className={`flex justify-between items-center font-bold text-[18px] md:text-[22px] lg:text-[25px] cursor-pointer p-4 transition-shadow duration-300 ease-in-out rounded-t-lg ${
                 openIndex === index
                   ? "bg-[#0E9046] text-white shadow-lg"
                   : "bg-white text-[#0E9046] hover:shadow-lg"
@@ -71,11 +76,24 @@ export default function FAQ() {
               </div>
               <span>{openIndex === index ? "-" : "+"}</span>
             </div>
-            {openIndex === index && (
-              <div className="p-4 text-white bg-[#0E9046] rounded-b-lg text-[22px]">
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                openIndex === index ? "max-h-[500px]" : "max-h-0"
+              }`}
+            >
+              <div className="p-4 text-white bg-[#0E9046] rounded-b-lg text-[18px] md:text-[22px] lg:text-[25px]">
                 {item.answer}
+                {item.link && (
+                  <a
+                    href={item.link}
+                    className="text-[#F3B71C] underline ml-2"
+                    onClick={handleLinkClick}
+                  >
+                    this Link
+                  </a>
+                )}
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>

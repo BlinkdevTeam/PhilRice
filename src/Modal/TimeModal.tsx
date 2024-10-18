@@ -51,17 +51,17 @@ const TimeCount = () => {
       </h1>
       <div className="flex flex-row justify-center text-[40px] md:text-[50px] lg:text-[80px]">
         <TimeUnit value={timeRemaining.days} label="Days" />
-        <p className="px-2 md:px-4 lg:px-6 xl:px-8 text-white font-bold">:</p>
+        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold">:</p>
         <TimeUnit
           value={String(timeRemaining.hours).padStart(2, "0")}
           label="Hours"
         />
-        <p className="px-2 md:px-4 lg:px-6 xl:px-8 text-white font-bold">:</p>
+        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold">:</p>
         <TimeUnit
           value={String(timeRemaining.minutes).padStart(2, "0")}
           label="Minutes"
         />
-        <p className="px-2 md:px-4 lg:px-6 xl:px-8 text-white font-bold">:</p>
+        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold">:</p>
         <TimeUnit
           value={String(timeRemaining.seconds).padStart(2, "0")}
           label="Seconds"

@@ -7,7 +7,7 @@ import ImageCollection from "./ImageSection/ImageCollection";
 export default function About() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center text-center py-16">
+      <div className="flex flex-col justify-center items-center text-center">
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold">
           About the <span className="text-[#F3B71C]">Conference</span>
         </div>

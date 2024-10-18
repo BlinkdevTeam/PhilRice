@@ -20,7 +20,7 @@ const Navbar = ({ scrollToSection, refs }: any) => {
   };
 
   return (
-    <nav className="bg-[#0E9046] p-4 w-full fixed top-0 left-0 z-50 text-xs lg:text-lg">
+    <nav className="bg-[#0C6972] p-4 w-full fixed top-0 left-0 z-50 text-xs lg:text-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left side - Logo */}
         <div className="flex items-center">
@@ -47,10 +47,10 @@ const Navbar = ({ scrollToSection, refs }: any) => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="absolute top-16 right-0 bg-[#0E9046] w-full shadow-lg md:hidden">
+            <div className="absolute top-16 right-0 bg-[#0C6972] w-full shadow-lg md:hidden">
               <div className="flex flex-col items-center">
                 {/* Register button shown bottom in mobile menu */}
-                {["home", "about", "speakers", "program", "venue", "faqs"].map(
+                {["home", "about", "program", "speakers", "venue", "faqs"].map(
                   (section) => (
                     <button
                       key={section}
@@ -78,8 +78,8 @@ const Navbar = ({ scrollToSection, refs }: any) => {
           )}
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex space-x-4">
-            {["home", "about", "speaker", "conference", "location", "faq"].map(
+          <div className="hidden md:flex space-x-8">
+            {["home", "about", "program", "speakers", "venue", "faqs"].map(
               (section) => (
                 <button
                   key={section}

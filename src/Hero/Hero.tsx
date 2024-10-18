@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import HeroBannerDesktop from "../Assets/Herobanner.jpg";
-import HeroBannerTablet from "../Assets/TabletHerobanner.jpg";
-import HeroBannerMobile from "../Assets/MobileHeroBanner.jpg";
+import HeroBannerDesktop from "../Assets/DesktopBanner.jpg";
+import HeroBannerTablet from "../Assets/TabletBanner.jpg";
+import HeroBannerMobile from "../Assets/MobileBanner.jpg";
 import TimeCount from "../Modal/TimeModal";
 
 export default function Hero() {
@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <div className="flex flex-col w-screen justify-center items-center">
       <img src={bannerSrc} alt="Ugnay Palay Banner" className="w-screen" />
-      <div className="mt-[-50px] md:mt-[-80px] lg:mt-[-100px]">
+      <div className="mt-[-60px] md:mt-[-80px] lg:mt-[-100px]">
         <TimeCount />
       </div>
     </div>
