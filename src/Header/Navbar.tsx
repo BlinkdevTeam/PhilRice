@@ -1,56 +1,61 @@
 import React, { useState } from "react";
 import Logo from "../Assets/PhilsanLogoWhite.png";
 import { FaBars } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ scrollToSection, refs }: any) => {
-  // State to track the active button and mobile menu visibility
+const Navbar = ({ refs }: any) => {
   const [activeButton, setActiveButton] = useState("home");
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate(); // React Router's useNavigate
 
-  // Function to handle button click and update the active state
-  const handleButtonClick = (ref: any, section: any) => {
-    scrollToSection(ref);
+  const handleButtonClick = (ref: any, section: string) => {
+    // Navigate to home and pass the section to scroll to
+    navigate("/", { state: { section } });
     setActiveButton(section);
-    setMobileMenuOpen(false); // Close mobile menu after selection
+    setMobileMenuOpen(false);
   };
 
-  // Function to toggle mobile menu visibility
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
     <nav className="bg-[#0C6972] p-4 w-full fixed top-0 left-0 z-50 text-xs lg:text-lg">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Left side - Logo */}
         <div className="flex items-center">
-          <img src={Logo} alt="PhilRice Logo" className="h-10" />
+          <img
+            src={Logo}
+            alt="PhilRice Logo"
+            className="h-10"
+            onClick={handleScrollToTop}
+          />
         </div>
 
-        {/* Right side - Register button and Hamburger Button for mobile view */}
         <div className="flex items-center space-x-0 gap-8 ml-auto">
-          {/* Register button - visible in both mobile and desktop */}
           <a
             href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
             className="bg-[#F3BD1C] text-white font-bold py-2 px-6 lg:px-12 rounded-md block md:hidden"
           >
             REGISTER
           </a>
-
-          {/* Hamburger Button for mobile view */}
           <button
             className="md:hidden flex items-center"
             onClick={toggleMobileMenu}
           >
             <FaBars className="text-white text-3xl" />
           </button>
-
-          {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <div className="absolute top-16 right-0 bg-[#0C6972] w-full shadow-lg md:hidden">
               <div className="flex flex-col items-center">
                 {/* Register button shown bottom in mobile menu */}
-                {["home", "about", "program", "speakers", "venue", "faqs"].map(
+                {["home", "about", "speakers", "program", "venue", "faqs"].map(
                   (section) => (
                     <button
                       key={section}
@@ -67,19 +72,12 @@ const Navbar = ({ scrollToSection, refs }: any) => {
                     </button>
                   )
                 )}
-                {/* <a
-                  href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-                  className="bg-[#F3BD1C] text-white font-bold py-2 px-12 rounded-md mb-4"
-                >
-                  REGISTER
-                </a> */}
               </div>
             </div>
           )}
-
           {/* Desktop Nav Links */}
           <div className="hidden md:flex space-x-8">
-            {["home", "about", "program", "speakers", "venue", "faqs"].map(
+            {["home", "about", "speakers", "program", "venue", "faqs"].map(
               (section) => (
                 <button
                   key={section}
@@ -97,8 +95,6 @@ const Navbar = ({ scrollToSection, refs }: any) => {
               )
             )}
           </div>
-
-          {/* Register button visible in desktop menu */}
           <a
             href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
             className="bg-[#F3BD1C] text-white font-bold py-2 px-12 rounded-md hidden md:block"

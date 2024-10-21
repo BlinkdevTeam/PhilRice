@@ -16,7 +16,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center px-4 sm:px-4 lg:px-12">
+    <div className="flex flex-col justify-center items-center my-24 px-4 sm:px-4 lg:px-12">
       <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold">
         Frequently asked <span className="text-[#F3B71C]">questions</span>
       </div>
@@ -25,12 +25,6 @@ export default function FAQ() {
         alt="Leaf Divider"
         className="my-4 w-full max-w-[300px]"
       />
-      <div className="text-center w-full max-w-[866px] text-[13px] md:text-[18px] lg:text-[22px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
-        vulputate eros, et <br />
-        faucibus velit. Donec sed elit tellus.
-      </div>
-
       <div className="w-full max-w-[858px]">
         {questions.map((item, index) => (
           <div key={index} className="my-[12px]">

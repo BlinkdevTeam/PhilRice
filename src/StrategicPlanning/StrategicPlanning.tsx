@@ -1,11 +1,15 @@
 import React from "react";
-import LeafDivider2 from "../Assets/leaf2.png";
 import Book from "../Assets/samplebook.png";
 import { ReactComponent as MyIcon } from "../Assets/Icons/download.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function StratPlan() {
+  const navigate = useNavigate();
+  const handleSeeMore = () => {
+    navigate("/strat-planning", { state: { section: "" } }); // Adjust the section name as needed
+  };
   return (
-    <div className="flex flex-col justify-center items-center w-full h-auto">
+    <div className="flex flex-col justify-center items-center w-full h-auto mt-20 md:mt-32 lg:mt-48">
       <div className="flex flex-col gap-10 sm:flex-row justify-center items-center md:justify-center md:items-start overflow-hidden w-full p-4">
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold inline sm:hidden">
           Strategic <span className="text-[#F3B71C]">Planning</span>
@@ -21,7 +25,6 @@ export default function StratPlan() {
             <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold hidden sm:inline">
               Strategic <span className="text-[#F3B71C]">Planning</span>
             </div>
-            {/* <img src={LeafDivider2} alt="Divider" className="my-4" /> */}
             <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] hidden sm:flex">
               by: Jayson San Agustin & Lander Guevarra
             </div>
@@ -48,12 +51,7 @@ export default function StratPlan() {
             <button
               type="button"
               className="bg-white w-full h-[47px] lg:w-[265px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[20px] lg:text-[30px] text-[#0E9046]"
-              onClick={() =>
-                window.open(
-                  "https://github.com/blinkcreativestudio/PhilRice/blob/main/src/Assets/Map.jpg?raw=true",
-                  "_blank"
-                )
-              }
+              onClick={handleSeeMore}
             >
               READ NOW
             </button>

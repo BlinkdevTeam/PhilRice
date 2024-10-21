@@ -10,13 +10,13 @@ export default function Conference() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const days = [
-    { day: "Day 1st", date: "November 26, 2024", program: <Program1 /> },
-    { day: "Day 2nd", date: "November 27, 2024", program: <Program2 /> },
-    { day: "Day 3rd", date: "November 28, 2024", program: <Program3 /> },
+    { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
+    { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
+    { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center bg-[#0E9046] w-screen px-8 py-24 mt-40">
+    <div className="flex flex-col justify-center items-center bg-[#0E9046] w-screen px-8 py-24 mt-[120px]">
       <div className="text-white text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold">
         Conference <span className="text-[#F3B71C]">Schedule</span>
       </div>
@@ -26,7 +26,6 @@ export default function Conference() {
         vulputate eros, et <br />
         faucibus velit. Donec sed elit tellus.
       </div>
-
       {/* Render the day buttons dynamically */}
       <div className="mt-12 w-11/12">
         {/* For Mobile and Tablet (use dropdown) */}
@@ -65,13 +64,12 @@ export default function Conference() {
             )}
           </div>
         </div>
-
         {/* For Desktop (use flex row) */}
-        <div className="hidden lg:flex flex-row gap-4">
+        <div className="hidden lg:flex flex-row justify-center items-center gap-4">
           {days.map((dayItem, index) => (
             <div
               key={index}
-              className={`flex flex-row w-full px-4 sm:px-[24px] py-3 gap-4 rounded-[10px] ${
+              className={`flex flex-row sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] ${
                 activeIndex === index ? "bg-[#EFB71E]" : ""
               } cursor-pointer`}
               onClick={() => setActiveIndex(index)}
@@ -89,13 +87,10 @@ export default function Conference() {
           ))}
         </div>
       </div>
-
       <div className="w-full max-w-[1108px] h-[2px] bg-white my-10" />
       <div className="text-white text-center text-[30px] md:text-[35px] lg:text-[40px] font-bold mb-4">
         Conference Program
       </div>
-
-      {/* Render the active program */}
       {days[activeIndex].program}
     </div>
   );

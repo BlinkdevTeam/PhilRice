@@ -1,4 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Hero from "./Hero/Hero";
 import About from "./About/About";
 import Speaker from "./Speaker/Speaker";
@@ -8,68 +14,86 @@ import StratPlan from "./StrategicPlanning/StrategicPlanning";
 import FAQ from "./FAQ/FAQ";
 import Footer from "./Footer/Footer";
 import Navbar from "./Header/Navbar";
+import SpeakerPage from "./Speaker/SpeakerPage";
+import Booklet from "./StrategicPlanning/Booklet";
+
+const Divider = () => (
+  <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[12px] mx-auto md:my-[16px] lg:my-[80px]" />
+);
+
+function ScrollToSection({ refs }: any) {
+  const location = useLocation();
+
+  useEffect(() => {
+    const section = location.state?.section;
+    if (section && refs[`${section}Ref`]?.current) {
+      refs[`${section}Ref`].current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location, refs]);
+
+  return null;
+}
 
 export default function App() {
-  const homeRef = useRef(null);
-  const aboutRef = useRef(null);
-  const speakerRef = useRef(null);
-  const conferenceRef = useRef(null);
-  const locationRef = useRef(null);
-  const faqRef = useRef(null);
+  const homeRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const programRef = useRef<HTMLDivElement>(null);
+  const speakersRef = useRef<HTMLDivElement>(null);
+  const venueRef = useRef<HTMLDivElement>(null);
+  const faqsRef = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (ref: any) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
+  const refs = {
+    homeRef,
+    aboutRef,
+    programRef,
+    speakersRef,
+    venueRef,
+    faqsRef,
   };
 
   return (
-    <>
+    <Router>
       <div className="flex flex-col justify-center items-center pt-[72px] overflow-x-hidden">
-        <Navbar
-          scrollToSection={scrollToSection}
-          refs={{
-            homeRef,
-            aboutRef,
-            speakerRef,
-            conferenceRef,
-            locationRef,
-            faqRef,
-          }}
-        />
-        <div ref={homeRef}>
-          <Hero />
-        </div>
-        <div ref={aboutRef}>
-          <About />
-        </div>
-        <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[24px] mx-auto md:my-[16px] lg:my-[32px]" />
-        <div ref={speakerRef}>
-          <Speaker />
-        </div>
-        <div ref={conferenceRef}>
-          <Conference />
-        </div>
-        <div ref={locationRef}>
-          <Location />
-        </div>
-        <div className="mt-28">
-          <StratPlan />
-        </div>
-        <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[24px] mx-auto md:my-[16px] lg:my-[32px]" />
-        <div ref={faqRef}>
-          <FAQ />
-        </div>
-        <div>
+        <Navbar refs={refs} />
+        <ScrollToSection refs={refs} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <div ref={homeRef}>
+                  <Hero />
+                </div>
+                <div ref={aboutRef}>
+                  <About />
+                </div>
+                <Divider />
+                <div ref={speakersRef}>
+                  <Speaker />
+                </div>
+                <div ref={programRef}>
+                  <Conference />
+                </div>
+                <div ref={venueRef}>
+                  <Location />
+                </div>
+                <div>
+                  <StratPlan />
+                </div>
+                <Divider />
+                <div ref={faqsRef}>
+                  <FAQ />
+                </div>
+              </>
+            }
+          />
+          <Route path="/speaker-details" element={<SpeakerPage />} />
+          <Route path="/strat-planning" element={<Booklet />} />
+        </Routes>
+        <div className="mt-32 md:mt-64">
           <Footer />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center text-white text-center w-full h-[66px] md:h-[108px] lg:h-[58px] text-[13px] md:text-[22px] px-4 bg-[#343434]">
-          <div>PHILRICE © 2023. All rights reserved.</div>
-          <div>
-            Powered by <span className="font-bold">BLINK</span> CREATIVE STUDIO
-          </div>
-        </div>
       </div>
-    </>
+    </Router>
   );
 }

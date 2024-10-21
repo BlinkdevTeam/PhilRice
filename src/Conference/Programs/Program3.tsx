@@ -4,8 +4,20 @@ export default function Program1() {
   // Define an array of program items
   const programItems = [
     {
-      time: "7:00 AM",
-      title: "Registration and Welcome Coffee",
+      time: "07:00 AM",
+      title: "Morning Coffee and Networking Viewing of posters and exhibits",
+    },
+    {
+      time: "08:00 AM",
+      title: "Recap of Day 1&2",
+    },
+    {
+      time: "08:30 AM",
+      title:
+        "Panel Discussion 3: Bridging Generations: Collaboration between Farmers and Youth",
+      speaker: "Sample Name A. Surname",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in vulputate eros,",
     },
     {
       time: "10:00 AM",
@@ -13,21 +25,20 @@ export default function Program1() {
     },
     {
       time: "10:30 AM",
-      title: "Plenary Session 1: Cutting-edge Rice R4D Innovations",
-      speaker: "Sample Name A. Surname",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in vulputate eros,",
+      title: "Closing Program",
+      speaker: [
+        "Synthesis",
+        "Awarding of Best Papers and Posters",
+        "Vote of thanks",
+      ],
     },
     {
       time: "12:00 NN",
       title: "Lunch Break",
     },
     {
-      time: "1:30 PM",
-      title: "Panel Discussion 1: Scaling R4D Innovations",
-      speaker: "Sample Name A. Surname",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in vulputate eros,",
+      time: "01:30 PM",
+      title: "Departure of participants",
     },
   ];
 

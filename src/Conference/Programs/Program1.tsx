@@ -4,11 +4,11 @@ export default function Program1() {
   // Define an array of program items
   const programItems = [
     {
-      time: "7:00 AM",
+      time: "07:00 AM",
       title: "Registration and Welcome Coffee",
     },
     {
-      time: "9:00 AM",
+      time: "09:00 AM",
       title: "Opening Program",
       speaker: [
         "Welcome Remarks",
@@ -34,22 +34,22 @@ export default function Program1() {
       title: "Lunch Break",
     },
     {
-      time: "1:30 PM",
+      time: "01:30 PM",
       title: "Panel Discussion 1: Scaling R4D Innovations",
       speaker: "Sample Name A. Surname",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in vulputate eros,",
     },
     {
-      time: "3:00 PM",
+      time: "03:00 PM",
       title: "Networking Break + viewing of posters and exhibits",
     },
     {
-      time: "3:30 PM",
+      time: "03:30 PM",
       title: "Concurrent Sessions",
     },
     {
-      time: "6:00 PM",
+      time: "06:00 PM",
       title: "Welcome Dinner and Networking",
     },
   ];

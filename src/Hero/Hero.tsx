@@ -18,16 +18,12 @@ export default function Hero() {
     };
   }, []);
 
-  // Select the banner based on window width
   let bannerSrc;
   if (windowWidth >= 1024) {
-    // Desktop view
     bannerSrc = HeroBannerDesktop;
   } else if (windowWidth >= 768) {
-    // Tablet view
     bannerSrc = HeroBannerTablet;
   } else {
-    // Mobile view
     bannerSrc = HeroBannerMobile;
   }
 

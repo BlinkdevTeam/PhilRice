@@ -1,7 +1,5 @@
 import React from "react";
 import Map from "../Assets//Mapfade.jpg";
-import LeafDivider from "../Assets/leaf.png";
-import { ReactComponent as MyIcon } from "../Assets/Icons/downloadWhite.svg";
 import MyIcon2 from "../Assets/downloadbutton.png";
 
 export default function Location() {
@@ -9,24 +7,27 @@ export default function Location() {
     <>
       <div className="flex flex-col justify-center items-center w-screen h-auto relative">
         <img src={Map} className="w-screen h-auto" alt="Map" />
-        {/* <div className="w-full max-w-[1728px] h-auto py-10 bg-white flex flex-col justify-center items-center absolute top-0 mt-20">
-          <div className="text-[#0E9046] text-6xl font-bold text-center">
-            Location <span className="text-[#F3B71C]">Map</span>
-          </div>
-          <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
-          <div className="text-center text-xl w-full max-w-[866px] px-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
-            vulputate eros, et <br />
-            faucibus velit. Donec sed elit tellus.
-          </div>
-        </div> */}
         <div className="flex justify-end absolute bottom-4 right-4 md:bottom-4 md:right-20">
           <div className="bg-transparent hover:bg-[#0E9046] rounded-lg absolute text-opacity-0 hover:text-opacity-100 text-white hover:text-white flex justify-start items-center transition-all ease-in-out duration-500 w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] hover:w-[200px] md:hover:w-[260px] lg:hover:w-[390px]">
-            <img
+            {/* <img
               src={MyIcon2}
               alt="button"
               className="w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] rounded-lg"
-            />
+            /> */}
+            <div className="bg-[#0E9046] w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 md:p-4 rounded-lg flex justify-center items-center">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M37.8334 0.946289H2.21826C1.51868 0.946289 0.946289 1.51868 0.946289 2.21826V37.8334C0.946289 38.533 1.51868 39.1054 2.21826 39.1054H37.8334C38.533 39.1054 39.1054 38.533 39.1054 37.8334V2.21826C39.1054 1.51868 38.533 0.946289 37.8334 0.946289ZM12.6739 19.1927C13.1127 18.6457 13.914 18.5567 14.461 18.9955L18.7539 22.4299V9.17593C18.7539 8.47635 19.3263 7.90396 20.0258 7.90396C20.7254 7.90396 21.2978 8.47635 21.2978 9.17593V22.4299L25.5907 18.9955C26.1504 18.5758 26.9517 18.6839 27.3715 19.2499C27.7721 19.7842 27.6895 20.5473 27.1807 20.9798L20.8844 26.0168L20.8208 26.0677C20.7763 26.1059 20.7254 26.1376 20.6745 26.1694C20.6046 26.214 20.5283 26.2521 20.4456 26.2776L20.2357 26.3284C20.0958 26.3539 19.9559 26.3539 19.816 26.3284L19.6061 26.2776L19.4725 26.2203L19.3899 26.1694C19.339 26.1376 19.2881 26.1059 19.2436 26.0677L19.18 26.0168L12.8837 20.9798C12.3304 20.5473 12.235 19.746 12.6739 19.1927ZM28.9296 32.1477H11.122C10.4225 32.1477 9.85008 31.5753 9.85008 30.8757C9.85008 30.1762 10.4225 29.6038 11.122 29.6038H28.9296C29.6292 29.6038 30.2016 30.1762 30.2016 30.8757C30.2016 31.5753 29.6292 32.1477 28.9296 32.1477Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
             <span className="ml-5 text-[18px] md:text-[22px] lg:text-[35px]">
               Download Map
             </span>

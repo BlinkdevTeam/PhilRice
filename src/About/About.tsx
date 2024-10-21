@@ -1,13 +1,12 @@
 import React from "react";
 import LeafDivider from "../Assets/leaf.png";
-import LeafDivider2 from "../Assets/leaf2.png";
 import DOA from "../Assets/DOA.png";
 import ImageCollection from "./ImageSection/ImageCollection";
 
 export default function About() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center text-center">
+      <div className="flex flex-col justify-center items-center text-center my-24">
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold">
           About the <span className="text-[#F3B71C]">Conference</span>
         </div>
@@ -50,6 +49,12 @@ export default function About() {
         <button
           type="button"
           className="w-[186px] lg:w-[265px] h-[47px] lg:h-[73px] text-[#0E9046] text-[20px] lg:text-[30px] font-bold rounded-xl bg-white border-[2px] border-[#0E9046] my-6 md:my-8 lg:my-12"
+          onClick={() =>
+            window.open(
+              "https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI",
+              "_blank"
+            )
+          }
         >
           Register
         </button>
@@ -68,29 +73,7 @@ export default function About() {
             </div>
           </div>
         </div>
-
-        {/* <div className="flex flex-col justify-center lg:justify-start xl:justify-start items-center lg:items-start xl:items-start w-full lg:w-auto">
-            <div className="text-[#0E9046] bg-red-100 text-center lg:text-start xl:text-start text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-bold">
-              About{" "}
-              <span className="text-[#F3B71C]">
-                <br />
-                DA-PhilRice
-              </span>
-            </div>
-            <div className="relative mt-8">
-              <img
-                src={DOA}
-                alt="DOA Logo"
-                className="w-auto ml-0 md:ml-8 lg:ml-12 xl:ml-12 mt-4"
-              />
-              <img
-                src={LeafDivider2}
-                alt="Divider"
-                className="absolute top-0 left-24 xl:left-0 -mt-11 "
-              />
-            </div>
-          </div> */}
-        <div className="text-[13px] md:text-[18px] lg:text-[22px] w-11/12 xl:w-9/12 leading-relaxed mt-7">
+        <div className="text-[13px] md:text-[18px] lg:text-[22px] w-11/12 xl:w-9/12 leading-relaxed mt-12">
           The{" "}
           <span className="text-[#0E9046] font-bold">DA-PhilRice charter</span>{" "}
           established by Executive Order No. 1061 in November 1985, mandates the
