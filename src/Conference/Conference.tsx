@@ -20,7 +20,11 @@ export default function Conference() {
       <div className="text-white text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold">
         Conference <span className="text-[#F3B71C]">Schedule</span>
       </div>
-      <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
+      <img
+        src={LeafDivider}
+        alt="Leaf Divider"
+        className="my-4 transform transition-transform duration-300 hover:scale-110"
+      />
       <div className="text-center text-white text-lg sm:text-xl w-full max-w-[866px]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
         vulputate eros, et <br />

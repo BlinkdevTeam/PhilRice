@@ -16,7 +16,11 @@ export default function Speaker() {
         <div className="text-[#0E9046] text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold">
           Speaker and <span className="text-[#F3B71C]">Panelists</span>
         </div>
-        <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
+        <img
+          src={LeafDivider}
+          alt="Leaf Divider"
+          className="my-4 transform transition-transform duration-300 hover:scale-110"
+        />
         <div className="text-center w-full max-w-[866px] text-[13px] md:text-[18px] lg:text-[22px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
           vulputate eros, et <br />

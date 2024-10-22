@@ -23,11 +23,14 @@ export default function FAQ() {
       <img
         src={LeafDivider}
         alt="Leaf Divider"
-        className="my-4 w-full max-w-[300px]"
+        className="my-4 transform transition-transform duration-300 hover:scale-110"
       />
       <div className="w-full max-w-[858px]">
         {questions.map((item, index) => (
-          <div key={index} className="my-[12px]">
+          <div
+            key={index}
+            className="my-[12px] transform transition-transform duration-300 hover:scale-105"
+          >
             <div
               className={`flex justify-between items-center font-bold text-[18px] md:text-[22px] lg:text-[25px] cursor-pointer p-4 transition-shadow duration-300 ease-in-out rounded-t-lg ${
                 openIndex === index

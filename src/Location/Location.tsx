@@ -33,7 +33,7 @@ export default function Location() {
             </span>
           </div>
         </div>
-        <div className="w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 bg-white rounded-full border-2 border-[#878787] flex justify-center items-center absolute bottom-8 right-4 md:bottom-16 md:right-20">
+        <div className="w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 bg-white rounded-full border-2 border-[#878787] flex justify-center items-center absolute bottom-8 right-4 md:bottom-16 md:right-20 cursor-pointer">
           <svg
             width="27"
             height="27"

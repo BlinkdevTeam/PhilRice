@@ -91,7 +91,7 @@ export default function App() {
           <Route path="/strat-planning" element={<Booklet />} />
         </Routes>
         <div className="mt-32 md:mt-64">
-          <Footer />
+          <Footer refs={refs} />
         </div>
       </div>
     </Router>

@@ -10,7 +10,12 @@ export default function About() {
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold">
           About the <span className="text-[#F3B71C]">Conference</span>
         </div>
-        <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
+        <img
+          src={LeafDivider}
+          alt="Leaf Divider"
+          className="my-4 transform transition-transform duration-300 hover:scale-110"
+        />
+
         <div className="text-[13px] md:text-[18px] lg:text-[22px] w-11/12 xl:w-9/12 leading-relaxed">
           The 
           <span className="text-[#0E9046] font-bold">

@@ -2,23 +2,32 @@ import React from "react";
 import Book from "../Assets/samplebook.png";
 import { ReactComponent as MyIcon } from "../Assets/Icons/download.svg";
 import { useNavigate } from "react-router-dom";
+import "./Flipbook.css";
 
 export default function StratPlan() {
   const navigate = useNavigate();
   const handleSeeMore = () => {
     navigate("/strat-planning", { state: { section: "" } }); // Adjust the section name as needed
   };
+
   return (
     <div className="flex flex-col justify-center items-center w-full h-auto mt-20 md:mt-32 lg:mt-48">
-      <div className="flex flex-col gap-10 sm:flex-row justify-center items-center md:justify-center md:items-start overflow-hidden w-full p-4">
+      <div className="flex flex-col gap-10 sm:flex-row justify-center items-center md:justify-center md:items-start overflow-visible w-full p-4">
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold inline sm:hidden">
           Strategic <span className="text-[#F3B71C]">Planning</span>
         </div>
         <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start inline sm:hidden">
           by: Jayson San Agustin & Lander Guevarra
         </div>
-        <div className="shadow-left">
-          <img src={Book} alt="book" className="max-w-full h-auto" />
+        <div
+          className={`book-container shadow-left perspective cursor-pointer`}
+          onClick={handleSeeMore}
+        >
+          <div
+            className={`frontpage transition-transform duration-700 transform origin-left`}
+          >
+            <img src={Book} alt="book front" className="max-w-full h-auto" />
+          </div>
         </div>
         <div className="flex flex-col">
           <div className="w-full max-w-[1005px]">

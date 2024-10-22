@@ -4,3 +4,54 @@
     padding: 20px;
     transition: all 0.3s;
 }
+
+.perspective {
+    -webkit-perspective: 1800px;
+    perspective: 1800px;
+}
+
+.book-container {
+    width: 50%; /* Set width as needed */
+    height: auto; /* Set height as needed */
+    overflow: visible; 
+}
+
+.frontpage,
+.backpage {
+    /* position: absolute; */
+    width: 100%;
+    height: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.frontpage {
+    -webkit-transform: rotateY(0deg); /* Initial state */
+    transform: rotateY(0deg);
+}
+
+.backpage {
+    -webkit-transform: rotateY(180deg); /* Start hidden */
+    transform: rotateY(180deg);
+}
+
+/* Add 3D flip animation for hover */
+.book-container:hover .frontpage {
+    transform: rotateY(-22.5deg); /* Flip front page */
+}
+
+.book-container:hover .backpage {
+    transform: rotateY(0deg); /* Show back page */
+}
+
+.origin-left {
+    transform-origin: left; /* Fix the left edge */
+}
+
+.shadow-left {
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+    width: auto;
+    background-color: #ffed698b;
+}

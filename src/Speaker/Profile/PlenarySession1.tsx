@@ -53,7 +53,7 @@ const SpeakerProfiles = () => {
         {speakersData.map((speaker, index) => (
           <div
             key={index}
-            className="w-[299px] md:w-[449px] h-[370px] md:h-[518px] bg-custom-gradient rounded-tr-[100px] relative mt-14 md:mt-20 lg:mt-20 cursor-pointer"
+            className="w-[299px] md:w-[449px] h-[370px] md:h-[518px] bg-custom-gradient rounded-tr-[100px] relative mt-14 md:mt-20 lg:mt-20 cursor-pointer transform transition-transform duration-300 hover:scale-105"
             onClick={() => openModal(speaker)}
           >
             <img

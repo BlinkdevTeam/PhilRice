@@ -33,7 +33,7 @@ const Navbar = ({ refs }: any) => {
           <img
             src={Logo}
             alt="PhilRice Logo"
-            className="h-10"
+            className="h-10 cursor-pointer"
             onClick={handleScrollToTop}
           />
         </div>
