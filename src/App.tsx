@@ -90,7 +90,7 @@ export default function App() {
           <Route path="/speaker-details" element={<SpeakerPage />} />
           <Route path="/strat-planning" element={<Booklet />} />
         </Routes>
-        <div className="mt-32 md:mt-64">
+        <div className="order-last">
           <Footer refs={refs} />
         </div>
       </div>
