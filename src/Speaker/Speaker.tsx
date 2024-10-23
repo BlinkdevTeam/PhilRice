@@ -41,7 +41,7 @@ export default function Speaker() {
           <SpeakerProfile />
         </div>
         <button
-          className="w-[186px] h-[47px] lg:w-[265px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[20px] lg:text-[30px] text-[#0E9046] mt-16"
+          className="hover:bg-[#0E9046] hover:text-white hover:transition-all ease-in-out duration-300 w-[186px] h-[47px] lg:w-[265px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[20px] lg:text-[30px] text-[#0E9046] mt-16"
           onClick={handleSeeMore}
         >
           See more

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
 import Page4 from "../Assets/BookletContent/Pg4.jpg";
 import Page1 from "../Assets/BookletContent/Pg1.jpg";
@@ -9,10 +9,40 @@ import Page6 from "../Assets/BookletContent/Pg6.jpg";
 import Page7 from "../Assets/BookletContent/Pg7.jpg";
 
 const Book: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <>
-      <div className="mb-12 xl:mb-0 order-2">
-        <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold xl:absolute xl:top-40 xl:left-32 px-8 xl:px-0 xl:w-[35%]">
+      <div className="mb-12 xl:mb-0 flex flex-row order-2">
+        <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold xl:absolute xl:top-36 xl:left-32 px-8 xl:px-0 xl:w-[35%]">
+          Strategic <span className="text-[#F3B71C]">Planning</span>
+          <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
+            by: Jayson San Agustin & Lander Guevarra
+          </div>
+          <div className="w-full max-w-[1005px] order-last sm:order-none mt-4 sm:mt-0">
+            <div className="text-[18px] md:text-[20px] lg:text-[25px] my-4 leading-relaxed font-bold text-[#0E9046]">
+              About the Book
+            </div>
+            <div className="text-[13px] font-normal text-black md:text-[18px] lg:text-[22px] leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur. Ultrices nibh rhoncus
+              viverra diam adipiscing. Dui in pharetra sed porttitor justo
+              fermentum sapien mattis consequat. Dolor tellus nunc commodo
+              lectus neque. Scelerisque tempus tristique phasellus pretium
+              pulvinar magna risus pretium feugiat. Sed amet sit morbi
+              suspendisse id felis. Senectus egestas cursus curabitur netus.{" "}
+              <br /> <br />
+              At ullamcorper in interdum dignissim ut eros erat sed maecenas. In
+              maecenas nullam tellus tellus. Ullamcorper risus tellus et euismod
+              massa. Consectetur massa tristique eget est orci dui aliquet
+              porttitor. Cursus eget mauris in praesent ....
+            </div>
+          </div>
+        </div>
+        <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold xl:absolute xl:top-36 xl:right-32 px-8 xl:px-0 xl:w-[35%] hidden xl:inline">
           Strategic <span className="text-[#F3B71C]">Planning</span>
           <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
             by: Jayson San Agustin & Lander Guevarra

@@ -73,7 +73,7 @@ export default function Conference() {
           {days.map((dayItem, index) => (
             <div
               key={index}
-              className={`flex flex-row sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] ${
+              className={`flex flex-row sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
                 activeIndex === index ? "bg-[#EFB71E]" : ""
               } cursor-pointer`}
               onClick={() => setActiveIndex(index)}

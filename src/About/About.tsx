@@ -53,7 +53,7 @@ export default function About() {
         </div>
         <button
           type="button"
-          className="w-[186px] lg:w-[265px] h-[47px] lg:h-[73px] text-[#0E9046] text-[20px] lg:text-[30px] font-bold rounded-xl bg-white border-[2px] border-[#0E9046] my-6 md:my-8 lg:my-12"
+          className="hover:bg-[#0E9046] hover:text-white hover:transition-all ease-in-out duration-300 w-[186px] lg:w-[265px] h-[47px] lg:h-[73px] text-[#0E9046] text-[20px] lg:text-[30px] font-bold rounded-xl bg-white border-[2px] border-[#0E9046] my-6 md:my-8 lg:my-12"
           onClick={() =>
             window.open(
               "https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI",

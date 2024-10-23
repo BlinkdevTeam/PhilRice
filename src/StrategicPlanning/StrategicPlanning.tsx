@@ -5,6 +5,26 @@ import { useNavigate } from "react-router-dom";
 import "./Flipbook.css";
 
 export default function StratPlan() {
+  const pdfUrl = "../Assets/BookletContent/StratPlan.pdf"; // Relative path to the PDF in your project
+  const fileName = "StratPlan"; // Name for the downloaded file
+
+  const downloadPDF = async () => {
+    try {
+      const response = await fetch(pdfUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("PDF download failed:", error);
+    }
+  };
+
   const navigate = useNavigate();
   const handleSeeMore = () => {
     navigate("/strat-planning", { state: { section: "" } }); // Adjust the section name as needed
@@ -67,12 +87,7 @@ export default function StratPlan() {
             <button
               type="button"
               className="flex justify-center items-center gap-2 bg-white w-full h-[47px] lg:w-[365px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[20px] lg:text-[30px] text-[#0E9046]"
-              onClick={() =>
-                window.open(
-                  "https://github.com/blinkcreativestudio/PhilRice/blob/main/src/Assets/Map.jpg?raw=true",
-                  "_blank"
-                )
-              }
+              onClick={downloadPDF}
             >
               <div className="flex items-center justify-center">
                 <MyIcon className="w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10" />

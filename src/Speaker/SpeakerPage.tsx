@@ -39,7 +39,7 @@ export default function SpeakerPage() {
           </div>
           <SpeakerProfile1 />
         </div>
-        <div className="flex flex-col justify-center items-center -mt-40 md:mt-0 lg:mt-0">
+        <div className="flex flex-col justify-center items-center mt-12 md:mt-10 lg:mt-0">
           <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
             <span className="text-[#0E9046]">Plenary Session 2</span>
             <br />

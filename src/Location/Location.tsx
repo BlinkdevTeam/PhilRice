@@ -1,13 +1,34 @@
 import React from "react";
-import Map from "../Assets//Mapfade.jpg";
-import MyIcon2 from "../Assets/downloadbutton.png";
+import Map from "../Assets/Mapfade.jpg";
 
 export default function Location() {
+  const pdfUrl = "../Assets/Map.jpg"; // Relative path to the PDF in your project
+  const fileName = "Map"; // Name for the downloaded file
+
+  const downloadPDF = async () => {
+    try {
+      const response = await fetch(pdfUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("PDF download failed:", error);
+    }
+  };
   return (
     <>
       <div className="flex flex-col justify-center items-center w-screen h-auto relative">
         <img src={Map} className="w-screen h-auto" alt="Map" />
-        <div className="flex justify-end absolute bottom-4 right-4 md:bottom-4 md:right-20">
+        <div
+          className="flex justify-end absolute bottom-4 right-4 md:bottom-4 md:right-20 cursor-pointer"
+          onClick={downloadPDF}
+        >
           <div className="bg-transparent hover:bg-[#0E9046] rounded-lg absolute text-opacity-0 hover:text-opacity-100 text-white hover:text-white flex justify-start items-center transition-all ease-in-out duration-500 w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] hover:w-[200px] md:hover:w-[260px] lg:hover:w-[390px]">
             {/* <img
               src={MyIcon2}
@@ -33,7 +54,15 @@ export default function Location() {
             </span>
           </div>
         </div>
-        <div className="w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 bg-white rounded-full border-2 border-[#878787] flex justify-center items-center absolute bottom-8 right-4 md:bottom-16 md:right-20 cursor-pointer">
+        <div
+          className="w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 bg-white rounded-full border-2 border-[#878787] flex justify-center items-center absolute bottom-8 right-4 md:bottom-16 md:right-20 cursor-pointer"
+          onClick={() =>
+            window.open(
+              "https://github.com/blinkcreativestudio/PhilRice/blob/main/src/Assets/Map.jpg?raw=true",
+              "_blank"
+            )
+          }
+        >
           <svg
             width="27"
             height="27"
