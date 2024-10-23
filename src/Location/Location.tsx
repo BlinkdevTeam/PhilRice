@@ -2,12 +2,19 @@ import React from "react";
 import Map from "../Assets/Mapfade.jpg";
 
 export default function Location() {
-  const pdfUrl = "../Assets/Map.jpg"; // Relative path to the PDF in your project
-  const fileName = "Map"; // Name for the downloaded file
+  const pdfUrl =
+    "https://raw.githubusercontent.com/BlinkdevTeam/PhilRice/refs/heads/main/src/Assets/Map.jpg"; // GitHub raw URL
+  const fileName = "downloaded-file.jpg"; // Name for the downloaded file
 
-  const downloadPDF = async () => {
+  const downloadImage = async () => {
     try {
       const response = await fetch(pdfUrl);
+
+      // Check if response is ok (status 200-299)
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -27,7 +34,7 @@ export default function Location() {
         <img src={Map} className="w-screen h-auto" alt="Map" />
         <div
           className="flex justify-end absolute bottom-4 right-4 md:bottom-4 md:right-20 cursor-pointer"
-          onClick={downloadPDF}
+          onClick={downloadImage}
         >
           <div className="bg-transparent hover:bg-[#0E9046] rounded-lg absolute text-opacity-0 hover:text-opacity-100 text-white hover:text-white flex justify-start items-center transition-all ease-in-out duration-500 w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] hover:w-[200px] md:hover:w-[260px] lg:hover:w-[390px]">
             {/* <img
