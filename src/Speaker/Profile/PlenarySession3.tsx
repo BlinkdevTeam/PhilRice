@@ -39,13 +39,13 @@ const SpeakerProfiles = () => {
   };
 
   return (
-    <div className="min-h-screen px-9 flex items-center justify-center">
-      <div className="flex flex-wrap justify-center gap-4">
+    <div className="min-h-screen px-9 flex flex-wrap items-center justify-center">
+      <div className="flex flex-wrap justify-center gap-[200px] md:gap-[100px] lg:gap-[80px]">
         {speakersData.map((speaker, index) => (
           <div
             key={index}
-            className="w-[299px] md:w-[449px] h-[370px] md:h-[518px] bg-custom-gradient rounded-tr-[100px] relative mt-14 md:mt-20 lg:mt-20 cursor-pointer"
-            onClick={() => openModal(speaker)} // Handle click to open modal
+            className="w-[299px] md:w-[449px] h-[370px] md:h-[518px] bg-custom-gradient rounded-tr-[100px] relative -mt-40 md:mt-2 lg:mt-0 cursor-pointer transform transition-transform duration-300 hover:scale-105"
+            onClick={() => openModal(speaker)}
           >
             <img
               src={speaker.image}
@@ -53,7 +53,8 @@ const SpeakerProfiles = () => {
               className="absolute bottom-0 w-full h-auto rounded-bl-[80px]"
             />
             <div className="absolute bottom-28 md:bottom-36 left-0 w-40 h-2 bg-[#EFB71E]" />
-            <div className="absolute bottom-0 flex flex-col justify-center items-center text-center text-white bg-[#0E9046] w-full h-[115.64px] md:h-[147px] rounded-bl-[80px] px-2">
+            <div className="absolute text-[15px] md:text-[22px] bottom-0 flex flex-col justify-center items-center text-center text-white bg-[#0E9046] w-full h-[115.64px] md:h-[147px] rounded-bl-[80px] px-2">
+              His Excellency
               <div className="text-[22px] md:text-[30px] font-bold">
                 {speaker.name}
               </div>

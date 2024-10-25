@@ -29,33 +29,39 @@ export default function SpeakerPage() {
           <div className="font-bold text-[#0E9046] text-[20px] md:text-[35px] lg:text-[40px] mt-20">
             Keynote Speaker
           </div>
-          <KeynoteSpeaker />
+          <div>
+            <KeynoteSpeaker />
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-center -mt-40 md:mt-0 lg:mt-0">
+        <div className="flex flex-col justify-center items-center -mt-[200px] md:mt-0 lg:mt-0">
           <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
             <span className="text-[#0E9046]">Plenary Session 1</span>
             <br />
             Cutting-edge Rice R4D Innovations
           </div>
-          <SpeakerProfile1 />
+          <div className="mt-[300px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+            <SpeakerProfile1 />
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-center mt-12 md:mt-10 lg:mt-0">
+        <div className="flex flex-col justify-center items-center mt-[100px] md:mt-[200px] lg:mt-[200px] xl:mt-[80px]">
           <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
             <span className="text-[#0E9046]">Plenary Session 2</span>
             <br />
-            RCEF Outcomes, Impact, Success Stories, Innovations, and Future
-            Directions
+            Cutting-edge Rice R4D Innovations
           </div>
-          <SpeakerProfile2 />
+          <div className="mt-[100px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+            <SpeakerProfile2 />
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-center -mt-40 md:mt-0 lg:mt-0">
+        <div className="flex flex-col justify-center items-center mt-0 md:mt-[200px] lg:mt-[200px] xl:mt-[80px]">
           <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
             <span className="text-[#0E9046]">Plenary Session 3</span>
             <br />
-            Co-creating the Future: Farmer-centered Innovations and Youth
-            Empowerment
+            Cutting-edge Rice R4D Innovations
           </div>
-          <SpeakerProfile3 />
+          <div className="mt-[100px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+            <SpeakerProfile3 />
+          </div>
         </div>
       </div>
     </>

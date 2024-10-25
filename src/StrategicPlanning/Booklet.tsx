@@ -43,7 +43,7 @@ const Book: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold px-8 xl:px-0 xl:w-[35%] hidden xl:inline">
+        <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold px-8 xl:px-0 xl:max-w-[514px] hidden xl:inline">
           Strategic <span className="text-[#F3B71C]">Planning</span>
           <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
             by: Jayson San Agustin & Lander Guevarra
@@ -93,8 +93,8 @@ const Book: React.FC = () => {
           height={800}
           minWidth={200} // Minimum width of the book
           minHeight={300} // Minimum height of the book
-          maxWidth={800} // Maximum width of the book
-          maxHeight={1200} // Maximum height of the book
+          maxWidth={700} // Maximum width of the book
+          maxHeight={800} // Maximum height of the book
         >
           <div className="bg-white flex justify-center items-center shadow-lg">
             <h1 className="text-3xl font-bold">

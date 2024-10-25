@@ -28,8 +28,8 @@ const KeynoteSpeaker = () => {
     setSelectedSpeaker(null);
   };
   return (
-    <div className="min-h-screen px-9 flex items-center justify-center">
-      <div className="flex flex-wrap justify-center gap-4">
+    <div className="min-h-screen px-9 flex flex-wrap items-center justify-center">
+      <div className="flex flex-wrap justify-center gap-[200px] md:gap-[100px] lg:gap-[80px]">
         {speakersData.map((speaker, index) => (
           <div
             key={index}
