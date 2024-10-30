@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
-import FrontCover from "../Assets/BookletContent/FrontCover.jpg";
-import BackCover from "../Assets/BookletContent/BackCover.jpg";
+import Cover from "../Assets/BookletContent/BookCover.png";
+// import BackCover from "../Assets/BookletContent/BackCover.jpg";
 import Page2 from "../Assets/BookletContent/Pg2.jpg";
 import Page3 from "../Assets/BookletContent/Pg3.jpg";
 import Page4 from "../Assets/BookletContent/Pg4.jpg";
@@ -98,7 +98,7 @@ const Book: React.FC = () => {
         >
           <div className="bg-white flex justify-center items-center shadow-lg">
             <h1 className="text-3xl font-bold">
-              <img src={FrontCover} alt="Front Cover" />
+              <img src={Cover} alt="Front Cover" className="w-full h-auto" />
             </h1>
           </div>
           <div className="bg-white flex justify-center items-center shadow-lg">
@@ -133,7 +133,7 @@ const Book: React.FC = () => {
           </div>
           <div className="bg-white flex justify-center items-center shadow-lg">
             <h1 className="text-3xl font-bold">
-              <img src={BackCover} alt="Back Cover" />
+              <img src={Cover} alt="Back Cover" className="w-full h-auto" />
             </h1>
           </div>
         </HTMLFlipBook>
