@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       <div className="flex flex-col justify-center items-center text-center my-24">
-        <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold">
+        <div className="text-[#0E9046] text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold p-4">
           About the <span className="text-[#F3B71C]">Conference</span>
         </div>
         <img

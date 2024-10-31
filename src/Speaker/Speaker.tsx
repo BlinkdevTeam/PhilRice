@@ -30,15 +30,19 @@ export default function Speaker() {
           <div className="font-bold text-[#0E9046] text-[20px] md:text-[35px] lg:text-[40px] mt-20">
             Keynote Speaker
           </div>
-          <KeynoteSpeaker />
+          <div className="-mt-16 md:mt-0 lg:mt-0">
+            <KeynoteSpeaker />
+          </div>
         </div>
-        <div className="flex flex-col justify-center items-center -mt-40 md:mt-0 lg:mt-0">
+        <div className="flex flex-col justify-center items-center -mt-56 md:mt-0 lg:mt-0">
           <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
             <span className="text-[#0E9046]">Plenary Session 1</span>
             <br />
             Cutting-edge Rice R4D Innovations
           </div>
-          <SpeakerProfile />
+          <div className="mt-72 md:mt-0 lg:mt-40 xl:mt-24">
+            <SpeakerProfile />
+          </div>
         </div>
         <button
           className="hover:bg-[#0E9046] hover:text-white hover:transition-all ease-in-out duration-300 w-[186px] h-[47px] lg:w-[265px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[20px] lg:text-[30px] text-[#0E9046] mt-16"
