@@ -64,7 +64,7 @@ export default function StratPlan() {
               by: Jayson San Agustin & Lander Guevarra
             </div>
           </div>
-          <div className="w-full max-w-[1005px] order-last sm:order-none mt-4 sm:mt-0">
+          <div className="w-full max-w-[1005px] px-6 order-last sm:order-none mt-4 sm:mt-0">
             <div className="text-[18px] md:text-[20px] lg:text-[25px] my-4 leading-relaxed font-bold text-[#0E9046]">
               About the Book
             </div>
@@ -82,7 +82,7 @@ export default function StratPlan() {
               porttitor. Cursus eget mauris in praesent ....
             </div>
           </div>
-          <div className="flex flex-col mt-2 sm:mt-16 sm:flex-row justify-center sm:justify-start gap-4">
+          <div className="flex flex-col mt-2 sm:mt-16 sm:flex-row justify-center sm:justify-start gap-4 px-6">
             <button
               type="button"
               className="hover:bg-[#0E9046] hover:text-white hover:transition-all ease-in-out duration-300 bg-white w-full h-[47px] lg:w-[265px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[20px] lg:text-[30px] text-[#0E9046]"
