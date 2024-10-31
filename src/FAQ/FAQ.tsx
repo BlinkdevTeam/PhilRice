@@ -75,7 +75,7 @@ export default function FAQ() {
               </div>
               <span>
                 {openIndex === index ? (
-                  <div className="-rotate-180 transform duration-300 ease-in-out">
+                  <div className="-rotate-180 transition-transform duration-300 ease-in-out">
                     <svg
                       width="16"
                       height="12"
@@ -93,7 +93,7 @@ export default function FAQ() {
                     </svg>
                   </div>
                 ) : (
-                  <div className="transform duration-300 ease-in-out">
+                  <div className="transition-transform duration-300 ease-in-out">
                     <svg
                       width="16"
                       height="12"
