@@ -17,7 +17,7 @@ export default function FAQ() {
 
   return (
     <div className="flex flex-col justify-center items-center my-24 px-4 sm:px-4 lg:px-12">
-      <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold">
+      <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold px-0">
         Frequently asked <span className="text-[#F3B71C]">questions</span>
       </div>
       <img
