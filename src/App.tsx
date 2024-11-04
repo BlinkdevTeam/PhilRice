@@ -64,7 +64,7 @@ export default function App() {
                 <div ref={homeRef}>
                   <Hero />
                 </div>
-                <div ref={aboutRef}>
+                <div ref={aboutRef} className="max-w-[1440px]">
                   <About />
                 </div>
                 <Divider />
