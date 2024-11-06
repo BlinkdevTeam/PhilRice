@@ -23,6 +23,23 @@ export default function Footer({ refs }: FooterProps) {
     });
   };
 
+  const phoneNumber = "0917 111 7423";
+
+  const copyToClipboard = () => {
+    navigator.clipboard
+      .writeText(phoneNumber)
+      .then(() => {
+        alert("Phone number copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy phone number:", err);
+      });
+  };
+
+  const emailAddress = "prri.mail@mail.philrice.gov.ph";
+
+  const facebookUrl = "https://www.facebook.com/DAPhilRice";
+
   return (
     <>
       <div className="stick bottom-0 left-0">
@@ -47,7 +64,10 @@ export default function Footer({ refs }: FooterProps) {
               </div>
 
               <div className="text-white text-[15px] md:text-[22px]">
-                <div className="flex mb-2 gap-4">
+                <div
+                  className="flex mb-2 gap-4 cursor-pointer"
+                  onClick={copyToClipboard}
+                >
                   <svg
                     width="35"
                     height="35"
@@ -71,9 +91,12 @@ export default function Footer({ refs }: FooterProps) {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span>+63-912-755-4269</span>
+                  <span>{phoneNumber}</span>
                 </div>
-                <div className="flex mb-2 gap-4 cursor-pointer">
+                <a
+                  href={`mailto:${emailAddress}`}
+                  className="flex mb-2 gap-4 cursor-pointer"
+                >
                   <svg
                     width="35"
                     height="35"
@@ -109,9 +132,14 @@ export default function Footer({ refs }: FooterProps) {
                       </clipPath>
                     </defs>
                   </svg>
-                  <span>sample@philrice.org</span>
-                </div>
-                <div className="flex gap-4 cursor-pointer">
+                  <span>{emailAddress}</span>
+                </a>
+                <a
+                  href={facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-4 cursor-pointer"
+                >
                   <svg
                     width="35"
                     height="35"
@@ -128,8 +156,8 @@ export default function Footer({ refs }: FooterProps) {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span>DA-PhilRice Facebook Page</span>
-                </div>
+                  <span>DA-PhilRice</span>
+                </a>
               </div>
             </div>
             <div className="text-left">
@@ -226,7 +254,7 @@ export default function Footer({ refs }: FooterProps) {
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center text-white text-center w-full h-[66px] md:h-[108px] lg:h-[58px] text-[13px] md:text-[22px] px-4 bg-[#343434]">
-          <div>PHILRICE © 2023. All rights reserved.</div>
+          <div>PHILRICE © 2024. All rights reserved.</div>
           <div>
             Powered by <span className="font-bold">BLINK</span> CREATIVE STUDIO
           </div>

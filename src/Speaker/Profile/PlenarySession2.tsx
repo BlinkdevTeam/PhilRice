@@ -55,7 +55,6 @@ const SpeakerProfiles = () => {
             />
             <div className="absolute bottom-28 md:bottom-36 left-0 w-40 h-2 bg-[#EFB71E]" />
             <div className="absolute text-[15px] md:text-[22px] bottom-0 flex flex-col justify-center items-center text-center text-white bg-[#0E9046] w-full h-[115.64px] md:h-[147px] rounded-bl-[80px] px-2">
-              His Excellency
               <div className="text-[22px] md:text-[30px] font-bold">
                 {speaker.name}
               </div>
