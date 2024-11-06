@@ -40,11 +40,12 @@ export default function StratPlan() {
     <div className="flex flex-col justify-center items-center w-full h-auto mt-20 md:mt-32 lg:mt-48">
       <div className="flex flex-col gap-10 md:flex-row justify-center items-center md:justify-center md:items-start overflow-visible w-full p-4">
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold inline sm:hidden">
-          Strategic <span className="text-[#F3B71C]">Planning</span>
+          The DA - PhilRice Strategic Plan{" "}
+          <span className="text-[#F3B71C]">2023 - 2024</span>
         </div>
-        <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start inline sm:hidden">
+        {/* <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start inline sm:hidden">
           by: Jayson San Agustin & Lander Guevarra
-        </div>
+        </div> */}
         <div
           className={`book-container shadow-left perspective cursor-pointer`}
           onClick={handleSeeMore}
@@ -58,15 +59,16 @@ export default function StratPlan() {
         <div className="flex flex-col">
           <div className="w-full max-w-[1005px]">
             <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold hidden sm:inline">
-              Strategic <span className="text-[#F3B71C]">Planning</span>
+              The DA - PhilRice Strategic Plan{" "}
+              <span className="text-[#F3B71C]">2023 - 2024</span>
             </div>
-            <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] hidden sm:flex">
+            {/* <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] hidden sm:flex">
               by: Jayson San Agustin & Lander Guevarra
-            </div>
+            </div> */}
           </div>
           <div className="w-full max-w-[1005px] px-6 order-last sm:order-none mt-4 sm:mt-0">
-            <div className="text-[18px] md:text-[20px] lg:text-[25px] my-4 leading-relaxed font-bold text-[#0E9046]">
-              About the Book
+            <div className="text-[18px] md:text-[20px] lg:text-[25px] my-4 leading-relaxed font-bold text-[#000000]">
+              Bette Rite Communities
             </div>
             <div className="text-[13px] md:text-[18px] lg:text-[22px] leading-relaxed">
               Lorem ipsum dolor sit amet consectetur. Ultrices nibh rhoncus

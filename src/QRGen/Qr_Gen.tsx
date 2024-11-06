@@ -61,7 +61,7 @@ export default function QrGen() {
         {qrCodeUrl && (
           <div className="flex flex-col items-center mt-8">
             <img src={qrCodeUrl} alt="QR Code" className="w-48 h-48" />
-            <p className="text-gray-600 mt-4">{email}</p>
+            {/* <p className="text-gray-600 mt-4">{email}</p> */}
           </div>
         )}
       </div>
