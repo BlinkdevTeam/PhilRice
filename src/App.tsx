@@ -16,6 +16,7 @@ import Footer from "./Footer/Footer";
 import Navbar from "./Header/Navbar";
 import SpeakerPage from "./Speaker/SpeakerPage";
 import Booklet from "./StrategicPlanning/Booklet";
+import QrGen from "./QRGen/Qr_Gen";
 
 const Divider = () => (
   <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[12px] mx-auto md:my-[16px] lg:my-[80px]" />
@@ -89,6 +90,7 @@ export default function App() {
           />
           <Route path="/speaker-details" element={<SpeakerPage />} />
           <Route path="/strat-planning" element={<Booklet />} />
+          <Route path="/qr-code-generator" element={<QrGen />} />
         </Routes>
         <div className="order-last">
           <Footer refs={refs} />
