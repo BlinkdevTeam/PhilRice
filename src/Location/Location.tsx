@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Map from "../Assets/Mapfade.jpg";
+import Map2 from "../Assets/Map.jpg";
 
 export default function Location() {
   const pdfUrl =
@@ -27,6 +28,19 @@ export default function Location() {
     } catch (error) {
       console.error("PDF download failed:", error);
     }
+  };
+
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openOverlay = (image: string) => {
+    setSelectedImage(image);
+    setIsOverlayOpen(true);
+  };
+
+  const closeOverlay = () => {
+    setIsOverlayOpen(false);
+    setSelectedImage(null);
   };
   return (
     <>
@@ -63,12 +77,7 @@ export default function Location() {
         </div>
         <div
           className="w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 bg-white rounded-full border-2 border-[#878787] flex justify-center items-center absolute bottom-8 right-4 md:bottom-16 md:right-20 cursor-pointer"
-          onClick={() =>
-            window.open(
-              "https://github.com/blinkcreativestudio/PhilRice/blob/main/src/Assets/Map.jpg?raw=true",
-              "_blank"
-            )
-          }
+          onClick={() => openOverlay(Map2)}
         >
           <svg
             width="27"
@@ -107,6 +116,24 @@ export default function Location() {
             />
           </svg>
         </div>
+        {isOverlayOpen && selectedImage && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+            onClick={closeOverlay}
+          >
+            <button
+              onClick={closeOverlay}
+              className="absolute top-2 right-2 text-white text-2xl font-bold"
+            >
+              &times;
+            </button>
+            <img
+              src={selectedImage}
+              alt="Full-size Ugnay Palay Banner"
+              className="w-[] md:w-[70%] lg:w-[60%] h-auto"
+            />
+          </div>
+        )}
       </div>
     </>
   );
