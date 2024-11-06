@@ -1,5 +1,5 @@
 import React from "react";
-import Book from "../Assets/BookletContent/BookCover.png";
+import Book from "../Assets/BookletContent/FrontCover.jpg";
 import { useNavigate } from "react-router-dom";
 import "./Flipbook.css";
 
