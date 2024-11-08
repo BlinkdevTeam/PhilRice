@@ -19,7 +19,7 @@ import Booklet from "./StrategicPlanning/Booklet";
 import QrGen from "./QRGen/Qr_Gen";
 
 const Divider = () => (
-  <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[12px] mx-auto md:my-[16px] lg:my-[80px]" />
+  <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[80px] mx-auto" />
 );
 
 function ScrollToSection({ refs }: any) {

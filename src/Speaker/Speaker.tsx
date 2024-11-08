@@ -12,9 +12,9 @@ export default function Speaker() {
   };
   return (
     <>
-      <div className="flex flex-col justify-center items-center px-4 w-screen my-24">
+      <div className="flex flex-col justify-center items-center px-4 w-screen my-16">
         <div className="text-[#0E9046] text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold">
-          Speaker and <span className="text-[#F3B71C]">Panelists</span>
+          Speakers and <span className="text-[#F3B71C]">Panelists</span>
         </div>
         <img
           src={LeafDivider}

@@ -53,7 +53,11 @@ export default function StratPlan() {
           <div
             className={`frontpage transition-transform duration-700 transform origin-left`}
           >
-            <img src={Book} alt="book front" className="max-w-[400px] h-auto" />
+            <img
+              src={Book}
+              alt="book front"
+              className="min-max-w-[400px] h-auto"
+            />
           </div>
         </div>
         <div className="flex flex-col">
@@ -87,14 +91,14 @@ export default function StratPlan() {
           <div className="flex flex-col mt-2 sm:mt-16 sm:flex-row justify-center sm:justify-start gap-4 px-6">
             <button
               type="button"
-              className="hover:bg-[#0E9046] hover:text-white hover:transition-all ease-in-out duration-300 bg-white w-full h-[47px] lg:w-[265px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[20px] lg:text-[30px] text-[#0E9046]"
+              className="hover:bg-[#0E9046] hover:text-white hover:transition-all ease-in-out duration-300 bg-white w-full h-[47px] lg:w-[265px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[13px] lg:text-[30px] text-[#0E9046]"
               onClick={handleSeeMore}
             >
               READ NOW
             </button>
             <button
               type="button"
-              className="group hover:bg-[#0E9046] hover:text-white hover:transition-all ease-in-out duration-300 flex justify-center items-center gap-2 bg-white w-full h-[47px] lg:w-[365px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[20px] lg:text-[30px] text-[#0E9046]"
+              className="group hover:bg-[#0E9046] hover:text-white hover:transition-all ease-in-out duration-300 flex justify-center items-center gap-2 bg-white w-full h-[47px] lg:w-[365px] lg:h-[73.4px] rounded-[10px] border-[#0E9046] border-2 font-bold text-[13px] lg:text-[30px] text-[#0E9046]"
               onClick={downloadPDF}
             >
               <div className="flex items-center justify-center">

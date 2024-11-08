@@ -50,13 +50,13 @@ export default function Location() {
           className="flex justify-end absolute bottom-4 right-4 md:bottom-4 md:right-20 cursor-pointer"
           onClick={downloadImage}
         >
-          <div className="bg-transparent hover:bg-[#0E9046] rounded-lg absolute text-opacity-0 hover:text-opacity-100 text-white hover:text-white flex justify-start items-center transition-all ease-in-out duration-500 w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] hover:w-[200px] md:hover:w-[260px] lg:hover:w-[390px]">
+          <div className="bg-transparent hover:bg-[#0E9046] rounded-lg absolute text-opacity-0 hover:text-opacity-100 text-white hover:text-white flex justify-start items-center transition-all ease-in-out duration-500 w-[43px] h-[43px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] hover:w-[200px] md:hover:w-[260px] lg:hover:w-[390px]">
             {/* <img
               src={MyIcon2}
               alt="button"
               className="w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] rounded-lg"
             /> */}
-            <div className="bg-[#0E9046] w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 md:p-4 rounded-lg flex justify-center items-center">
+            <div className="bg-[#0E9046] w-[43px] h-[43px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 md:p-4 rounded-lg flex justify-center items-center">
               <svg
                 width="40"
                 height="40"
@@ -76,12 +76,12 @@ export default function Location() {
           </div>
         </div>
         <div
-          className="w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 bg-white rounded-full border-2 border-[#878787] flex justify-center items-center absolute bottom-8 right-4 md:bottom-16 md:right-20 cursor-pointer"
+          className="w-[43px] h-[43px] md:w-[53px] md:h-[53px] lg:w-[73px] lg:h-[73px] p-2 bg-white rounded-full border-2 border-[#878787] flex justify-center items-center absolute bottom-8 right-4 md:bottom-16 md:right-20 cursor-pointer"
           onClick={() => openOverlay(Map2)}
         >
           <svg
-            width="27"
-            height="27"
+            width="37"
+            height="37"
             viewBox="0 0 27 27"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

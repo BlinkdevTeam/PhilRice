@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = ({ refs }: any) => {
   const [activeButton, setActiveButton] = useState("home");
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isTabletMenuOpen, setTabletMenuOpen] = useState(false); // Added state for tablet
   const navigate = useNavigate(); // React Router's useNavigate
 
   const handleButtonClick = (ref: any, section: string) => {
@@ -13,10 +14,15 @@ const Navbar = ({ refs }: any) => {
     navigate("/", { state: { section } });
     setActiveButton(section);
     setMobileMenuOpen(false);
+    setTabletMenuOpen(false); // Close the tablet menu when an item is clicked
   };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleTabletMenu = () => {
+    setTabletMenuOpen(!isTabletMenuOpen);
   };
 
   const handleScrollToTop = () => {
@@ -39,22 +45,34 @@ const Navbar = ({ refs }: any) => {
         </div>
 
         <div className="flex items-center space-x-0 gap-8 ml-auto">
+          {/* Register button, visible on both desktop and mobile */}
           <a
             href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-            className="bg-[#F3BD1C] text-white font-bold py-2 px-6 lg:px-12 rounded-md block md:hidden"
+            className="bg-[#F3BD1C] text-white font-bold py-2 px-6 lg:px-12 rounded-md hidden"
           >
             REGISTER
           </a>
+
+          {/* Mobile Menu Toggle Button (visible on small screens) */}
           <button
-            className="md:hidden flex items-center"
+            className="sm:block md:hidden flex items-center"
             onClick={toggleMobileMenu}
           >
             <FaBars className="text-white text-3xl" />
           </button>
+
+          {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <div className="absolute top-16 right-0 bg-[#0C6972] w-full shadow-lg md:hidden">
               <div className="flex flex-col items-center">
-                {/* Register button shown bottom in mobile menu */}
+                {/* Register button visible only in mobile menu */}
+                <a
+                  href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
+                  className="bg-[#F3BD1C] text-white font-bold py-2 px-6 rounded-md mb-4"
+                >
+                  REGISTER
+                </a>
+                {/* Mobile Menu Links */}
                 {["home", "about", "speakers", "program", "venue", "faqs"].map(
                   (section) => (
                     <button
@@ -75,8 +93,42 @@ const Navbar = ({ refs }: any) => {
               </div>
             </div>
           )}
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex space-x-8">
+
+          {/* Tablet Menu Toggle Button (visible on tablet screens) */}
+          <button
+            className="hidden md:block lg:hidden flex items-center"
+            onClick={toggleTabletMenu}
+          >
+            <FaBars className="text-white text-3xl" />
+          </button>
+
+          {/* Tablet Menu */}
+          {isTabletMenuOpen && (
+            <div className="absolute top-16 right-0 bg-[#0C6972] w-full shadow-lg md:block lg:hidden">
+              <div className="flex space-x-6 justify-center">
+                {["home", "about", "speakers", "program", "venue", "faqs"].map(
+                  (section) => (
+                    <button
+                      key={section}
+                      onClick={() =>
+                        handleButtonClick(refs[`${section}Ref`], section)
+                      }
+                      className={`${
+                        activeButton === section
+                          ? "text-[#F3B71C] font-bold"
+                          : "text-white"
+                      } py-2 px-4`}
+                    >
+                      {section.toUpperCase()}
+                    </button>
+                  )
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex space-x-8 text-[16px]">
             {["home", "about", "speakers", "program", "venue", "faqs"].map(
               (section) => (
                 <button
@@ -95,9 +147,17 @@ const Navbar = ({ refs }: any) => {
               )
             )}
           </div>
+
+          {/* Register, QR button, visible only on desktop */}
+          {/* <a
+            href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
+            className="bg-transparent border-solid border-[1px] text-white text-[16px] font-bold py-2 px-8 rounded-md hidden lg:block"
+          >
+            GENERATE QR CODE
+          </a> */}
           <a
             href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-            className="bg-[#F3BD1C] text-white font-bold py-2 px-12 rounded-md hidden md:block"
+            className="bg-[#F3BD1C] text-white text-[16px] font-bold py-2 px-8 rounded-md hidden lg:block"
           >
             REGISTER
           </a>

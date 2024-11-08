@@ -13,6 +13,10 @@ export default function QrGen() {
   const [error, setError] = useState<string | null>(null); // Error state for invalid email
   const [showConfetti, setShowConfetti] = useState(false);
 
+  const [numberOfPieces, setNumberOfPieces] = useState(
+    window.innerWidth < 768 ? 80 : 550
+  );
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -28,6 +32,15 @@ export default function QrGen() {
       document.body.style.overflowX = "auto";
       document.documentElement.style.overflowX = "auto";
     };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setNumberOfPieces(window.innerWidth < 768 ? 80 : 550);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const generateQRCode = async () => {
@@ -129,10 +142,14 @@ export default function QrGen() {
         <>
           {showConfetti && (
             <Confetti
-              width={window.innerWidth} // Fixed width to prevent horizontal scroll
+              width={window.innerWidth}
               height={document.documentElement.scrollHeight}
               recycle={false}
-              numberOfPieces={2000}
+              numberOfPieces={numberOfPieces}
+              gravity={0.2}
+              wind={0.1}
+              initialVelocityX={{ min: -5, max: 5 }}
+              initialVelocityY={{ min: 5, max: 10 }}
               colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
             />
           )}
