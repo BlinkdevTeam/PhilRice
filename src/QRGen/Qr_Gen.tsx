@@ -8,11 +8,11 @@ export default function QrGen() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null); // Error state for invalid email
+  const [error, setError] = useState<string | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
 
   const [numberOfPieces, setNumberOfPieces] = useState(
-    window.innerWidth < 768 ? 80 : 550
+    window.innerWidth < 768 ? 150 : 1550
   );
 
   useEffect(() => {
@@ -21,11 +21,9 @@ export default function QrGen() {
       behavior: "smooth",
     });
 
-    // Prevent horizontal scroll on the entire page
     document.body.style.overflowX = "hidden";
     document.documentElement.style.overflowX = "hidden";
 
-    // Cleanup to restore overflowX setting on unmount
     return () => {
       document.body.style.overflowX = "auto";
       document.documentElement.style.overflowX = "auto";
@@ -34,7 +32,7 @@ export default function QrGen() {
 
   useEffect(() => {
     const handleResize = () => {
-      setNumberOfPieces(window.innerWidth < 768 ? 80 : 550);
+      setNumberOfPieces(window.innerWidth < 768 ? 480 : 550);
     };
 
     window.addEventListener("resize", handleResize);
@@ -43,7 +41,6 @@ export default function QrGen() {
 
   const generateQRCode = async () => {
     if (email) {
-      // Use a CORS proxy to bypass the CORS restrictions
       const apiUrl = `https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec`;
 
       const payload = { email };
@@ -61,14 +58,12 @@ export default function QrGen() {
           const result = await response.json();
 
           if (result.status === "success") {
-            // If email is valid, generate the QR code
             const qrCodeData = await QRCode.toDataURL(email);
             setQrCodeUrl(qrCodeData);
-            setError(null); // Clear any previous error
+            setError(null);
             setShowConfetti(true);
-            setTimeout(() => setShowConfetti(false), 8000);
+            setTimeout(() => setShowConfetti(false), 16000);
           } else {
-            // If email is not found in the database
             setError(result.message);
             setQrCodeUrl(null);
           }
@@ -92,9 +87,9 @@ export default function QrGen() {
 
     if (section) {
       html2canvas(section, {
-        scale: window.devicePixelRatio, // Ensures higher DPI for better image resolution
-        useCORS: true, // Enable CORS to capture images hosted on other domains
-        logging: false, // Disable logs to reduce unnecessary output
+        scale: window.devicePixelRatio,
+        useCORS: true,
+        logging: false,
         backgroundColor: null,
       }).then((canvas) => {
         const imageUrl = canvas.toDataURL("image/png");
@@ -140,7 +135,7 @@ export default function QrGen() {
               className="border border-gray-300 rounded p-2"
             />
             <button
-              onClick={generateQRCode} // Generate QR code on button click
+              onClick={generateQRCode}
               className="bg-[#F3BD1C] text-white font-bold py-3 px-6 lg:px-12 rounded-md"
             >
               Generate
@@ -156,10 +151,10 @@ export default function QrGen() {
               height={document.documentElement.scrollHeight}
               recycle={false}
               numberOfPieces={numberOfPieces}
-              gravity={0.2}
-              wind={0.1}
+              gravity={0.01}
+              // wind={0.07}
               initialVelocityX={{ min: -5, max: 5 }}
-              initialVelocityY={{ min: 5, max: 10 }}
+              initialVelocityY={{ min: 2, max: 12 }}
               colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
             />
           )}
@@ -192,7 +187,7 @@ export default function QrGen() {
 
               {/* DOWNLOAD Button */}
               <button
-                onClick={handleDownload} // Trigger the download function on button click
+                onClick={handleDownload}
                 className="bg-[#F3BD1C] text-white font-bold py-3 px-6 lg:px-12 rounded-md"
               >
                 DOWNLOAD
