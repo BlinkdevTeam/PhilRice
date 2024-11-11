@@ -105,7 +105,7 @@ export default function QrGen() {
 
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center px-4 w-screen h-full my-20 p-4 gap-4 overflow-hidden">
-      <div className="w-full lg:w-[734px] h-auto lg:h-[744px] border-[1px] border-solid border-gray-100 rounded-2xl px-16 py-16 flex flex-col justify-center items-center shadow-lg drop-shadow-md backdrop-blur-lg">
+      <div className="w-full lg:w-[734px] h-auto lg:h-[744px] border-[1px] border-solid border-gray-100 rounded-2xl px-8 py-16 flex flex-col justify-center items-center shadow-lg drop-shadow-md backdrop-blur-lg">
         <div className="text-[#0E9046] text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold">
           Get Event-Ready with <br />
           Your<span className="text-[#F3B71C]"> QR Code</span>
