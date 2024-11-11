@@ -16,14 +16,14 @@ export default function Conference() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center bg-[#0E9046] w-screen px-8 py-24">
+    <div className="flex flex-col justify-center items-center bg-[#0E9046] w-screen px-8 py-16 xl:py-24">
       <div className="text-white text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold">
         Conference <span className="text-[#F3B71C]">Schedule</span>
       </div>
       <img
         src={LeafDivider}
         alt="Leaf Divider"
-        className="my-4 transform transition-transform duration-300 hover:scale-110"
+        className="my-4 w-[90%] md:w-auto transform transition-transform duration-300 hover:scale-110"
       />
       <div className="text-center text-white text-lg sm:text-xl w-full max-w-[866px]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
@@ -42,14 +42,14 @@ export default function Conference() {
               <div className="flex items-center justify-center">
                 <MyIcon className="w-8 h-8 sm:w-10 sm:h-10 text-blue-500" />
               </div>
-              <div className="flex flex-col justify-start items-start absolute bottom-1 left-20">
+              <div className="flex flex-col justify-start items-start absolute bottom-0 left-20">
                 {days[activeIndex].day} <br />
                 <div className="font-bold">{days[activeIndex].date}</div>
               </div>
               <span>{isDropdownOpen ? "▲" : "▼"}</span>
             </button>
             {isDropdownOpen && (
-              <ul className="absolute justify-center items-center text-center left-0 top-14 bg-gray-800 text-white w-full rounded-b-[10px] shadow-lg z-10">
+              <ul className="absolute justify-center items-center text-center left-0 top-14 bg-[#0C6972] text-white w-full rounded-b-[10px] shadow-lg z-10">
                 {days.map((dayItem, index) => (
                   <li
                     key={index}

@@ -6,14 +6,14 @@ import ImageCollection from "./ImageSection/ImageCollection";
 export default function About() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center text-center my-24">
-        <div className="text-[#0E9046] text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold p-4">
+      <div className="flex flex-col justify-center items-center text-center mt-12 mb-8 md:my-16">
+        <div className="text-[#0E9046] text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold px-4">
           About the <span className="text-[#F3B71C]">Conference</span>
         </div>
         <img
           src={LeafDivider}
           alt="Leaf Divider"
-          className="my-4 transform transition-transform duration-300 hover:scale-110"
+          className="my-6 w-[80%] md:w-auto transform transition-transform duration-300 hover:scale-110"
         />
 
         <div className="text-[13px] md:text-[18px] lg:text-[22px] w-11/12 xl:w-9/12 leading-relaxed">
@@ -73,8 +73,8 @@ export default function About() {
                 DA-PhilRice
               </span>
             </div>
-            <div className="relative mt-8">
-              <img src={DOA} alt="DOA Logo" className="" />
+            <div className="relative mt-8 flex flex-col justify-center items-center">
+              <img src={DOA} alt="DOA Logo" className="w-[90%] md:w-full" />
             </div>
           </div>
         </div>

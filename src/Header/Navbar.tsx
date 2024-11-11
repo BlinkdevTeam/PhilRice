@@ -75,10 +75,10 @@ const Navbar = ({ refs }: any) => {
           {isMobileMenuOpen && (
             <div className="fixed inset-0 z-50">
               <div
-                className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300"
+                className="absolute inset-0 bg-black opacity-50 transition-opacity duration-1000"
                 onClick={handleCloseMenu}
               />
-              <div className="absolute top-0 left-0 w-[60%] h-screen bg-[#0E9046] shadow-lg md:block lg:hidden transition-transform ease-in-out duration-300">
+              <div className="absolute top-0 left-0 w-[60%] h-screen bg-[#0C6972] shadow-lg md:block lg:hidden transition-transform ease-in-out duration-1000">
                 <div className="flex flex-col justify-start items-start p-4">
                   <img
                     src={Logo}
@@ -152,7 +152,7 @@ const Navbar = ({ refs }: any) => {
                 className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300"
                 onClick={handleCloseMenu}
               />
-              <div className="absolute top-0 left-0 w-[50%] h-screen bg-[#0E9046] shadow-lg md:block lg:hidden transition-transform ease-in-out duration-300">
+              <div className="absolute top-0 left-0 w-[50%] h-screen bg-[#0C6972] shadow-lg md:block lg:hidden transition-transform ease-in-out duration-300">
                 <div className="flex flex-col justify-start items-start p-4">
                   <img
                     src={Logo}

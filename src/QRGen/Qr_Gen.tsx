@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import QRCode from "qrcode";
 import QRTicket from "../Assets/PHILRICE_QR_CONFIRMATION.png";
 import html2canvas from "html2canvas";
-import { get, ref, query, orderByChild, equalTo } from "firebase/database";
-import { database } from "../firebase";
 import Confetti from "react-confetti";
 
 export default function QrGen() {
