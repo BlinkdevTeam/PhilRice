@@ -201,6 +201,11 @@ export default function QrGen() {
         <div className="w-full lg:w-[734px] h-auto lg:h-[744px] border-[1px] border-solid border-gray-100 rounded-2xl px-16 py-16 flex flex-col justify-center items-center shadow-lg drop-shadow-md backdrop-blur-lg">
           <div className="text-red-500 text-xl font-bold mt-4">
             {error} {/* Display error message */}
+            <br /> <br /> Note:{" "}
+            <span className="font-normal text-black">
+              Use the email address you registered with at Ugnay Palay
+              Registration.
+            </span>
           </div>
         </div>
       )}
