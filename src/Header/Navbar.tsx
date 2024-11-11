@@ -6,15 +6,14 @@ import { useNavigate } from "react-router-dom";
 const Navbar = ({ refs }: any) => {
   const [activeButton, setActiveButton] = useState("home");
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isTabletMenuOpen, setTabletMenuOpen] = useState(false); // Added state for tablet
-  const navigate = useNavigate(); // React Router's useNavigate
+  const [isTabletMenuOpen, setTabletMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleButtonClick = (ref: any, section: string) => {
-    // Navigate to home and pass the section to scroll to
     navigate("/", { state: { section } });
     setActiveButton(section);
     setMobileMenuOpen(false);
-    setTabletMenuOpen(false); // Close the tablet menu when an item is clicked
+    setTabletMenuOpen(false);
   };
 
   const toggleMobileMenu = () => {
@@ -25,11 +24,22 @@ const Navbar = ({ refs }: any) => {
     setTabletMenuOpen(!isTabletMenuOpen);
   };
 
+  const handleCloseMenu = () => {
+    setTabletMenuOpen(false);
+    setMobileMenuOpen(false);
+  };
+
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  const buttons = ["GENERATE QR CODE", "REGISTER"];
+
+  const handleSeeMore = () => {
+    navigate("/qr-code-generator", { state: { section: "qrgenerator" } });
   };
 
   return (
@@ -63,18 +73,27 @@ const Navbar = ({ refs }: any) => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="absolute top-16 right-0 bg-[#0C6972] w-full shadow-lg md:hidden">
-              <div className="flex flex-col items-center">
-                {/* Register button visible only in mobile menu */}
-                <a
-                  href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-                  className="bg-[#F3BD1C] text-white font-bold py-2 px-6 rounded-md mb-4"
-                >
-                  REGISTER
-                </a>
-                {/* Mobile Menu Links */}
-                {["home", "about", "speakers", "program", "venue", "faqs"].map(
-                  (section) => (
+            <div className="fixed inset-0 z-50">
+              <div
+                className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300"
+                onClick={handleCloseMenu}
+              />
+              <div className="absolute top-0 left-0 w-[60%] h-screen bg-[#0E9046] shadow-lg md:block lg:hidden transition-transform ease-in-out duration-300">
+                <div className="flex flex-col justify-start items-start p-4">
+                  <img
+                    src={Logo}
+                    alt="tablet logo"
+                    className="h-10 cursor-pointer"
+                  />
+                  <div className="w-full h-[1px] bg-white my-5" />
+                  {[
+                    "home",
+                    "about",
+                    "speakers",
+                    "program",
+                    "venue",
+                    "faqs",
+                  ].map((section) => (
                     <button
                       key={section}
                       onClick={() =>
@@ -82,21 +101,45 @@ const Navbar = ({ refs }: any) => {
                       }
                       className={`${
                         activeButton === section
-                          ? "text-[#F3B71C] font-bold"
-                          : "text-white"
+                          ? "text-[#F3B71C] font-bold text-[14px] py-4"
+                          : "text-white text-[14px] font-bold py-4"
                       } py-2 px-4`}
                     >
                       {section.toUpperCase()}
                     </button>
-                  )
-                )}
+                  ))}
+                  <div className="w-full h-[1px] bg-white my-5" />
+                </div>
+                <div className="flex flex-col justify-center items-center px-4 gap-4 font-bold text-[14px]">
+                  {buttons.map((label, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        if (label === "REGISTER") {
+                          window.location.href =
+                            "https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI";
+                        } else {
+                          handleSeeMore();
+                        }
+                        handleCloseMenu();
+                      }}
+                      className={`w-full border-solid border-[2px] p-3 text-white rounded-md ${
+                        label === "REGISTER"
+                          ? "bg-[#EFB71E] border-[#EFB71E]"
+                          : "bg-transparent"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           )}
 
           {/* Tablet Menu Toggle Button (visible on tablet screens) */}
           <button
-            className="hidden md:block lg:hidden flex items-center"
+            className="hidden md:block lg:hidden items-center"
             onClick={toggleTabletMenu}
           >
             <FaBars className="text-white text-3xl" />
@@ -104,10 +147,27 @@ const Navbar = ({ refs }: any) => {
 
           {/* Tablet Menu */}
           {isTabletMenuOpen && (
-            <div className="absolute top-16 right-0 bg-[#0C6972] w-full shadow-lg md:block lg:hidden">
-              <div className="flex space-x-6 justify-center">
-                {["home", "about", "speakers", "program", "venue", "faqs"].map(
-                  (section) => (
+            <div className="fixed inset-0 z-50">
+              <div
+                className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300"
+                onClick={handleCloseMenu}
+              />
+              <div className="absolute top-0 left-0 w-[50%] h-screen bg-[#0E9046] shadow-lg md:block lg:hidden transition-transform ease-in-out duration-300">
+                <div className="flex flex-col justify-start items-start p-4">
+                  <img
+                    src={Logo}
+                    alt="tablet logo"
+                    className="h-10 cursor-pointer"
+                  />
+                  <div className="w-full h-[1px] bg-white my-5" />
+                  {[
+                    "home",
+                    "about",
+                    "speakers",
+                    "program",
+                    "venue",
+                    "faqs",
+                  ].map((section) => (
                     <button
                       key={section}
                       onClick={() =>
@@ -115,14 +175,38 @@ const Navbar = ({ refs }: any) => {
                       }
                       className={`${
                         activeButton === section
-                          ? "text-[#F3B71C] font-bold"
-                          : "text-white"
+                          ? "text-[#F3B71C] font-bold text-[16px] py-4"
+                          : "text-white text-[16px] font-bold py-4"
                       } py-2 px-4`}
                     >
                       {section.toUpperCase()}
                     </button>
-                  )
-                )}
+                  ))}
+                  <div className="w-full h-[1px] bg-white my-5" />
+                </div>
+                <div className="flex flex-col justify-center items-center px-4 gap-4 font-bold text-[16px]">
+                  {buttons.map((label, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        if (label === "REGISTER") {
+                          window.location.href =
+                            "https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI";
+                        } else {
+                          handleSeeMore();
+                        }
+                        handleCloseMenu();
+                      }}
+                      className={`w-full border-solid border-[2px] p-3 text-white rounded-md ${
+                        label === "REGISTER"
+                          ? "bg-[#EFB71E] border-[#EFB71E]"
+                          : "bg-transparent"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           )}
