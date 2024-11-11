@@ -125,18 +125,18 @@ export default function QrGen() {
               placeholder="Enter your First Name, Last Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="border border-gray-300 rounded p-2"
+              className="border border-gray-300 rounded p-2 h-14"
             />
             <input
               type="email"
               placeholder="Enter your Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="border border-gray-300 rounded p-2"
+              className="border border-gray-300 rounded p-2 h-14"
             />
             <button
               onClick={generateQRCode}
-              className="bg-[#F3BD1C] text-white font-bold py-3 px-6 lg:px-12 rounded-md"
+              className="bg-[#F3BD1C] text-white text-[18px] font-bold py-4 px-6 lg:px-12 rounded-md"
             >
               Generate
             </button>
@@ -188,7 +188,7 @@ export default function QrGen() {
               {/* DOWNLOAD Button */}
               <button
                 onClick={handleDownload}
-                className="bg-[#F3BD1C] text-white font-bold py-3 px-6 lg:px-12 rounded-md"
+                className="bg-[#F3BD1C] text-white text-[18px] font-bold py-4 px-6 lg:px-12 rounded-md"
               >
                 DOWNLOAD
               </button>
