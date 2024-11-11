@@ -45,35 +45,47 @@ export default function QrGen() {
 
   const generateQRCode = async () => {
     if (email) {
-      // Reference to the users node in Firebase
-      const usersRef = ref(database, "users");
+      // Use a CORS proxy to bypass the CORS restrictions
+      const apiUrl = `https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec`;
 
-      // Query to find the user by email
-      const emailQuery = query(usersRef, orderByChild("email"), equalTo(email));
-
-      console.log("Querying email:", email); // Debugging
+      const payload = { email };
 
       try {
-        const snapshot = await get(emailQuery);
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
 
-        console.log("Firebase snapshot:", snapshot); // Debugging
+        if (response.ok) {
+          const result = await response.json();
 
-        if (snapshot.exists()) {
-          // If email exists in Firebase, generate QR code
-          const qrCodeData = await QRCode.toDataURL(email);
-          setQrCodeUrl(qrCodeData);
-          setError(null); // Clear error if email is valid
-          setShowConfetti(true);
-          setTimeout(() => setShowConfetti(false), 8000);
+          if (result.status === "success") {
+            // If email is valid, generate the QR code
+            const qrCodeData = await QRCode.toDataURL(email);
+            setQrCodeUrl(qrCodeData);
+            setError(null); // Clear any previous error
+            setShowConfetti(true);
+            setTimeout(() => setShowConfetti(false), 8000);
+          } else {
+            // If email is not found in the database
+            setError(result.message);
+            setQrCodeUrl(null);
+          }
         } else {
-          setError("Invalid email!"); // Email not found in Firebase
-          setQrCodeUrl(null); // Clear QR code if email is invalid
+          setError("Error verifying email!");
+          setQrCodeUrl(null);
         }
       } catch (error) {
-        console.error("Error verifying email in Firebase", error);
-        setError("Error verifying email!"); // Handle Firebase error
-        setQrCodeUrl(null); // Clear QR code on error
+        console.error("Error verifying email in Google Sheets", error);
+        setError("Error verifying email!");
+        setQrCodeUrl(null);
       }
+    } else {
+      setError("Please enter a valid email address.");
+      setQrCodeUrl(null);
     }
   };
 
@@ -193,7 +205,7 @@ export default function QrGen() {
       )}
       {/* Display error or QR Code */}
       {error && (
-        <div className="w-full lg:w-[734px] border-[1px] border-solid border-gray-100 rounded-2xl px-16 py-16 flex flex-col justify-center items-center shadow-lg drop-shadow-md backdrop-blur-lg">
+        <div className="w-full lg:w-[734px] h-auto lg:h-[744px] border-[1px] border-solid border-gray-100 rounded-2xl px-16 py-16 flex flex-col justify-center items-center shadow-lg drop-shadow-md backdrop-blur-lg">
           <div className="text-red-500 text-xl font-bold mt-4">
             {error} {/* Display error message */}
           </div>

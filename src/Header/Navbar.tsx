@@ -233,18 +233,29 @@ const Navbar = ({ refs }: any) => {
           </div>
 
           {/* Register, QR button, visible only on desktop */}
-          {/* <a
-            href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-            className="bg-transparent border-solid border-[1px] text-white text-[16px] font-bold py-2 px-8 rounded-md hidden lg:block"
-          >
-            GENERATE QR CODE
-          </a> */}
-          <a
-            href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-            className="bg-[#F3BD1C] text-white text-[16px] font-bold py-2 px-8 rounded-md hidden lg:block"
-          >
-            REGISTER
-          </a>
+          <div className="flex-row justify-center items-center px-4 font-bold text-[16px] hidden lg:block">
+            {buttons.map((label, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (label === "REGISTER") {
+                    window.location.href =
+                      "https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI";
+                  } else {
+                    handleSeeMore();
+                  }
+                  handleCloseMenu();
+                }}
+                className={`w-auto border-solid border-[2px] px-4 py-2 mx-2 text-white rounded-md ${
+                  label === "REGISTER"
+                    ? "bg-[#EFB71E] border-[#EFB71E]"
+                    : "bg-transparent"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
