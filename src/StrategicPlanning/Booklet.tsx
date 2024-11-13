@@ -141,7 +141,7 @@ const Book: React.FC = () => {
 
   return (
     <>
-      <div className="mb-12 xl:mb-0 flex flex-row justify-center items-center gap-36 xl:absolute xl:top-40 order-2">
+      <div className="mb-12 xl:mb-0 flex flex-row justify-center items-center gap-36 xl:absolute xl:top-40 order-2 overflow-hidden">
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold px-8 xl:px-0 xl:max-w-[514px]">
           Strategic <span className="text-[#F3B71C]">Planning</span>
           <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
@@ -191,7 +191,7 @@ const Book: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="py-12 px-20 w-full h-full flex items-center justify-center order-1">
+      <div className="py-12 px-20 w-full h-full flex items-center justify-center order-1 overflow-hidden">
         <HTMLFlipBook
           className="flex justify-center items-center absolute top-0 left-0"
           style={{ position: "relative" }} // Required style prop
@@ -207,7 +207,7 @@ const Book: React.FC = () => {
           mobileScrollSupport={true} // Enable mobile scroll support
           clickEventForward={true} // Allow click events to be forwarded
           useMouseEvents={true} // Use mouse events
-          onFlip={(e) => console.log("Flipped to page:", e.data)} // Callback on flip event
+          // onFlip={(e) => console.log("Flipped to page:", e.data)}
           swipeDistance={50} // Distance required to trigger a swipe action
           showPageCorners={true} // Display corners of the pages
           disableFlipByClick={false} // Set to true to disable flipping by clicking
