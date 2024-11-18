@@ -41,7 +41,8 @@ export default function QrGen() {
 
   const generateQRCode = async () => {
     if (email) {
-      const apiUrl = `https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec`;
+      // Direct API URL without CORS proxy
+      const apiUrl = `https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec`;
 
       const payload = { email };
 
