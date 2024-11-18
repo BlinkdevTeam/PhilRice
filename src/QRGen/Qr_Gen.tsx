@@ -70,12 +70,24 @@ export default function QrGen() {
         setResponseMessage(
           `Welcome, ${data.user.firstName} ${data.user.lastName}!`
         );
+        setShowConfetti(true);
+        generateQRCodeImage();
       } else {
         setError(data.message || "An error occurred.");
       }
     } catch (err) {
       console.error(err);
       setError("Error connecting to the server. Please try again later.");
+    }
+  };
+
+  const generateQRCodeImage = async () => {
+    try {
+      const qrUrl = await QRCode.toDataURL(`email:${email}`);
+      setQrCodeUrl(qrUrl);
+    } catch (err) {
+      console.error("QR Code generation failed", err);
+      setError("Failed to generate QR code.");
     }
   };
 
@@ -107,7 +119,6 @@ export default function QrGen() {
           Get Event-Ready with <br />
           Your<span className="text-[#F3B71C]"> QR Code</span>
         </div>
-        {/* <img src={LeafDivider} alt="Leaf Divider" className="my-4" /> */}
         <div className="text-[22px] text-center my-4">
           Confirm registration and save your QR Code for <br />
           easy check-in at the event!
@@ -149,7 +160,6 @@ export default function QrGen() {
               recycle={false}
               numberOfPieces={numberOfPieces}
               gravity={0.01}
-              // wind={0.07}
               initialVelocityX={{ min: -5, max: 5 }}
               initialVelocityY={{ min: 2, max: 12 }}
               colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
