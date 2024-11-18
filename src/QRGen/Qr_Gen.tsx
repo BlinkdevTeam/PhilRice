@@ -10,7 +10,6 @@ export default function QrGen() {
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [responseMessage, setResponseMessage] = useState<string | null>(null);
 
   const [numberOfPieces, setNumberOfPieces] = useState(
     window.innerWidth < 768 ? 150 : 1550
@@ -41,53 +40,45 @@ export default function QrGen() {
   }, []);
 
   const generateQRCode = async () => {
-    if (!email) {
-      setError("Please enter a valid email address.");
-      return;
-    }
+    if (email) {
+      const apiUrl = `https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec`;
 
-    setError(null);
-    setResponseMessage(null);
+      const payload = { email };
 
-    try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec",
-        {
+      try {
+        const response = await fetch(apiUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email }),
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+
+          if (result.status === "success") {
+            const qrCodeData = await QRCode.toDataURL(email);
+            setQrCodeUrl(qrCodeData);
+            setError(null);
+            setShowConfetti(true);
+            setTimeout(() => setShowConfetti(false), 16000);
+          } else {
+            setError(result.message);
+            setQrCodeUrl(null);
+          }
+        } else {
+          setError("Error verifying email!");
+          setQrCodeUrl(null);
         }
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to connect to the server.");
+      } catch (error) {
+        console.error("Error verifying email in Google Sheets", error);
+        setError("Error verifying email!");
+        setQrCodeUrl(null);
       }
-
-      const data = await response.json();
-      if (data.status === "success") {
-        setResponseMessage(
-          `Welcome, ${data.user.firstName} ${data.user.lastName}!`
-        );
-        setShowConfetti(true);
-        generateQRCodeImage();
-      } else {
-        setError(data.message || "An error occurred.");
-      }
-    } catch (err) {
-      console.error(err);
-      setError("Error connecting to the server. Please try again later.");
-    }
-  };
-
-  const generateQRCodeImage = async () => {
-    try {
-      const qrUrl = await QRCode.toDataURL(`email:${email}`);
-      setQrCodeUrl(qrUrl);
-    } catch (err) {
-      console.error("QR Code generation failed", err);
-      setError("Failed to generate QR code.");
+    } else {
+      setError("Please enter a valid email address.");
+      setQrCodeUrl(null);
     }
   };
 
@@ -119,6 +110,7 @@ export default function QrGen() {
           Get Event-Ready with <br />
           Your<span className="text-[#F3B71C]"> QR Code</span>
         </div>
+        {/* <img src={LeafDivider} alt="Leaf Divider" className="my-4" /> */}
         <div className="text-[22px] text-center my-4">
           Confirm registration and save your QR Code for <br />
           easy check-in at the event!
@@ -160,6 +152,7 @@ export default function QrGen() {
               recycle={false}
               numberOfPieces={numberOfPieces}
               gravity={0.01}
+              // wind={0.07}
               initialVelocityX={{ min: -5, max: 5 }}
               initialVelocityY={{ min: 2, max: 12 }}
               colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
