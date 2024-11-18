@@ -10,6 +10,7 @@ export default function QrGen() {
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [responseMessage, setResponseMessage] = useState<string | null>(null);
 
   const [numberOfPieces, setNumberOfPieces] = useState(
     window.innerWidth < 768 ? 150 : 1550
@@ -40,45 +41,41 @@ export default function QrGen() {
   }, []);
 
   const generateQRCode = async () => {
-    if (email) {
-      const apiUrl = `https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec`;
+    if (!email) {
+      setError("Please enter a valid email address.");
+      return;
+    }
 
-      const payload = { email };
+    setError(null);
+    setResponseMessage(null);
 
-      try {
-        const response = await fetch(apiUrl, {
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec",
+        {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(payload),
-        });
-
-        if (response.ok) {
-          const result = await response.json();
-
-          if (result.status === "success") {
-            const qrCodeData = await QRCode.toDataURL(email);
-            setQrCodeUrl(qrCodeData);
-            setError(null);
-            setShowConfetti(true);
-            setTimeout(() => setShowConfetti(false), 16000);
-          } else {
-            setError(result.message);
-            setQrCodeUrl(null);
-          }
-        } else {
-          setError("Error verifying email!");
-          setQrCodeUrl(null);
+          body: JSON.stringify({ email }),
         }
-      } catch (error) {
-        console.error("Error verifying email in Google Sheets", error);
-        setError("Error verifying email!");
-        setQrCodeUrl(null);
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to connect to the server.");
       }
-    } else {
-      setError("Please enter a valid email address.");
-      setQrCodeUrl(null);
+
+      const data = await response.json();
+      if (data.status === "success") {
+        setResponseMessage(
+          `Welcome, ${data.user.firstName} ${data.user.lastName}!`
+        );
+      } else {
+        setError(data.message || "An error occurred.");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Error connecting to the server. Please try again later.");
     }
   };
 
