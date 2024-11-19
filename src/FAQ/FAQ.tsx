@@ -126,7 +126,7 @@ export default function FAQ() {
                     className="text-[#F3B71C] underline ml-2"
                     onClick={handleLinkClick}
                   >
-                    this Link
+                    Link
                   </a>
                 )}
               </div>
