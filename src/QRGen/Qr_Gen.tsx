@@ -32,6 +32,7 @@ export default function QrGen() {
   const [firstname, setFirstName] = useState<string>("");
   const [lastname, setLastName] = useState<string>("");
   const [affiliationname, setAffiliationName] = useState<string>("");
+  const [unitname, setUnitName] = useState<string>("");
 
   useEffect(() => {
     window.scrollTo({
@@ -74,6 +75,7 @@ export default function QrGen() {
         let userFirstName = "";
         let userLastName = "";
         let userAffiliation = "";
+        let userUnit = "";
 
         snapshot.forEach((childSnapshot) => {
           const user = childSnapshot.val();
@@ -82,6 +84,7 @@ export default function QrGen() {
             userFirstName = user.firstName;
             userLastName = user.lastName;
             userAffiliation = user.affiliationName;
+            userUnit = user.philRiceUnit;
           }
         });
 
@@ -89,6 +92,7 @@ export default function QrGen() {
           setFirstName(userFirstName);
           setLastName(userLastName);
           setAffiliationName(userAffiliation);
+          setUnitName(userUnit);
           setError(null);
           setShowConfetti(true);
           setQrCodeUrl(
@@ -189,7 +193,7 @@ export default function QrGen() {
                       ? `${firstname} ${lastname}`
                       : "Guest"}{" "}
                     <br />
-                    {affiliationname}
+                    {unitname || affiliationname}
                   </div>
                   <img
                     src={QRTicket}

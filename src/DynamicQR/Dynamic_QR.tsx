@@ -9,6 +9,8 @@ export default function DynamicQR() {
   const [searchParams] = useSearchParams(); // To get query parameters
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
   const [name, setName] = useState(""); // Set dynamically if needed
+  const [unitname, setUnitName] = useState(""); // Set dynamically if needed
+  const [affiliationname, setAffiliationName] = useState(""); // Set dynamically if needed
   const [email, setEmail] = useState(""); // Set dynamically if needed
   const [error, setError] = useState<string | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -16,8 +18,26 @@ export default function DynamicQR() {
     window.innerWidth < 768 ? 150 : 1550
   );
 
-  // Get the `id` query parameter
+  // Get the `id`, `name`, `affiliation`, and `unit` query parameters
   const userId = searchParams.get("id");
+  const userName = searchParams.get("name")?.replace(/%20/, " "); // Replace encoded space with space
+  const userAffiliationName = searchParams
+    .get("affiliation")
+    ?.replace(/%20/, " "); // Replace encoded space with space
+  const userUnitName = searchParams.get("unit")?.replace(/%20/, " "); // Replace encoded space with space
+
+  // Set name, unit, and affiliation
+  useEffect(() => {
+    if (userName) {
+      setName(userName);
+    }
+    if (userAffiliationName) {
+      setAffiliationName(userAffiliationName);
+    }
+    if (userUnitName) {
+      setUnitName(userUnitName);
+    }
+  }, [userName, userAffiliationName, userUnitName]);
 
   // Generate the QR code based on the `id`
   useEffect(() => {
@@ -91,8 +111,8 @@ export default function DynamicQR() {
                   YOU'RE ALL SET!
                 </div>
                 <div className="absolute z-30 mt-[130px] text-sm flex flex-col items-center justify-center text-center mr-2">
-                  See you, {name || "Guest"} <br />
-                  Your registration is complete!
+                  {name || "Guest"} <br />
+                  {unitname || affiliationname || "No affiliation available"}
                 </div>
                 <img
                   src={QRTicket}
