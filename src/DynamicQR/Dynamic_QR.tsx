@@ -82,19 +82,17 @@ export default function DynamicQR() {
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center px-4 w-screen h-full my-20 p-4 gap-4 overflow-hidden">
       <>
-        {showConfetti && (
-          <Confetti
-            width={window.innerWidth}
-            height={document.documentElement.scrollHeight}
-            recycle={false}
-            numberOfPieces={numberOfPieces}
-            gravity={0.01}
-            wind={0.07}
-            initialVelocityX={{ min: -5, max: 5 }}
-            initialVelocityY={{ min: 2, max: 12 }}
-            colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
-          />
-        )}
+        <Confetti
+          width={window.innerWidth}
+          height={document.documentElement.scrollHeight}
+          recycle={false}
+          numberOfPieces={numberOfPieces}
+          gravity={0.01}
+          wind={0.07}
+          initialVelocityX={{ min: -5, max: 5 }}
+          initialVelocityY={{ min: 2, max: 12 }}
+          colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
+        />
         <div className="w-full lg:w-[734px] h-auto lg:h-[744px] border-[1px] border-solid border-gray-100 rounded-2xl px-16 py-16 flex flex-col justify-center items-center shadow-lg drop-shadow-md backdrop-blur-lg">
           <div className="flex flex-col justify-center items-center">
             <div
