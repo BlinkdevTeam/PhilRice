@@ -90,7 +90,7 @@ const Navbar = ({ refs }: any) => {
                     "home",
                     "about",
                     // "speakers",
-                    "program",
+                    // "program",
                     "venue",
                     "faqs",
                   ].map((section) => (
@@ -164,7 +164,7 @@ const Navbar = ({ refs }: any) => {
                     "home",
                     "about",
                     // "speakers",
-                    "program",
+                    // "program",
                     "venue",
                     "faqs",
                   ].map((section) => (
@@ -213,7 +213,7 @@ const Navbar = ({ refs }: any) => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex space-x-8 text-[16px]">
-            {["home", "about", "program", "venue", "faqs"].map((section) => (
+            {["home", "about", "venue", "faqs"].map((section) => (
               <button
                 key={section}
                 onClick={() =>

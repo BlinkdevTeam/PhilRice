@@ -1,19 +1,37 @@
-import React, { useState, useEffect } from "react";
-import QRCode from "qrcode";
+import { useState, useEffect } from "react";
+import { getDatabase, ref, get } from "firebase/database";
 import QRTicket from "../Assets/PHILRICE_QR_CONFIRMATION.png";
+import { initializeApp } from "firebase/app";
 import html2canvas from "html2canvas";
 import Confetti from "react-confetti";
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC1id1bulVq3lLUJhkzaNBKH363gp4WqEc",
+  authDomain: "philricescannerapp.firebaseapp.com",
+  databaseURL: "https://philricescannerapp-default-rtdb.firebaseio.com",
+  projectId: "philricescannerapp",
+  storageBucket: "philricescannerapp.firebasestorage.app",
+  messagingSenderId: "57763195941",
+  appId: "1:57763195941:web:e1c8e98a6905b53fc2e3cc",
+  measurementId: "G-1S23JZ7X56",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
 export default function QrGen() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
-
   const [numberOfPieces, setNumberOfPieces] = useState(
     window.innerWidth < 768 ? 150 : 1550
   );
+  const [firstname, setFirstName] = useState<string>("");
+  const [lastname, setLastName] = useState<string>("");
+  const [affiliationname, setAffiliationName] = useState<string>("");
 
   useEffect(() => {
     window.scrollTo({
@@ -40,46 +58,51 @@ export default function QrGen() {
   }, []);
 
   const generateQRCode = async () => {
-    if (email) {
-      // Direct API URL without CORS proxy
-      const apiUrl = `https://script.google.com/macros/s/AKfycbw7KLmdKFIUYfBk4Vmo6l2z056JQmXmftxKmE7b9aI8yHp9_qV_u6ENGi8dFRNo1BkC/exec`;
+    if (!email) {
+      setError("Please enter your email.");
+      return;
+    }
 
-      const payload = { email };
+    const sanitizedEmail = email.replace(/\./g, ",");
 
-      try {
-        const response = await fetch(apiUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
+    const usersRef = ref(database, "users");
+
+    try {
+      const snapshot = await get(usersRef);
+      if (snapshot.exists()) {
+        let userFound = false;
+        let userFirstName = "";
+        let userLastName = "";
+        let userAffiliation = "";
+
+        snapshot.forEach((childSnapshot) => {
+          const user = childSnapshot.val();
+          if (user.email === email) {
+            userFound = true;
+            userFirstName = user.firstName;
+            userLastName = user.lastName;
+            userAffiliation = user.affiliationName;
+          }
         });
 
-        if (response.ok) {
-          const result = await response.json();
-
-          if (result.status === "success") {
-            const qrCodeData = await QRCode.toDataURL(email);
-            setQrCodeUrl(qrCodeData);
-            setError(null);
-            setShowConfetti(true);
-            setTimeout(() => setShowConfetti(false), 16000);
-          } else {
-            setError(result.message);
-            setQrCodeUrl(null);
-          }
+        if (userFound) {
+          setFirstName(userFirstName);
+          setLastName(userLastName);
+          setAffiliationName(userAffiliation);
+          setError(null);
+          setShowConfetti(true);
+          setQrCodeUrl(
+            `https://api.qrserver.com/v1/create-qr-code/?data=${email}&size=200x200`
+          );
         } else {
-          setError("Error verifying email!");
-          setQrCodeUrl(null);
+          setError("This email is not registered. Please check and try again.");
         }
-      } catch (error) {
-        console.error("Error verifying email in Google Sheets", error);
-        setError("Error verifying email!");
-        setQrCodeUrl(null);
+      } else {
+        setError("No users found in the database.");
       }
-    } else {
-      setError("Please enter a valid email address.");
-      setQrCodeUrl(null);
+    } catch (error) {
+      setError("Error checking email in the database.");
+      console.error(error);
     }
   };
 
@@ -111,23 +134,14 @@ export default function QrGen() {
           Get Event-Ready with <br />
           Your<span className="text-[#F3B71C]"> QR Code</span>
         </div>
-        {/* <img src={LeafDivider} alt="Leaf Divider" className="my-4" /> */}
         <div className="text-[22px] text-center my-4">
           Confirm registration and save your QR Code for <br />
           easy check-in at the event!
         </div>
         <div className="w-8/12 h-[1px] bg-[#0E9046] my-4" />
 
-        {/* Form */}
         <div className="flex flex-col lg:flex-row items-center gap-4 mt-8">
           <div className="flex flex-col gap-4 w-[250px] md:w-[450px]">
-            <input
-              type="text"
-              placeholder="Enter your First Name, Last Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="border border-gray-300 rounded p-2 h-14"
-            />
             <input
               type="email"
               placeholder="Enter your Email"
@@ -144,6 +158,7 @@ export default function QrGen() {
           </div>
         </div>
       </div>
+
       {qrCodeUrl && (
         <>
           {showConfetti && (
@@ -153,7 +168,7 @@ export default function QrGen() {
               recycle={false}
               numberOfPieces={numberOfPieces}
               gravity={0.01}
-              // wind={0.07}
+              wind={0.002}
               initialVelocityX={{ min: -5, max: 5 }}
               initialVelocityY={{ min: 2, max: 12 }}
               colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
@@ -170,22 +185,26 @@ export default function QrGen() {
                     YOU'RE ALL SET!
                   </div>
                   <div className="absolute z-30 mt-[130px] text-sm flex flex-col items-center justify-center text-center mr-2">
-                    See you, {name} <br />
-                    Your registration is complete!
+                    {firstname && lastname
+                      ? `${firstname} ${lastname}`
+                      : "Guest"}{" "}
+                    <br />
+                    {affiliationname}
                   </div>
                   <img
                     src={QRTicket}
                     alt="QR Ticket"
                     className="absolute z-10 w-80"
                   />
-                  <img
-                    src={qrCodeUrl}
-                    alt="QR Code"
-                    className="w-44 h-44 z-20 relative mt-[190px] mr-[10px]"
-                  />
+                  {qrCodeUrl && (
+                    <img
+                      src={qrCodeUrl}
+                      alt="QR Code"
+                      className="w-44 h-44 z-20 relative mt-[190px] mr-[10px]"
+                    />
+                  )}
                 </div>
               </div>
-
               {/* DOWNLOAD Button */}
               <button
                 onClick={handleDownload}
@@ -197,11 +216,11 @@ export default function QrGen() {
           </div>
         </>
       )}
-      {/* Display error or QR Code */}
+
       {error && (
         <div className="w-full lg:w-[734px] h-auto lg:h-[744px] border-[1px] border-solid border-gray-100 rounded-2xl px-16 py-16 flex flex-col justify-center items-center shadow-lg drop-shadow-md backdrop-blur-lg">
           <div className="text-red-500 text-xl font-bold mt-4">
-            {error} {/* Display error message */}
+            {error}
             <br /> <br /> Note:{" "}
             <span className="font-normal text-black">
               Use the email address you registered with at Ugnay Palay
