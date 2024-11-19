@@ -6,27 +6,25 @@ import Confetti from "react-confetti";
 import { useSearchParams } from "react-router-dom";
 
 export default function DynamicQR() {
-  const [searchParams] = useSearchParams(); // To get query parameters
+  const [searchParams] = useSearchParams();
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
-  const [name, setName] = useState(""); // Set dynamically if needed
-  const [unitname, setUnitName] = useState(""); // Set dynamically if needed
-  const [affiliationname, setAffiliationName] = useState(""); // Set dynamically if needed
-  const [email, setEmail] = useState(""); // Set dynamically if needed
+  const [name, setName] = useState("");
+  const [unitname, setUnitName] = useState("");
+  const [affiliationname, setAffiliationName] = useState("");
+  const [email, setEmail] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [numberOfPieces, setNumberOfPieces] = useState(
     window.innerWidth < 768 ? 150 : 1550
   );
 
-  // Get the `id`, `name`, `affiliation`, and `unit` query parameters
   const userId = searchParams.get("id");
-  const userName = searchParams.get("name")?.replace(/%20/, " "); // Replace encoded space with space
+  const userName = searchParams.get("name")?.replace(/%20/, " ");
   const userAffiliationName = searchParams
     .get("affiliation")
-    ?.replace(/%20/, " "); // Replace encoded space with space
-  const userUnitName = searchParams.get("unit")?.replace(/%20/, " "); // Replace encoded space with space
+    ?.replace(/%20/, " ");
+  const userUnitName = searchParams.get("unit")?.replace(/%20/, " ");
 
-  // Set name, unit, and affiliation
   useEffect(() => {
     if (userName) {
       setName(userName);
@@ -39,7 +37,6 @@ export default function DynamicQR() {
     }
   }, [userName, userAffiliationName, userUnitName]);
 
-  // Generate the QR code based on the `id`
   useEffect(() => {
     if (userId) {
       QRCode.toDataURL(userId, { width: 256 })
@@ -53,7 +50,6 @@ export default function DynamicQR() {
     }
   }, [userId]);
 
-  // Adjust confetti pieces on screen resize
   useEffect(() => {
     const handleResize = () => {
       setNumberOfPieces(window.innerWidth < 768 ? 480 : 550);
@@ -63,7 +59,6 @@ export default function DynamicQR() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Handle download of the QR code section
   const handleDownload = () => {
     const section = document.getElementById("qr-section");
     if (section) {

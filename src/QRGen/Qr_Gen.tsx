@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { getDatabase, ref, get } from "firebase/database";
 import QRTicket from "../Assets/PHILRICE_QR_CONFIRMATION.png";
+import { getDatabase, ref, get } from "firebase/database";
 import { initializeApp } from "firebase/app";
 import html2canvas from "html2canvas";
 import Confetti from "react-confetti";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC1id1bulVq3lLUJhkzaNBKH363gp4WqEc",
   authDomain: "philricescannerapp.firebaseapp.com",
@@ -17,7 +16,6 @@ const firebaseConfig = {
   measurementId: "G-1S23JZ7X56",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
