@@ -89,7 +89,7 @@ const Navbar = ({ refs }: any) => {
                   {[
                     "home",
                     "about",
-                    "speakers",
+                    // "speakers",
                     "program",
                     "venue",
                     "faqs",
@@ -163,7 +163,7 @@ const Navbar = ({ refs }: any) => {
                   {[
                     "home",
                     "about",
-                    "speakers",
+                    // "speakers",
                     "program",
                     "venue",
                     "faqs",
@@ -213,23 +213,21 @@ const Navbar = ({ refs }: any) => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex space-x-8 text-[16px]">
-            {["home", "about", "speakers", "program", "venue", "faqs"].map(
-              (section) => (
-                <button
-                  key={section}
-                  onClick={() =>
-                    handleButtonClick(refs[`${section}Ref`], section)
-                  }
-                  className={`${
-                    activeButton === section
-                      ? "text-[#F3B71C] font-bold"
-                      : "text-white"
-                  }`}
-                >
-                  {section.toUpperCase()}
-                </button>
-              )
-            )}
+            {["home", "about", "program", "venue", "faqs"].map((section) => (
+              <button
+                key={section}
+                onClick={() =>
+                  handleButtonClick(refs[`${section}Ref`], section)
+                }
+                className={`${
+                  activeButton === section
+                    ? "text-[#F3B71C] font-bold"
+                    : "text-white"
+                }`}
+              >
+                {section.toUpperCase()}
+              </button>
+            ))}
           </div>
 
           {/* Register, QR button, visible only on desktop */}

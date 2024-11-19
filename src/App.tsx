@@ -69,10 +69,10 @@ export default function App() {
                 <div ref={aboutRef} className="max-w-[1440px] px-0">
                   <About />
                 </div>
-                <Divider />
+                {/* <Divider />
                 <div ref={speakersRef}>
                   <Speaker />
-                </div>
+                </div> */}
                 <div ref={programRef}>
                   <Conference />
                 </div>
