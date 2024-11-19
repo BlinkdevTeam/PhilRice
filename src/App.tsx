@@ -73,9 +73,9 @@ export default function App() {
                 <div ref={speakersRef}>
                   <Speaker />
                 </div> */}
-                {/* <div ref={programRef}>
+                <div ref={programRef}>
                   <Conference />
-                </div> */}
+                </div>
                 <div ref={venueRef}>
                   <Location />
                 </div>

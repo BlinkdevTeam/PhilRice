@@ -5,29 +5,52 @@ export default function Program1() {
   const programItems = [
     {
       time: "07:00 AM",
-      title: "Registration and Welcome Coffee",
+      title: "Registration of Participants and Welcome Coffee",
     },
     {
       time: "09:00 AM",
       title: "Opening Program",
       speaker: [
-        "Welcome Remarks",
-        "Keynote Message",
+        "Doxology and National Anthem",
+        "Welcome Remarks and Introduction of the Guest of Honor and Keynote Speaker",
+        "Message of the Guest of Honor and Keynote Speaker",
         "Turnover of BPI Foundation Grant for the RiceBIS Community in Masbate",
-        "Launching of new knowledge products",
-        "Opening/Viewing of Posters / Exhibits",
+        "Presentation of new DA-PhilRice knowledge products",
+        "Opening and Viewing of Posters and Exhibits",
       ],
     },
     {
       time: "10:00 AM",
-      title: "Networking Break + viewing of posters and exhibits",
+      title: "Networking break and viewing of posters and exhibits",
+    },
+    {
+      // time: "10:30 AM",
+      title: "PLENARY SESSION 1. Cutting-edge Rice R4D Innovations",
+      speaker: "Chair: Dr. Eduardo Jimmy P. Quilang",
     },
     {
       time: "10:30 AM",
-      title: "Plenary Session 1: Cutting-edge Rice R4D Innovations",
-      speaker: "Sample Name A. Surname",
+      title: "Filipinnovation and its enabling environment",
+      speaker: "Ms. Dianne Gail L. Maharjan",
+      description: "Director, NEDA Innovation Staff",
+    },
+    {
+      time: "10:50 AM",
+      title: "DOST-PCAARRD’s R&D initiatives",
+      speaker: "Ms. Leilani D. Pelegrina",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in vulputate eros,",
+        "Director, Crops Research Division DOST-Philippine Council for Agriculture, Aquatic, and Natural Resources Research and Development (DOST-PCAARRD)",
+    },
+    {
+      time: "11:10 AM",
+      title: "JIRCAS R&D Thrusts",
+      speaker: "Dr. Mitsuhiro Obara",
+      description:
+        "Senior  ResearcherJapan International Research Center for Agricultural Sciences (JIRCAS)",
+    },
+    {
+      time: "11:30 AM",
+      title: "Open Forum / Q&A",
     },
     {
       time: "12:00 NN",
@@ -35,14 +58,17 @@ export default function Program1() {
     },
     {
       time: "01:30 PM",
-      title: "Panel Discussion 1: Scaling R4D Innovations",
-      speaker: "Sample Name A. Surname",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in vulputate eros,",
+      title: "PANEL DISCUSSION 1:  Scaling R4D Innovations",
+      speaker: "Mr. Dindo King M. Donayre",
+      description: [
+        "Dr. Junel B. Soriano, DA-BAR",
+        "Ms. Andrea Marie S. Dizon, Davao Beta Spring Inc.",
+        "Mr. Ramon T. Lim, DA-PhilRice Trustee",
+      ],
     },
     {
       time: "03:00 PM",
-      title: "Networking Break + viewing of posters and exhibits",
+      title: "Networking Break + Viewing of Posters and Exhibits",
     },
     {
       time: "03:30 PM",
@@ -84,7 +110,21 @@ export default function Program1() {
             )}
             {item.description && (
               <div className="text-[14px] md:text-18px] lg:text-[22px] text-[#202020]">
-                {item.description}
+                {/* Render speakers as bullet points if it's an array */}
+                {Array.isArray(item.description) ? (
+                  <>
+                    <div className="flex flex-col lg:flex-row gap-5">
+                      <div className="">Panelist: </div>
+                      <ul className="list-disc pl-5 font-bold">
+                        {item.description.map((description, i) => (
+                          <li key={i}>{description}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                ) : (
+                  <div>{item.description}</div>
+                )}
               </div>
             )}
           </div>
