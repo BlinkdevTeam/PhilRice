@@ -24,7 +24,7 @@ export default function Program1() {
       title: "Networking break and viewing of posters and exhibits",
     },
     {
-      // time: "10:30 AM",
+      time: "10:30 AM",
       title: "PLENARY SESSION 1. Cutting-edge Rice R4D Innovations",
       speaker: "Chair: Dr. Eduardo Jimmy P. Quilang",
     },
