@@ -87,10 +87,10 @@ export default function DynamicQR() {
           height={document.documentElement.scrollHeight}
           recycle={false}
           numberOfPieces={numberOfPieces}
-          gravity={0.01}
+          gravity={0.04}
           wind={0.002}
           initialVelocityX={{ min: -5, max: 5 }}
-          initialVelocityY={{ min: 2, max: 12 }}
+          initialVelocityY={{ min: 5, max: 12 }}
           colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
         />
         <div className="w-full lg:w-[734px] h-auto lg:h-[744px] border-[1px] border-solid border-gray-100 rounded-2xl px-16 py-16 flex flex-col justify-center items-center shadow-lg drop-shadow-md backdrop-blur-lg">
