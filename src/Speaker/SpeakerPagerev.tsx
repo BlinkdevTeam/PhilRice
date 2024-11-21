@@ -81,9 +81,7 @@ export default function SpeakerPagerev() {
             </button>
             <div
               id={`accordion-content-${index}`}
-              className={`${
-                openIndex === index ? "block" : "hidden"
-              } p-5 text-gray-500 dark:text-gray-400`}>
+              className={`${openIndex === index ? "block" : "hidden"}`}>
               {session.content}
             </div>
           </div>
@@ -91,22 +89,45 @@ export default function SpeakerPagerev() {
       </div>
 
       {/* Static Content for Desktop */}
-      <div className="hidden lg:flex flex-col items-center w-full max-w-[800px]">
-        {sessions.map((session, index) => (
-          <div
-            key={index}
-            className="flex flex-col justify-center items-center mb-20">
-            <div className="font-bold text-center text-[#0E9046] text-[20px] md:text-[35px] lg:text-[40px]">
-              {session.title}
-            </div>
-            {session.subtitle && (
-              <div className="text-center text-gray-500 text-[16px] md:text-[20px] lg:text-[24px] mt-2">
-                {session.subtitle}
-              </div>
-            )}
-            <div className="mt-8 w-full">{session.content}</div>
+      <div className="hidden lg:flex flex-col">
+        <div className="flex flex-col justify-center items-center">
+          <div className="font-bold text-[#0E9046] text-[20px] md:text-[35px] lg:text-[40px] mt-20">
+            Keynote Speaker
           </div>
-        ))}
+          <div>
+            <KeynoteSpeaker />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center -mt-[200px] md:mt-0 lg:mt-0">
+          <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
+            <span className="text-[#0E9046]">Plenary Session 1</span>
+            <br />
+            Cutting-edge Rice R4D Innovations
+          </div>
+          <div className="mt-[300px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+            <SpeakerProfile1 />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center mt-[100px] md:mt-[200px] lg:mt-[200px] xl:mt-[80px]">
+          <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
+            <span className="text-[#0E9046]">Plenary Session 2</span>
+            <br />
+            Cutting-edge Rice R4D Innovations
+          </div>
+          <div className="mt-[100px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+            <SpeakerProfile2 />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center items-center mt-0 md:mt-[200px] lg:mt-[200px] xl:mt-[80px]">
+          <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
+            <span className="text-[#0E9046]">Plenary Session 3</span>
+            <br />
+            Cutting-edge Rice R4D Innovations
+          </div>
+          <div className="mt-[100px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+            <SpeakerProfile3 />
+          </div>
+        </div>
       </div>
     </div>
   );
