@@ -4,6 +4,7 @@ import SpeakerProfile1 from "./Profile/PlenarySession1";
 import SpeakerProfile2 from "./Profile/PlenarySession2";
 import SpeakerProfile3 from "./Profile/PlenarySession3";
 import KeynoteSpeaker from "./Profile/KeynoteSpeaker";
+import "./speakerpage.css";
 
 export default function SpeakerPagerev() {
   const [openIndex, setOpenIndex] = useState(null); // For accordion
@@ -50,42 +51,36 @@ export default function SpeakerPagerev() {
 
       {/* Accordion for Mobile */}
       <div className="flex flex-col lg:hidden w-full max-w-[800px] gap-8">
-        {sessions.map((session, index) => (
-          <div key={index} className="border-b border-gray-200">
-            <button
-              className="flex items-center justify-center w-full p-5 font-medium text-white border border-[#F3B71C] bg-[#F3B71C] rounded-lg"
-              onClick={() => toggleAccordion(index)}
-              aria-expanded={openIndex === index}
-              aria-controls={`accordion-content-${index}`}>
-              <span>
-                {session.title}
-                {session.subtitle && (
-                  <span className="block text-sm">{session.subtitle}</span>
-                )}
-              </span>
-              {/* <svg
-                className={`w-4 h-4 transform ${
-                  openIndex === index ? "rotate-180" : ""
-                }`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg> */}
-            </button>
+        {sessions.map((session, index) => {
+          // Generate a unique class name based on the index
+          const sessionClass = `session-${index}`;
+
+          return (
             <div
-              id={`accordion-content-${index}`}
-              className={`${openIndex === index ? "block" : "hidden"}`}>
-              {session.content}
+              key={index}
+              className={`border-b border-gray-200 ${sessionClass}`}>
+              <button
+                className={`flex items-center justify-center w-full p-5 font-medium text-white border border-[#F3B71C] bg-[#F3B71C] rounded-lg ${sessionClass}-button`}
+                onClick={() => toggleAccordion(index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`accordion-content-${index}`}>
+                <span>
+                  {session.title}
+                  {session.subtitle && (
+                    <span className="block text-sm">{session.subtitle}</span>
+                  )}
+                </span>
+              </button>
+              <div
+                id={`accordion-content-${index}`}
+                className={`${
+                  openIndex === index ? "block" : "hidden"
+                } ${sessionClass}-content`}>
+                {session.content}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Static Content for Desktop */}

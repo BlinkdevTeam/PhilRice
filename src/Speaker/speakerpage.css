@@ -1,0 +1,56 @@
+.session-0 {
+  /* Styles for Keynote Speaker */
+}
+
+.session-0-button {
+}
+
+.session-0-content {
+  color: #333;
+}
+
+.session-1 {
+  /* Styles for Plenary Session 1 */
+}
+
+.session-1-button {
+}
+
+.session-1-content {
+  margin-top: 100px;
+}
+
+.session-2 {
+  /* Styles for Plenary Session 1 */
+}
+
+.session-2-button {
+}
+
+.session-2-content {
+  margin-top: 100px;
+}
+
+.session-3 {
+  /* Styles for Plenary Session 1 */
+}
+
+.session-3-button {
+}
+
+.session-3-content {
+  margin-top: 100px;
+}
+
+/* Repeat for other sessions */
+
+/* Responsive Styles for Screens Below 780px */
+@media screen and (max-width: 780px) {
+  .session-1-content {
+    margin-top: 200px; /* Adjusted margin for smaller screens */
+  }
+  .session-2-content {
+  }
+  .session-3-content {
+  }
+}
