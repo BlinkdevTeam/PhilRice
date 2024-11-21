@@ -79,10 +79,10 @@ export default function QrGen() {
           const user = childSnapshot.val();
           if (user.email === email) {
             userFound = true;
-            userFirstName = user.firstName;
-            userLastName = user.lastName;
-            userAffiliation = user.affiliationName;
-            userUnit = user.philRiceUnit;
+            userFirstName = user.firstNameColumn; // Correct property for first name
+            userLastName = user.lastNameColumn; // Correct property for last name
+            userAffiliation = user.affiliationName || user.philriceName; // Fallback to "philriceName"
+            userUnit = user.philriceUnit; // Correct property for unit
           }
         });
 
@@ -153,8 +153,7 @@ export default function QrGen() {
             />
             <button
               onClick={generateQRCode}
-              className="bg-[#F3BD1C] text-white text-[18px] font-bold py-4 px-6 lg:px-12 rounded-md"
-            >
+              className="bg-[#F3BD1C] text-white text-[18px] font-bold py-4 px-6 lg:px-12 rounded-md">
               Generate
             </button>
           </div>
@@ -180,8 +179,7 @@ export default function QrGen() {
             <div className="flex flex-col justify-center items-center">
               <div
                 id="qr-section"
-                className="flex flex-col items-center mb-8 min-w-[320px] max-w-[375px] h-[608px]"
-              >
+                className="flex flex-col items-center mb-8 min-w-[320px] max-w-[375px] h-[608px]">
                 <div className="flex flex-col items-center mt-8 font-bold">
                   <div className="absolute z-30 mt-[100px] text-[#0C6972] text-2xl mr-2">
                     YOU'RE ALL SET!
@@ -210,8 +208,7 @@ export default function QrGen() {
               {/* DOWNLOAD Button */}
               <button
                 onClick={handleDownload}
-                className="bg-[#F3BD1C] text-white text-[18px] font-bold py-4 px-6 lg:px-12 rounded-md"
-              >
+                className="bg-[#F3BD1C] text-white text-[18px] font-bold py-4 px-6 lg:px-12 rounded-md">
                 DOWNLOAD
               </button>
             </div>

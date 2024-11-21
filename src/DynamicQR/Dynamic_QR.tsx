@@ -88,7 +88,7 @@ export default function DynamicQR() {
           recycle={false}
           numberOfPieces={numberOfPieces}
           gravity={0.01}
-          wind={0.07}
+          wind={0.002}
           initialVelocityX={{ min: -5, max: 5 }}
           initialVelocityY={{ min: 2, max: 12 }}
           colors={["#0C6972", "#EFB71E", "#EFB71E", "#FFFFFF"]}
@@ -97,8 +97,7 @@ export default function DynamicQR() {
           <div className="flex flex-col justify-center items-center">
             <div
               id="qr-section"
-              className="flex flex-col items-center mb-8 min-w-[320px] max-w-[375px] h-[608px]"
-            >
+              className="flex flex-col items-center mb-8 min-w-[320px] max-w-[375px] h-[608px]">
               <div className="flex flex-col items-center mt-8 font-bold">
                 <div className="absolute z-30 mt-[100px] text-[#0C6972] text-2xl mr-2">
                   YOU'RE ALL SET!
@@ -124,8 +123,7 @@ export default function DynamicQR() {
             {/* DOWNLOAD Button */}
             <button
               onClick={handleDownload}
-              className="bg-[#F3BD1C] text-white text-[18px] font-bold py-4 px-6 lg:px-12 rounded-md"
-            >
+              className="bg-[#F3BD1C] text-white text-[18px] font-bold py-4 px-6 lg:px-12 rounded-md">
               DOWNLOAD
             </button>
           </div>
