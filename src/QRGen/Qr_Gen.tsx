@@ -189,7 +189,9 @@ export default function QrGen() {
                       ? `${firstname} ${lastname}`
                       : "Guest"}{" "}
                     <br />
-                    {unitname || affiliationname}
+                    <div className="w-[250px]">
+                      {unitname || affiliationname}
+                    </div>
                   </div>
                   <img
                     src={QRTicket}
