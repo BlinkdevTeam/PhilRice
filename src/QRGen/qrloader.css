@@ -1,16 +1,31 @@
-/* HTML: <div class="loader"></div> */
+/* Full-Screen Overlay */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensures full width */
+  height: 100%; /* Ensures full height */
+  background: rgba(0, 0, 0, 0.75); /* Black background with 75% opacity */
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  z-index: 9999; /* Ensures it's above all other elements */
+}
+
+/* Rotating Loader */
 .loader {
   width: 70px;
   aspect-ratio: 1;
-  background:
-    radial-gradient(farthest-side,#ffa516 90%,#0000) center/16px 16px,
-    radial-gradient(farthest-side,green   90%,#0000) bottom/12px 12px;
+  background: radial-gradient(farthest-side, #ffa516 90%, transparent)
+      center/16px 16px,
+    radial-gradient(farthest-side, green 90%, transparent) bottom/12px 12px;
   background-repeat: no-repeat;
   animation: l17 1s infinite linear;
   position: relative;
 }
-.loader::before {    
-  content:"";
+
+.loader::before {
+  content: "";
   position: absolute;
   width: 8px;
   aspect-ratio: 1;
@@ -22,6 +37,9 @@
   animation: inherit;
   animation-duration: 0.5s;
 }
-@keyframes l17 { 
-  100%{transform: rotate(1turn)}
+
+@keyframes l17 {
+  100% {
+    transform: rotate(1turn);
+  }
 }

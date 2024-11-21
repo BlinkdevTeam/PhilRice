@@ -165,7 +165,11 @@ export default function QrGen() {
               {loading ? "Generating..." : "Generate"}
             </button>
           </div>
-          <div>{loading && <div className="loader"></div>}</div>
+          {loading && (
+            <div className="loader-overlay">
+              <div className="loader"></div>
+            </div>
+          )}
         </div>
       </div>
 
