@@ -19,6 +19,7 @@ import Booklet from "./StrategicPlanning/Booklet";
 import QrGen from "./QRGen/Qr_Gen";
 import DynamicQR from "./DynamicQR/Dynamic_QR";
 import ProgramSched from "./Conference/ProgramSched";
+import SpeakerPagerev from "./Speaker/SpeakerPagerev";
 
 const Divider = () => (
   <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[40px] mx-auto" />
@@ -91,7 +92,7 @@ export default function App() {
               </>
             }
           />
-          <Route path="/speaker-details" element={<SpeakerPage />} />
+          <Route path="/speaker-details" element={<SpeakerPagerev />} />
           <Route path="/strat-planning" element={<Booklet />} />
           <Route path="/qr-code-generator" element={<QrGen />} />
           <Route path="/dynamic-qr-code" element={<DynamicQR />} />

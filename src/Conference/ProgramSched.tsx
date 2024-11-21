@@ -7,13 +7,22 @@ import Program3 from "./Programs/Program3";
 
 export default function ProgramSched() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null); // For accordion
 
   const days = [
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
     { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
     { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
   ];
+  const mobiledays = [
+    { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
+    { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
+    { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
+  ];
+
+  const toggleAccordion = (index: any) => {
+    setOpenIndex(openIndex === index ? null : index); // Toggle between open and closed
+  };
 
   return (
     <div className="flex flex-col justify-center items-center bg-[#0E9046] w-screen px-8 py-16 xl:py-24">
@@ -26,18 +35,60 @@ export default function ProgramSched() {
         className="my-4 w-[90%] md:w-auto transform transition-transform duration-300 hover:scale-110"
       />
       <div className="text-center text-white text-lg sm:text-xl w-full max-w-[866px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
-        vulputate eros, et <br />
-        faucibus velit. Donec sed elit tellus.
+        {/* Placeholder for subtitle */}
       </div>
       {/* Render the day buttons dynamically */}
       <div className="mt-12 w-11/12">
-              {/* For Mobile and Tablet (use dropdown) */}
-              <div>
-                  
+        {/* For Mobile and Tablet (Accordion) */}
+        <div
+          id="accordion-collapse"
+          data-accordion="collapse"
+          className="flex flex-col lg:hidden gap-8">
+          {mobiledays.map((mobiledayItem, index) => (
+            <div key={index}>
+              <h2 id={`accordion-collapse-heading-${index}`}>
+                <button
+                  type="button"
+                  className="flex items-center justify-between w-full py-5 px-3 md:px-10 font-medium text-white border border-[#EFB71E] bg-[#EFB71E] rounded-lg"
+                  onClick={() => toggleAccordion(index)}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`accordion-collapse-body-${index}`}>
+                  <div className="flex flex-col justify-start items-start md:flex-row md:justify-between md:gap-16">
+                    <span>{mobiledayItem.day}</span>
+                    <span>{mobiledayItem.date}</span>
+                  </div>
+                  <svg
+                    data-accordion-icon
+                    className={`w-3 h-3 transform shrink-0 ${
+                      openIndex === index ? "" : "rotate-180"
+                    }`}
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6">
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5 5 1 1 5"
+                    />
+                  </svg>
+                </button>
+              </h2>
+              <div
+                id={`accordion-collapse-body-${index}`}
+                className={`${openIndex === index ? "" : "hidden"} p-5 `}
+                aria-labelledby={`accordion-collapse-heading-${index}`}>
+                <div className="text-gray-500 dark:text-gray-400">
+                  {mobiledayItem.program}
+                </div>
               </div>
+            </div>
+          ))}
+        </div>
 
-        {/* For Desktop (use flex row) */}
+        {/* For Desktop (Tabs) */}
         <div className="hidden lg:flex flex-row justify-center items-center gap-4">
           {days.map((dayItem, index) => (
             <div

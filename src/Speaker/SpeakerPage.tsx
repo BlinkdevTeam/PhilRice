@@ -20,11 +20,11 @@ export default function SpeakerPage() {
           Speakers and <span className="text-[#F3B71C]">Panelists</span>
         </div>
         <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
-        <div className="text-center w-full max-w-[866px] text-[13px] md:text-[18px] lg:text-[22px]">
+        {/* <div className="text-center w-full max-w-[866px] text-[13px] md:text-[18px] lg:text-[22px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in
           vulputate eros, et <br />
           faucibus velit. Donec sed elit tellus.
-        </div>
+        </div> */}
         <div className="flex flex-col justify-center items-center">
           <div className="font-bold text-[#0E9046] text-[20px] md:text-[35px] lg:text-[40px] mt-20">
             Keynote Speaker
