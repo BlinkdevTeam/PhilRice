@@ -143,50 +143,50 @@ const Book: React.FC = () => {
     <>
       <div className="mb-12 xl:mb-0 flex flex-row justify-center items-center gap-36 xl:absolute xl:top-40 order-2 overflow-hidden">
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold px-8 xl:px-0 xl:max-w-[514px]">
-          Strategic <span className="text-[#F3B71C]">Planning</span>
-          <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
+          The DA - PhiliRice Plan{" "}
+          <span className="text-[#F3B71C]">2023 - 2024</span>
+          {/* <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
             by: Jayson San Agustin & Lander Guevarra
-          </div>
+          </div> */}
           <div className="w-full max-w-[1005px] order-last sm:order-none mt-4 sm:mt-0">
-            <div className="text-[18px] md:text-[20px] lg:text-[25px] my-4 leading-relaxed font-bold text-[#0E9046]">
-              About the Book
+            <div className="text-[18px] md:text-[20px] lg:text-[25px] my-4 leading-relaxed font-bold text-black">
+              Better Rice Communities
             </div>
             <div className="text-[13px] font-normal text-black md:text-[18px] lg:text-[22px] leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Ultrices nibh rhoncus
-              viverra diam adipiscing. Dui in pharetra sed porttitor justo
-              fermentum sapien mattis consequat. Dolor tellus nunc commodo
-              lectus neque. Scelerisque tempus tristique phasellus pretium
-              pulvinar magna risus pretium feugiat. Sed amet sit morbi
-              suspendisse id felis. Senectus egestas cursus curabitur netus.{" "}
+              The Strategic Plan 2023-2028 outlines DA-PhilRice's vision to
+              uplift the wellbeing of farming communities, foster a resilient
+              and sustainable rice industry, and achieve a nutrition-secure
+              Philippines. Rooted in the President's eight-point socioeconomic
+              agenda, the Plan marks a strategic shift from a commodity-centric
+              framework to a people-focused approach. By emphasizing the
+              prosperity of farmers and their communities, it underscores their
+              pivotal role in ensuring the availability of sufficient,
+              affordable, and accessible rice for all Filipinos.
               <br /> <br />
-              At ullamcorper in interdum dignissim ut eros erat sed maecenas. In
-              maecenas nullam tellus tellus. Ullamcorper risus tellus et euismod
-              massa. Consectetur massa tristique eget est orci dui aliquet
-              porttitor. Cursus eget mauris in praesent ....
             </div>
           </div>
         </div>
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold px-8 xl:px-0 xl:max-w-[514px] hidden xl:inline">
-          Strategic <span className="text-[#F3B71C]">Planning</span>
-          <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
+          The DA - PhiliRice Plan{" "}
+          <span className="text-[#F3B71C]">2023 - 2024</span>
+          {/* <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
             by: Jayson San Agustin & Lander Guevarra
-          </div>
+          </div> */}
           <div className="w-full max-w-[1005px] order-last sm:order-none mt-4 sm:mt-0">
-            <div className="text-[18px] md:text-[20px] lg:text-[25px] my-4 leading-relaxed font-bold text-[#0E9046]">
-              About the Book
+            <div className="text-[18px] md:text-[20px] lg:text-[25px] my-4 leading-relaxed font-bold text-black">
+              Better Rice Communities
             </div>
             <div className="text-[13px] font-normal text-black md:text-[18px] lg:text-[22px] leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Ultrices nibh rhoncus
-              viverra diam adipiscing. Dui in pharetra sed porttitor justo
-              fermentum sapien mattis consequat. Dolor tellus nunc commodo
-              lectus neque. Scelerisque tempus tristique phasellus pretium
-              pulvinar magna risus pretium feugiat. Sed amet sit morbi
-              suspendisse id felis. Senectus egestas cursus curabitur netus.{" "}
+              The Strategic Plan 2023-2028 outlines DA-PhilRice's vision to
+              uplift the wellbeing of farming communities, foster a resilient
+              and sustainable rice industry, and achieve a nutrition-secure
+              Philippines. Rooted in the President's eight-point socioeconomic
+              agenda, the Plan marks a strategic shift from a commodity-centric
+              framework to a people-focused approach. By emphasizing the
+              prosperity of farmers and their communities, it underscores their
+              pivotal role in ensuring the availability of sufficient,
+              affordable, and accessible rice for all Filipinos.
               <br /> <br />
-              At ullamcorper in interdum dignissim ut eros erat sed maecenas. In
-              maecenas nullam tellus tellus. Ullamcorper risus tellus et euismod
-              massa. Consectetur massa tristique eget est orci dui aliquet
-              porttitor. Cursus eget mauris in praesent ....
             </div>
           </div>
         </div>
@@ -222,8 +222,7 @@ const Book: React.FC = () => {
           {pages.map((page, index) => (
             <div
               key={index}
-              className="bg-white flex justify-center items-center shadow-lg"
-            >
+              className="bg-white flex justify-center items-center shadow-lg">
               <img src={page.src} alt={page.alt} className="w-full h-auto" />
             </div>
           ))}
