@@ -40,7 +40,7 @@ export default function ProgramSched() {
       {/* Render the day buttons dynamically */}
       <div className="mt-12 w-11/12">
         {/* For Mobile and Tablet (Accordion) */}
-        {/* <div
+        <div
           id="accordion-collapse"
           data-accordion="collapse"
           className="flex flex-col lg:hidden gap-8">
@@ -86,10 +86,10 @@ export default function ProgramSched() {
               </div>
             </div>
           ))}
-        </div> */}
+        </div>
 
         {/* For Desktop (Tabs) */}
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-4">
+        <div className="hidden lg:flex flex-row justify-center items-center gap-4">
           {days.map((dayItem, index) => (
             <div
               key={index}
@@ -110,11 +110,11 @@ export default function ProgramSched() {
           ))}
         </div>
       </div>
-      <div className="flex w-full max-w-[1108px] h-[2px] bg-white my-10" />
-      <div className="flex text-white text-center text-[30px] md:text-[35px] lg:text-[40px] font-bold mb-4">
+      <div className="hidden lg:flex w-full max-w-[1108px] h-[2px] bg-white my-10" />
+      <div className="hidden lg:flex text-white text-center text-[30px] md:text-[35px] lg:text-[40px] font-bold mb-4">
         Conference Program
       </div>
-      <div className="flex">{days[activeIndex].program}</div>
+      <div className="hidden lg:flex">{days[activeIndex].program}</div>
     </div>
   );
 }
