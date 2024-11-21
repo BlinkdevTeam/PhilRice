@@ -38,6 +38,13 @@ function ScrollToSection({ refs }: any) {
   return null;
 }
 
+const handleScrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // This adds a smooth scrolling animation
+  });
+};
+
 export default function App() {
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -45,6 +52,7 @@ export default function App() {
   const speakersRef = useRef<HTMLDivElement>(null);
   const venueRef = useRef<HTMLDivElement>(null);
   const faqsRef = useRef<HTMLDivElement>(null);
+  const stratplanRef = useRef<HTMLDivElement>(null);
 
   const refs = {
     homeRef,
@@ -53,6 +61,7 @@ export default function App() {
     speakersRef,
     venueRef,
     faqsRef,
+    stratplanRef,
   };
 
   return (
@@ -82,7 +91,7 @@ export default function App() {
                 <div ref={venueRef}>
                   <Location />
                 </div>
-                <div>
+                <div ref={stratplanRef}>
                   <StratPlan />
                 </div>
                 <Divider />
@@ -99,6 +108,31 @@ export default function App() {
         </Routes>
         <div className="order-last">
           <Footer refs={refs} />
+        </div>
+        <div
+          className="border-[#F3B71C] border-2 rounded-full flex justify-center items-center w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[56px] lg:h-[56px] p-2 cursor-pointer fixed bottom-8 right-8"
+          onClick={handleScrollToTop}>
+          <svg
+            width="26"
+            height="28"
+            viewBox="0 0 26 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13 26.8425V2.63867"
+              stroke="#F3B71C"
+              strokeWidth="5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M1 13.2858L13 1.66797L25 13.2858"
+              stroke="#F3B71C"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
       </div>
     </Router>

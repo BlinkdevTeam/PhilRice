@@ -10,6 +10,7 @@ interface FooterProps {
     speakersRef: React.RefObject<HTMLDivElement>;
     venueRef: React.RefObject<HTMLDivElement>;
     faqsRef: React.RefObject<HTMLDivElement>;
+    stratplanRef: React.RefObject<HTMLDivElement>;
   };
 }
 
@@ -66,15 +67,13 @@ export default function Footer({ refs }: FooterProps) {
               <div className="text-white text-[15px] md:text-[22px]">
                 <div
                   className="flex mb-2 gap-4 cursor-pointer"
-                  onClick={copyToClipboard}
-                >
+                  onClick={copyToClipboard}>
                   <svg
                     width="35"
                     height="35"
                     viewBox="0 0 35 35"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                    xmlns="http://www.w3.org/2000/svg">
                     <circle cx="17.5" cy="17.5" r="17.5" fill="white" />
                     <path
                       d="M22.1667 9.66699H13.8334C12.9129 9.66699 12.1667 10.4132 12.1667 11.3337V24.667C12.1667 25.5875 12.9129 26.3337 13.8334 26.3337H22.1667C23.0872 26.3337 23.8334 25.5875 23.8334 24.667V11.3337C23.8334 10.4132 23.0872 9.66699 22.1667 9.66699Z"
@@ -95,15 +94,13 @@ export default function Footer({ refs }: FooterProps) {
                 </div>
                 <a
                   href={`mailto:${emailAddress}`}
-                  className="flex mb-2 gap-4 cursor-pointer"
-                >
+                  className="flex mb-2 gap-4 cursor-pointer">
                   <svg
                     width="35"
                     height="35"
                     viewBox="0 0 35 35"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                    xmlns="http://www.w3.org/2000/svg">
                     <circle cx="17.5" cy="17.5" r="17.5" fill="white" />
                     <g clipPath="url(#clip0_8_1256)">
                       <path
@@ -138,15 +135,13 @@ export default function Footer({ refs }: FooterProps) {
                   href={facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex gap-4 cursor-pointer"
-                >
+                  className="flex gap-4 cursor-pointer">
                   <svg
                     width="35"
                     height="35"
                     viewBox="0 0 35 35"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                    xmlns="http://www.w3.org/2000/svg">
                     <circle cx="17.5" cy="17.5" r="17.5" fill="white" />
                     <path
                       d="M23 8H20C18.6739 8 17.4021 8.52678 16.4645 9.46447C15.5268 10.4021 15 11.6739 15 13V16H12V20H15V28H19V20H22L23 16H19V13C19 12.7348 19.1054 12.4804 19.2929 12.2929C19.4804 12.1054 19.7348 12 20 12H23V8Z"
@@ -170,8 +165,7 @@ export default function Footer({ refs }: FooterProps) {
                   className="cursor-pointer"
                   onClick={() =>
                     refs.homeRef.current?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
+                  }>
                   Home
                 </div>
                 <div
@@ -180,8 +174,7 @@ export default function Footer({ refs }: FooterProps) {
                     refs.programRef.current?.scrollIntoView({
                       behavior: "smooth",
                     })
-                  }
-                >
+                  }>
                   Program
                 </div>
                 <div
@@ -190,8 +183,7 @@ export default function Footer({ refs }: FooterProps) {
                     refs.aboutRef.current?.scrollIntoView({
                       behavior: "smooth",
                     })
-                  }
-                >
+                  }>
                   About
                 </div>
                 <div
@@ -200,8 +192,7 @@ export default function Footer({ refs }: FooterProps) {
                     refs.venueRef.current?.scrollIntoView({
                       behavior: "smooth",
                     })
-                  }
-                >
+                  }>
                   Venue
                 </div>
                 <div
@@ -210,22 +201,31 @@ export default function Footer({ refs }: FooterProps) {
                     refs.speakersRef.current?.scrollIntoView({
                       behavior: "smooth",
                     })
-                  }
-                >
+                  }>
                   Speaker
                 </div>
                 <div
                   className="cursor-pointer"
                   onClick={() =>
                     refs.faqsRef.current?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
+                  }>
                   FAQs
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-1 grid-rows-1 px-4 text-[15px] md:text-[22px] text-white text-start">
+                <div
+                  className="cursor-pointer"
+                  onClick={() =>
+                    refs.stratplanRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                    })
+                  }>
+                  Strategic Plan
                 </div>
               </div>
             </div>
           </div>
-          <div
+          {/* <div
             className="border-white border-2 rounded-full flex justify-center items-center w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[56px] lg:h-[56px] p-2 absolute top-[60%] right-5 md:top-[65%] md:right-5 lg:top-32 lg:right-10 cursor-pointer"
             onClick={handleScrollToTop}
           >
@@ -251,7 +251,7 @@ export default function Footer({ refs }: FooterProps) {
                 strokeLinejoin="round"
               />
             </svg>
-          </div>
+          </div> */}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center text-white text-center w-full h-[66px] md:h-[108px] lg:h-[58px] text-[13px] md:text-[22px] px-4 bg-[#343434]">
           <div>PHILRICE © 2024. All rights reserved.</div>

@@ -13,11 +13,13 @@ export default function ProgramSched() {
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
     { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
     { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
+    { day: "Day 4", date: "December 6, 2024", program: <Program3 /> },
   ];
   const mobiledays = [
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
     { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
     { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
+    { day: "Day 4", date: "December 6, 2024", program: <Program3 /> },
   ];
 
   const toggleAccordion = (index: any) => {
@@ -40,7 +42,7 @@ export default function ProgramSched() {
       {/* Render the day buttons dynamically */}
       <div className="mt-12 w-11/12">
         {/* For Mobile and Tablet (Accordion) */}
-        <div
+        {/* <div
           id="accordion-collapse"
           data-accordion="collapse"
           className="flex flex-col lg:hidden gap-8">
@@ -86,23 +88,25 @@ export default function ProgramSched() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* For Desktop (Tabs) */}
-        <div className="hidden lg:flex flex-row justify-center items-center gap-4">
+        <div className="flex flex-row justify-center items-center gap-4">
           {days.map((dayItem, index) => (
             <div
               key={index}
-              className={`flex flex-row sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
+              className={`flex flex-row px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
                 activeIndex === index ? "bg-[#EFB71E]" : ""
               } cursor-pointer`}
               onClick={() => setActiveIndex(index)}>
-              <div className="flex items-center justify-center">
-                <MyIcon className="w-8 h-8 sm:w-10 sm:h-10 text-blue-500" />
+              <div className="hidden md:flex items-center justify-center">
+                <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
               </div>
               <div className="flex flex-col justify-center text-white">
-                <div className="text-base sm:text-lg">{dayItem.day}</div>
-                <div className="text-lg sm:text-xl font-bold">
+                <div className="text-[8px] sm:text-[10px] lg:text-[13px]">
+                  {dayItem.day}
+                </div>
+                <div className="text-[10px] sm:text-[12px] lg:text-[15px] font-bold">
                   {dayItem.date}
                 </div>
               </div>
@@ -110,11 +114,11 @@ export default function ProgramSched() {
           ))}
         </div>
       </div>
-      <div className="hidden lg:flex w-full max-w-[1108px] h-[2px] bg-white my-10" />
-      <div className="hidden lg:flex text-white text-center text-[30px] md:text-[35px] lg:text-[40px] font-bold mb-4">
+      <div className="flex w-full max-w-[1108px] h-[2px] bg-white my-10" />
+      <div className="flex text-white text-center text-[30px] md:text-[35px] lg:text-[40px] font-bold mb-4">
         Conference Program
       </div>
-      <div className="hidden lg:flex">{days[activeIndex].program}</div>
+      <div className="flex">{days[activeIndex].program}</div>
     </div>
   );
 }

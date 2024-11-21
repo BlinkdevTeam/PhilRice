@@ -4,6 +4,10 @@ import SpeakerProfile1 from "./Profile/PlenarySession1";
 import SpeakerProfile2 from "./Profile/PlenarySession2";
 import SpeakerProfile3 from "./Profile/PlenarySession3";
 import KeynoteSpeaker from "./Profile/KeynoteSpeaker";
+import MobileP1 from "./Profile/MobilePlenary1";
+import MobileP2 from "./Profile/MobilePlenary2";
+import MobileP3 from "./Profile/MobilePlenary3";
+import MobileKeynote from "./Profile/MobileKeynote";
 import "./speakerpage.css";
 
 export default function SpeakerPagerev() {
@@ -42,32 +46,58 @@ export default function SpeakerPagerev() {
     },
   ];
 
+  const mobilesessions = [
+    {
+      title: "Keynote Speaker",
+      content: <MobileKeynote />,
+    },
+    {
+      title: "Plenary Session 1",
+      subtitle: "Cutting-edge Rice R4D Innovations",
+      content: <MobileP1 />,
+    },
+    {
+      title: "Plenary Session 2",
+      subtitle: "Cutting-edge Rice R4D Innovations",
+      content: <MobileP2 />,
+    },
+    {
+      title: "Plenary Session 3",
+      subtitle: "Cutting-edge Rice R4D Innovations",
+      content: <MobileP3 />,
+    },
+  ];
+
   return (
     <div className="flex flex-col justify-center items-center px-4 w-screen my-24">
       <div className="text-[#0E9046] text-center text-[40px] md:text-[50px] lg:text-[60px] font-bold">
         Speakers and <span className="text-[#F3B71C]">Panelists</span>
       </div>
-      <img src={LeafDivider} alt="Leaf Divider" className="my-4" />
+      <img
+        src={LeafDivider}
+        alt="Leaf Divider"
+        className="my-4 w-[90%] md:w-auto transform transition-transform duration-300 hover:scale-110"
+      />
 
       {/* Accordion for Mobile */}
       <div className="flex flex-col lg:hidden w-full max-w-[800px] gap-8">
-        {sessions.map((session, index) => {
+        {mobilesessions.map((mobilesession, index) => {
           // Generate a unique class name based on the index
-          const sessionClass = `session-${index}`;
+          const mobilesessionClass = `mobilesession-${index}`;
 
           return (
-            <div
-              key={index}
-              className={`border-b border-gray-200 ${sessionClass}`}>
+            <div key={index} className={`border-b ${mobilesessionClass}`}>
               <button
-                className={`flex items-center justify-center w-full p-5 font-medium text-white border border-[#F3B71C] bg-[#F3B71C] rounded-lg ${sessionClass}-button`}
+                className={`flex items-center justify-center w-full p-5 font-medium text-white border border-[#F3B71C] bg-[#F3B71C] rounded-lg ${mobilesessionClass}-button`}
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={openIndex === index}
                 aria-controls={`accordion-content-${index}`}>
                 <span>
-                  {session.title}
-                  {session.subtitle && (
-                    <span className="block text-sm">{session.subtitle}</span>
+                  {mobilesession.title}
+                  {mobilesession.subtitle && (
+                    <span className="block text-sm">
+                      {mobilesession.subtitle}
+                    </span>
                   )}
                 </span>
               </button>
@@ -75,8 +105,8 @@ export default function SpeakerPagerev() {
                 id={`accordion-content-${index}`}
                 className={`${
                   openIndex === index ? "block" : "hidden"
-                } ${sessionClass}-content`}>
-                {session.content}
+                } ${mobilesessionClass}-content`}>
+                {mobilesession.content}
               </div>
             </div>
           );

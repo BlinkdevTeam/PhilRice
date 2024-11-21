@@ -58,16 +58,14 @@ const Navbar = ({ refs }: any) => {
           {/* Register button, visible on both desktop and mobile */}
           <a
             href="https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI"
-            className="bg-[#F3BD1C] text-white font-bold py-2 px-6 lg:px-12 rounded-md hidden"
-          >
+            className="bg-[#F3BD1C] text-white font-bold py-2 px-6 lg:px-12 rounded-md hidden">
             REGISTER
           </a>
 
           {/* Mobile Menu Toggle Button (visible on small screens) */}
           <button
             className="sm:block md:hidden flex items-center"
-            onClick={toggleMobileMenu}
-          >
+            onClick={toggleMobileMenu}>
             <FaBars className="text-white text-3xl" />
           </button>
 
@@ -103,8 +101,7 @@ const Navbar = ({ refs }: any) => {
                         activeButton === section
                           ? "text-[#F3B71C] font-bold text-[14px] py-4"
                           : "text-white text-[14px] font-bold py-4"
-                      } py-2 px-4`}
-                    >
+                      } py-2 px-4`}>
                       {section.toUpperCase()}
                     </button>
                   ))}
@@ -127,8 +124,7 @@ const Navbar = ({ refs }: any) => {
                         label === "REGISTER"
                           ? "bg-[#EFB71E] border-[#EFB71E]"
                           : "bg-transparent"
-                      }`}
-                    >
+                      }`}>
                       {label}
                     </button>
                   ))}
@@ -140,8 +136,7 @@ const Navbar = ({ refs }: any) => {
           {/* Tablet Menu Toggle Button (visible on tablet screens) */}
           <button
             className="hidden md:block lg:hidden items-center"
-            onClick={toggleTabletMenu}
-          >
+            onClick={toggleTabletMenu}>
             <FaBars className="text-white text-3xl" />
           </button>
 
@@ -177,8 +172,7 @@ const Navbar = ({ refs }: any) => {
                         activeButton === section
                           ? "text-[#F3B71C] font-bold text-[16px] py-4"
                           : "text-white text-[16px] font-bold py-4"
-                      } py-2 px-4`}
-                    >
+                      } py-2 px-4`}>
                       {section.toUpperCase()}
                     </button>
                   ))}
@@ -201,8 +195,7 @@ const Navbar = ({ refs }: any) => {
                         label === "REGISTER"
                           ? "bg-[#EFB71E] border-[#EFB71E]"
                           : "bg-transparent"
-                      }`}
-                    >
+                      }`}>
                       {label}
                     </button>
                   ))}
@@ -223,8 +216,7 @@ const Navbar = ({ refs }: any) => {
                   activeButton === section
                     ? "text-[#F3B71C] font-bold"
                     : "text-white"
-                }`}
-              >
+                }`}>
                 {section.toUpperCase()}
               </button>
             ))}
@@ -248,8 +240,7 @@ const Navbar = ({ refs }: any) => {
                   label === "REGISTER"
                     ? "bg-[#EFB71E] border-[#EFB71E]"
                     : "bg-transparent"
-                }`}
-              >
+                }`}>
                 {label}
               </button>
             ))}
