@@ -18,6 +18,7 @@ import SpeakerPage from "./Speaker/SpeakerPage";
 import Booklet from "./StrategicPlanning/Booklet";
 import QrGen from "./QRGen/Qr_Gen";
 import DynamicQR from "./DynamicQR/Dynamic_QR";
+import ProgramSched from "./Conference/ProgramSched";
 
 const Divider = () => (
   <div className="w-11/12 md:w-11/12 lg:w-10/12 h-[2px] bg-[#DDDEDD] my-[40px] mx-auto" />
@@ -74,7 +75,8 @@ export default function App() {
                   <Speaker />
                 </div> */}
                 <div ref={programRef}>
-                  <Conference />
+                  <ProgramSched />
+                  {/* <Conference /> */}
                 </div>
                 <div ref={venueRef}>
                   <Location />
