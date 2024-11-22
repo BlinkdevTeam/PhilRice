@@ -21,7 +21,7 @@ export default function ProgramSched() {
     { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
   ];
   const belowmobiledays = [
-    { day: "1 - 3", date: "December 3 - 5, 2024", program: <Program3 /> },
+    { day: "Day 1 - 3", date: "December 3 - 5, 2024", program: <Program3 /> },
   ];
 
   const toggleAccordion = (index: any) => {
@@ -93,24 +93,24 @@ export default function ProgramSched() {
         </div> */}
 
         {/* For Desktop (Tabs) */}
-        <div className="flex flex-col justify-center item-center gap-4 w-full">
+        <div className="flex flex-row justify-center item-center gap-4 w-full">
           <div className="flex flex-row w-full gap-4 justify-between">
             {days.map((dayItem, index) =>
               index !== 3 ? (
                 <div
                   key={index}
                   className={`flex flex-row px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
-                    activeIndex === index ? "bg-[#EFB71E]" : ""
+                    activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
                   } cursor-pointer`}
                   onClick={() => setActiveIndex(index)}>
                   <div className="hidden md:flex items-center justify-center">
                     <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
                   </div>
                   <div className="flex flex-col justify-center text-white">
-                    <div className="text-[8px] sm:text-[10px] lg:text-[13px]">
+                    <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px]">
                       {dayItem.day}
                     </div>
-                    <div className="text-[10px] sm:text-[12px] lg:text-[15px] font-bold">
+                    <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
                       {dayItem.date}
                     </div>
                   </div>
@@ -124,7 +124,7 @@ export default function ProgramSched() {
                 <div
                   key={index}
                   className={`flex flex-row w-full px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
-                    activeIndex === index ? "bg-[#EFB71E]" : ""
+                    activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
                   } cursor-pointer`}
                   onClick={() => setActiveIndex(index)}>
                   <div className="hidden md:flex items-center justify-center">

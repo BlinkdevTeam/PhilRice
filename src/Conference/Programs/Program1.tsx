@@ -81,21 +81,20 @@ export default function Program1() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center p-4">
+    <div className="flex flex-col justify-start items-start md:justify-center md:items-center p-4">
       {programItems.map((item, index) => (
         <div
           key={index}
-          className="w-full max-w-[1108px] h-auto py-8 bg-white mb-4 relative rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
-        >
-          <div className="bg-[#EFB71E] text-white rounded-xl font-bold text-[18px] md:text-22px] lg:text-[35px] w-auto h-auto px-4 py-4 flex justify-center absolute top-[50px] left-0 transform -translate-x-1/2 -translate-y-1/2">
+          className="w-full max-w-[1108px] h-auto md:py-8 bg-white mb-4 relative rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 overflow-hidden">
+          <div className="bg-[#EFB71E] text-white md:rounded-xl font-bold text-[10px] md:text-22px] lg:text-[35px] w-auto h-auto px-4 py-2 md:py-4 flex md:justify-center md:absolute md:top-[50px] md:left-0 md:transform md:-translate-x-1/2 md:-translate-y-1/2">
             {item.time}
           </div>
-          <div className="flex flex-col justify-center pl-[72px] md:pl-[122px] lg:pl-[172px] pr-4">
-            <div className="text-[18px] md:text-22px] lg:text-[35px] text-[#0E9046] font-bold">
+          <div className="flex flex-col justify-center py-2 md:py-0 pl-[14px] md:pl-[122px] lg:pl-[172px] pr-4">
+            <div className="text-[12px] md:text-22px] lg:text-[35px] text-[#0E9046] font-bold">
               {item.title}
             </div>
             {item.speaker && (
-              <div className="text-[14px] md:text-18px] lg:text-[22px] font-bold text-[#202020]">
+              <div className="text-[10px] md:text-18px] lg:text-[22px] font-bold text-[#202020]">
                 {/* Render speakers as bullet points if it's an array */}
                 {Array.isArray(item.speaker) ? (
                   <ul className="list-disc pl-5">
@@ -109,7 +108,7 @@ export default function Program1() {
               </div>
             )}
             {item.description && (
-              <div className="text-[14px] md:text-18px] lg:text-[22px] text-[#202020]">
+              <div className="text-[9px] md:text-18px] lg:text-[22px] text-[#202020]">
                 {/* Render speakers as bullet points if it's an array */}
                 {Array.isArray(item.description) ? (
                   <>
