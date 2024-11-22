@@ -13,7 +13,7 @@ export default function ProgramSched() {
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
     { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
     { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
-    { day: "1 - 3", date: "December 3 - 5, 2024", program: <Program3 /> },
+    { day: "Day 1 - 3", date: "December 3 - 5, 2024", program: <Program3 /> },
   ];
   const mobiledays = [
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
@@ -93,24 +93,24 @@ export default function ProgramSched() {
         </div> */}
 
         {/* For Desktop (Tabs) */}
-        <div className="flex flex-row justify-center item-center gap-4 w-full">
+        <div className="flex flex-row justify-center item-center gap-7 w-full">
           <div className="flex flex-row w-full gap-4 justify-between">
             {days.map((dayItem, index) =>
               index !== 3 ? (
                 <div
                   key={index}
-                  className={`flex flex-row px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
+                  className={`flex flex-row px-2 sm:px-[24px] lg:px-16 py-3 gap-1 lg:gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
                     activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
                   } cursor-pointer`}
                   onClick={() => setActiveIndex(index)}>
-                  <div className="hidden md:flex items-center justify-center">
+                  <div className="flex items-center justify-center">
                     <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
                   </div>
                   <div className="flex flex-col justify-center text-white">
                     <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px]">
                       {dayItem.day}
                     </div>
-                    <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
+                    <div className="hidden lg:flex text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
                       {dayItem.date}
                     </div>
                   </div>
@@ -118,7 +118,7 @@ export default function ProgramSched() {
               ) : null
             )}
           </div>
-          <div className="flex w-full">
+          <div className="flex w-5/12">
             {days.map((dayItem, index) =>
               index === 3 ? (
                 <div
@@ -127,14 +127,14 @@ export default function ProgramSched() {
                     activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
                   } cursor-pointer`}
                   onClick={() => setActiveIndex(index)}>
-                  <div className="hidden md:flex items-center justify-center">
+                  <div className="flex items-center justify-center">
                     <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
                   </div>
-                  <div className="flex flex-col md:flex-row justify-start items-start md:justify-center md:items-center md:gap-8 text-white">
+                  <div className="flex flex-col md:flex-row justify-center items-start md:justify-center md:items-center md:gap-8 text-white">
                     <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px]">
                       {dayItem.day}
                     </div>
-                    <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
+                    <div className="hidden lg:flex text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
                       {dayItem.date}
                     </div>
                   </div>
