@@ -13,13 +13,15 @@ export default function ProgramSched() {
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
     { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
     { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
-    { day: "Day 4", date: "December 6, 2024", program: <Program3 /> },
+    { day: "1 - 3", date: "December 3 - 5, 2024", program: <Program3 /> },
   ];
   const mobiledays = [
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
     { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
     { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
-    { day: "Day 4", date: "December 6, 2024", program: <Program3 /> },
+  ];
+  const belowmobiledays = [
+    { day: "1 - 3", date: "December 3 - 5, 2024", program: <Program3 /> },
   ];
 
   const toggleAccordion = (index: any) => {
@@ -40,7 +42,7 @@ export default function ProgramSched() {
         {/* Placeholder for subtitle */}
       </div>
       {/* Render the day buttons dynamically */}
-      <div className="mt-12 w-11/12">
+      <div className="mt-12 w-full flex flex-col gap-4">
         {/* For Mobile and Tablet (Accordion) */}
         {/* <div
           id="accordion-collapse"
@@ -91,27 +93,55 @@ export default function ProgramSched() {
         </div> */}
 
         {/* For Desktop (Tabs) */}
-        <div className="flex flex-row justify-center items-center gap-4">
-          {days.map((dayItem, index) => (
-            <div
-              key={index}
-              className={`flex flex-row px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
-                activeIndex === index ? "bg-[#EFB71E]" : ""
-              } cursor-pointer`}
-              onClick={() => setActiveIndex(index)}>
-              <div className="hidden md:flex items-center justify-center">
-                <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
-              </div>
-              <div className="flex flex-col justify-center text-white">
-                <div className="text-[8px] sm:text-[10px] lg:text-[13px]">
-                  {dayItem.day}
+        <div className="flex flex-col justify-center item-center gap-4 w-full">
+          <div className="flex flex-row w-full gap-4 justify-between">
+            {days.map((dayItem, index) =>
+              index !== 3 ? (
+                <div
+                  key={index}
+                  className={`flex flex-row px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
+                    activeIndex === index ? "bg-[#EFB71E]" : ""
+                  } cursor-pointer`}
+                  onClick={() => setActiveIndex(index)}>
+                  <div className="hidden md:flex items-center justify-center">
+                    <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
+                  </div>
+                  <div className="flex flex-col justify-center text-white">
+                    <div className="text-[8px] sm:text-[10px] lg:text-[13px]">
+                      {dayItem.day}
+                    </div>
+                    <div className="text-[10px] sm:text-[12px] lg:text-[15px] font-bold">
+                      {dayItem.date}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-[10px] sm:text-[12px] lg:text-[15px] font-bold">
-                  {dayItem.date}
+              ) : null
+            )}
+          </div>
+          <div className="flex w-full">
+            {days.map((dayItem, index) =>
+              index === 3 ? (
+                <div
+                  key={index}
+                  className={`flex flex-row w-full px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
+                    activeIndex === index ? "bg-[#EFB71E]" : ""
+                  } cursor-pointer`}
+                  onClick={() => setActiveIndex(index)}>
+                  <div className="hidden md:flex items-center justify-center">
+                    <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
+                  </div>
+                  <div className="flex flex-col md:flex-row justify-start items-start md:justify-center md:items-center md:gap-8 text-white">
+                    <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px]">
+                      {dayItem.day}
+                    </div>
+                    <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
+                      {dayItem.date}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              ) : null
+            )}
+          </div>
         </div>
       </div>
       <div className="flex w-full max-w-[1108px] h-[2px] bg-white my-10" />
