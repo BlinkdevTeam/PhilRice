@@ -13,7 +13,7 @@ const Modal = ({ isOpen, onClose, speaker }: any) => {
     <div
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
       onClick={handleOutsideClick}>
-      <div className="relative bg-white flex mt-40 md:mt-0 flex-col md:flex-row rounded-tr-[80px] shadow-lg w-[298px] md:w-[90%] h-[550px] md:h-[374px] lg:h-[518px]">
+      <div className="relative bg-white flex mt-40 md:mt-0 flex-col md:flex-row rounded-tr-[80px] shadow-lg w-[298px] md:w-[90%] h-[450px] md:h-[374px] lg:h-[518px]">
         <div
           className="absolute top-6 right-8 cursor-pointer"
           onClick={onClose}>
