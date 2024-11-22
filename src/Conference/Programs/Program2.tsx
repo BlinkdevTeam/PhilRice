@@ -138,7 +138,7 @@ export default function Program1() {
                 {/* Render speakers as bullet points if it's an array */}
                 {Array.isArray(item.description) ? (
                   <>
-                    <div className="flex flex-col lg:flex-row gap-5">
+                    <div className="flex flex-col lg:flex-row gap-5 px-0">
                       <div className="">Panelist: </div>
                       <ul className="list-disc pl-5 font-bold">
                         {item.description.map((description, i) => (
