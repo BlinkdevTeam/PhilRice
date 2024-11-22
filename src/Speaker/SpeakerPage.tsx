@@ -29,7 +29,7 @@ export default function SpeakerPage() {
           <div className="font-bold text-[#0E9046] text-[20px] md:text-[35px] lg:text-[40px] mt-20">
             Keynote Speaker
           </div>
-          <div>
+          <div className="-mt-8 md:mt-0">
             <KeynoteSpeaker />
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function SpeakerPage() {
             <br />
             Cutting-edge Rice R4D Innovations
           </div>
-          <div className="mt-[300px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+          <div className="mt-[250px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
             <SpeakerProfile1 />
           </div>
         </div>
@@ -47,9 +47,10 @@ export default function SpeakerPage() {
           <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
             <span className="text-[#0E9046]">Plenary Session 2</span>
             <br />
-            Cutting-edge Rice R4D Innovations
+            CRCEF Outcomes, Impact, Success Stories,
+            <br /> Innovations, and Future Directions
           </div>
-          <div className="mt-[100px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+          <div className="mt-[200px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
             <SpeakerProfile2 />
           </div>
         </div>
@@ -57,9 +58,10 @@ export default function SpeakerPage() {
           <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
             <span className="text-[#0E9046]">Plenary Session 3</span>
             <br />
-            Cutting-edge Rice R4D Innovations
+            Co-creating the Future: Farmer-centered <br /> Innovations and Youth
+            Empowerment
           </div>
-          <div className="mt-[100px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
+          <div className="mt-[250px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
             <SpeakerProfile3 />
           </div>
         </div>

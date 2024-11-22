@@ -4,6 +4,7 @@ import { ReactComponent as MyIcon } from "../Assets/Icons/calendar.svg";
 import Program1 from "./Programs/Program1";
 import Program2 from "./Programs/Program2";
 import Program3 from "./Programs/Program3";
+import ProgramSum from "./Programs/ProgramSum";
 
 export default function ProgramSched() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -13,7 +14,7 @@ export default function ProgramSched() {
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
     { day: "Day 2", date: "December 4, 2024", program: <Program2 /> },
     { day: "Day 3", date: "December 5, 2024", program: <Program3 /> },
-    { day: "Day 1 - 3", date: "December 3 - 5, 2024", program: <Program3 /> },
+    { day: "Day 1 - 3", date: "December 3 - 5, 2024", program: <ProgramSum /> },
   ];
   const mobiledays = [
     { day: "Day 1", date: "December 3, 2024", program: <Program1 /> },
@@ -36,13 +37,13 @@ export default function ProgramSched() {
       <img
         src={LeafDivider}
         alt="Leaf Divider"
-        className="my-4 w-[90%] md:w-auto transform transition-transform duration-300 hover:scale-110"
+        className="my-6 w-[80%] md:w-auto transform transition-transform duration-300 hover:scale-110"
       />
       <div className="text-center text-white text-lg sm:text-xl w-full max-w-[866px]">
         {/* Placeholder for subtitle */}
       </div>
       {/* Render the day buttons dynamically */}
-      <div className="mt-12 w-full flex flex-col gap-4">
+      <div className="mt-12 w-full flex flex-col justify-center items-center gap-4">
         {/* For Mobile and Tablet (Accordion) */}
         {/* <div
           id="accordion-collapse"
@@ -91,14 +92,65 @@ export default function ProgramSched() {
             </div>
           ))}
         </div> */}
+        {/*MOBILE REV*/}
+        <div className="flex flex-col xl:hidden justify-center item-center gap-2 w-[70%]">
+          <div className="flex flex-row w-full gap-[5px] justify-between">
+            {days.map((dayItem, index) =>
+              index !== 3 ? (
+                <div
+                  key={index}
+                  className={`flex flex-row justify-center item-center w-[100%] px-2 sm:px-[24px] lg:px-4 py-3 gap-[10px] lg:gap-4 rounded-[5px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
+                    activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
+                  } cursor-pointer`}
+                  onClick={() => setActiveIndex(index)}>
+                  {/* <div className="flex items-center justify-center">
+                    <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
+                  </div> */}
+                  <div className="flex flex-col justify-center text-white">
+                    {/* <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[16px]">
+                      {dayItem.day}
+                    </div> */}
+                    <div className="flex text-[9px] sm:text-[11px] md:text-[16px] lg:text-[18px] font-bold">
+                      {dayItem.date}
+                    </div>
+                  </div>
+                </div>
+              ) : null
+            )}
+          </div>
+          <div className="flex w-full">
+            {days.map((dayItem, index) =>
+              index === 3 ? (
+                <div
+                  key={index}
+                  className={`flex flex-row justify-center items-center w-full px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[5px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
+                    activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
+                  } cursor-pointer`}
+                  onClick={() => setActiveIndex(index)}>
+                  {/* <div className="flex items-center justify-center">
+                    <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
+                  </div> */}
+                  <div className="flex flex-col md:flex-row justify-center items-start md:justify-center md:items-center md:gap-8 text-white">
+                    {/* <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px]">
+                      {dayItem.day}
+                    </div> */}
+                    <div className="flex text-[9px] sm:text-[11px] md:text-[16px] lg:text-[18px] font-bold">
+                      {dayItem.date}
+                    </div>
+                  </div>
+                </div>
+              ) : null
+            )}
+          </div>
+        </div>
 
         {/* For Desktop (Tabs) */}
-        <div className="flex flex-row justify-center item-center gap-2 w-full">
+        <div className="hidden xl:flex xl:flex-row justify-center item-center gap-2 w-[70%]">
           <div className="flex flex-row w-full gap-[5px] justify-between">
             {days.map((dayItem, index) => (
               <div
                 key={index}
-                className={`flex flex-row w-[100%] px-2 sm:px-[24px] lg:px-16 py-2 gap-[10px] lg:gap-4 rounded-[5px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
+                className={`flex flex-row w-[100%] px-2 sm:px-[24px] lg:px-4 py-2 gap-[10px] lg:gap-4 rounded-[5px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
                   activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
                 } cursor-pointer`}
                 onClick={() => setActiveIndex(index)}>
@@ -106,10 +158,10 @@ export default function ProgramSched() {
                   <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
                 </div>
                 <div className="flex flex-col justify-center text-white">
-                  <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px]">
+                  <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[16px]">
                     {dayItem.day}
                   </div>
-                  <div className="hidden lg:flex text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
+                  <div className="flex text-[9px] sm:text-[10px] md:text-[12px] lg:text-[18px] font-bold">
                     {dayItem.date}
                   </div>
                 </div>

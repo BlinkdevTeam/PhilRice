@@ -12,20 +12,17 @@ const Modal = ({ isOpen, onClose, speaker }: any) => {
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-      onClick={handleOutsideClick}
-    >
+      onClick={handleOutsideClick}>
       <div className="relative bg-white flex mt-40 md:mt-0 flex-col md:flex-row rounded-tr-[80px] shadow-lg w-[298px] md:w-[90%] h-[550px] md:h-[374px] lg:h-[518px]">
         <div
           className="absolute top-6 right-8 cursor-pointer"
-          onClick={onClose}
-        >
+          onClick={onClose}>
           <svg
             width="36"
             height="36"
             viewBox="0 0 36 36"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+            xmlns="http://www.w3.org/2000/svg">
             <path
               d="M8.48542 26.8701L26.1631 9.19238"
               stroke="#0E9046"
@@ -47,11 +44,10 @@ const Modal = ({ isOpen, onClose, speaker }: any) => {
             <img
               src={speaker.image}
               alt={speaker.name}
-              className="absolute bottom-0 w-full h-auto rounded-bl-[80px]"
+              className="absolute bottom-16 w-full h-auto rounded-bl-[80px]"
             />
             <div className="absolute bottom-28 md:bottom-36 left-0 w-40 h-2 bg-[#EFB71E]" />
             <div className="absolute text-[15px] md:text-[22px] bottom-0 flex flex-col justify-center items-center text-center text-white bg-[#0E9046] w-full h-[115.64px] md:h-[147px] rounded-bl-[80px] px-2">
-              His Excellency
               <div className="text-[22px] md:text-[30px] font-bold">
                 {speaker.name}
               </div>

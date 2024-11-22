@@ -87,8 +87,8 @@ const Navbar = ({ refs }: any) => {
                   {[
                     "home",
                     "about",
-                    // "speakers",
-                    // "program",
+                    "speakers",
+                    "program",
                     "venue",
                     "stratplan",
                     "faqs",
@@ -159,8 +159,8 @@ const Navbar = ({ refs }: any) => {
                   {[
                     "home",
                     "about",
-                    // "speakers",
-                    // "program",
+                    "speakers",
+                    "program",
                     "venue",
                     "stratplan",
                     "faqs",
@@ -207,8 +207,16 @@ const Navbar = ({ refs }: any) => {
           )}
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex space-x-8 text-[16px]">
-            {["home", "about", "venue", "stratplan", "faqs"].map((section) => (
+          <div className="hidden lg:flex lg:space-x-6 xl:space-x-8 lg:text-[14px] xl:text-[16px]">
+            {[
+              "home",
+              "about",
+              "speakers",
+              "program",
+              "venue",
+              "stratplan",
+              "faqs",
+            ].map((section) => (
               <button
                 key={section}
                 onClick={() =>
@@ -225,7 +233,7 @@ const Navbar = ({ refs }: any) => {
           </div>
 
           {/* Register, QR button, visible only on desktop */}
-          <div className="flex-row justify-center items-center px-4 font-bold text-[16px] hidden lg:block">
+          <div className="flex-row justify-center items-center font-bold lg:text-[14px] xl:text-[16px] hidden lg:block">
             {buttons.map((label, index) => (
               <button
                 key={index}
@@ -238,7 +246,7 @@ const Navbar = ({ refs }: any) => {
                   }
                   handleCloseMenu();
                 }}
-                className={`w-auto border-solid border-[2px] px-4 py-2 mx-2 text-white rounded-md ${
+                className={`w-auto border-solid border-[2px] px-2 py-2 mx-2 text-white rounded-md ${
                   label === "REGISTER"
                     ? "bg-[#EFB71E] border-[#EFB71E]"
                     : "bg-transparent"
