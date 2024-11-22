@@ -69,6 +69,7 @@ export default function QrGen() {
     setLoading(true);
     const usersRef = ref(database, "users");
 
+    console.log("userRef", usersRef)
     try {
       const snapshot = await get(usersRef);
       if (snapshot.exists()) {
