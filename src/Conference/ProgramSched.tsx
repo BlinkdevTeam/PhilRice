@@ -93,32 +93,30 @@ export default function ProgramSched() {
         </div> */}
 
         {/* For Desktop (Tabs) */}
-        <div className="flex flex-row justify-center item-center gap-7 w-full">
-          <div className="flex flex-row w-full gap-4 justify-between">
-            {days.map((dayItem, index) =>
-              index !== 3 ? (
-                <div
-                  key={index}
-                  className={`flex flex-row px-2 sm:px-[24px] lg:px-16 py-3 gap-1 lg:gap-4 rounded-[10px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
-                    activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
-                  } cursor-pointer`}
-                  onClick={() => setActiveIndex(index)}>
-                  <div className="flex items-center justify-center">
-                    <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
+        <div className="flex flex-row justify-center item-center gap-2 w-full">
+          <div className="flex flex-row w-full gap-[5px] justify-between">
+            {days.map((dayItem, index) => (
+              <div
+                key={index}
+                className={`flex flex-row w-[100%] px-2 sm:px-[24px] lg:px-16 py-2 gap-[10px] lg:gap-4 rounded-[5px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
+                  activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
+                } cursor-pointer`}
+                onClick={() => setActiveIndex(index)}>
+                <div className="flex items-center justify-center">
+                  <MyIcon className="w-4 h-4 sm:w-10 sm:h-10 text-blue-500" />
+                </div>
+                <div className="flex flex-col justify-center text-white">
+                  <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px]">
+                    {dayItem.day}
                   </div>
-                  <div className="flex flex-col justify-center text-white">
-                    <div className="text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px]">
-                      {dayItem.day}
-                    </div>
-                    <div className="hidden lg:flex text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
-                      {dayItem.date}
-                    </div>
+                  <div className="hidden lg:flex text-[9px] sm:text-[10px] md:text-[12px] lg:text-[13px] font-bold">
+                    {dayItem.date}
                   </div>
                 </div>
-              ) : null
-            )}
+              </div>
+            ))}
           </div>
-          <div className="flex w-5/12">
+          {/* <div className="flex w-5/12">
             {days.map((dayItem, index) =>
               index === 3 ? (
                 <div
@@ -141,7 +139,7 @@ export default function ProgramSched() {
                 </div>
               ) : null
             )}
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex w-full max-w-[1108px] h-[2px] bg-white my-10" />
