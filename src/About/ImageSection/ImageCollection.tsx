@@ -35,30 +35,37 @@ export default function ImageCollection() {
           onClick={() => openOverlay(Image2)}
         />
       </div>
+      
+      <div className="bg-gray-500 overflow-hidden">
+        <img
+          src={Image3}
+          className="object-cover w-full h-full cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          alt="Ugnay Palay Banner"
+          onClick={() => openOverlay(Image2)}
+        />
+      </div>
 
-      <div className="bg-gray-600 overflow-hidden">
+      {/* <div className="bg-gray-600 overflow-hidden">
         <img
           src={Image3}
           className="object-cover w-full h-full cursor-pointer transform transition-transform duration-300 hover:scale-105"
           alt="Ugnay Palay Banner"
           onClick={() => openOverlay(Image3)}
         />
-      </div>
+      </div> */}
       {isOverlayOpen && selectedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-          onClick={closeOverlay}
-        >
+          onClick={closeOverlay}>
           <button
             onClick={closeOverlay}
-            className="absolute top-2 right-2 text-white text-2xl font-bold"
-          >
+            className="absolute top-2 right-2 text-white text-2xl font-bold">
             &times;
           </button>
           <img
             src={selectedImage}
             alt="Full-size Ugnay Palay Banner"
-            className="w-[] md:w-[70%] lg:w-[50%] h-auto"
+            className="w-[90%] md:w-[70%] lg:w-[50%] h-auto"
           />
         </div>
       )}
