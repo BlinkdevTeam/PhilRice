@@ -31,7 +31,7 @@ export default function Program1() {
     {
       time: "09:00 AM",
       title:
-        "Evaluation and Case Studies: Key Service Delivery Mechanisms in the RCEF Implementation (progress results)",
+        "Evaluation and Case Studies: Key Service Delivery Mechanisms in the RCEF Implementation",
       speaker: "Ms. Hazel A. Tanchuling",
       description: "Executive Director, Rice Watch Action Network",
     },
@@ -64,7 +64,7 @@ export default function Program1() {
     {
       time: "01:30 PM",
       title:
-        "PLENARY SESSION 3.  Co-creating the Future: Farmer-centered Innovations and Youth Empowerment",
+        "PLENARY SESSION 3. Co-creating the Future: Farmer-Centered Innovations and Youth Empowerment",
       speaker: "Chair: Ms. Lea D. Abaoag",
     },
     {
@@ -77,7 +77,7 @@ export default function Program1() {
     },
     {
       time: "01:50 PM",
-      title: "Youth in Agriculture and Innovative Solutions ",
+      title: "Investing in Youth towards a Sustainable Future for Farming",
       speaker: "Ms. Irene B. Dumlao",
       description: "Assistant Secretary, DSWD",
     },

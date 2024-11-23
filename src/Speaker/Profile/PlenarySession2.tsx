@@ -18,7 +18,8 @@ const speakersData = [
     image: Speaker2,
     name: "Ms. Hazel A. Tanchuling",
     description: "Executive Director, Rice Watch <br> Action Network",
-    title: "",
+    title:
+      "Evaluation and Case Studies: Key Service Delivery Mechanisms in the RCEF Implementation",
     content:
       "Hazel A. Tanchuling, a 1993 BS Community Development graduate from UP Diliman, has led the Rice Watch Action Network (R1) since its founding in 2004. She also chairs the Philippine Council for Agriculture and Fisheries (PCAF) National Sectoral Committee on Rice and serves as Interim Chair of the Gender Equality and Social Inclusion Committee.  She is a Council Member (NGO Sector) of the National Anti-Poverty Commission. With 30 years of experience, her work focuses on rural development, agriculture policy, governance, public advocacies, sustainable livelihoods, food security, and climate change adaptation in agriculture. She received the 2022 Pillar of Agriculture and Fisheries Award from DA-PCAF and the 2015 Wind Vane Award from DOST-PAGASA. Under her leadership, R1 gained international recognition for climate change efforts.  In 2020, it was named one of Start Network’s 10 International Change-Makers and won the Lasting Systemic Change Award R1’s Climate Information Services and Climate-Resiliency Field School program was also a finalist for the 2018 Gender-Just Climate Solutions Award (Transformational Solutions Category) given by the Women and Gender Constituency of the UN Framework Convention on Climate Change (UNFCCC).",
   },

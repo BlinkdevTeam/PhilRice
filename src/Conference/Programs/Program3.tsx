@@ -35,9 +35,11 @@ export default function Program1() {
       title: "CLOSING PROGRAM",
       speaker: [
         "Master of Ceremonies:	 Ms. Leylani M. Juliano",
-        "Synthesis: Mr. Joselito A. Kalaw Head, Corporate Services Division, DA-PhilRice",
+        "Launch of DA-PhilRice Blockbuster Innovations: Dr. Karen Eloisa T. Barroga, Deputy Executive Director for Development, DA-PhilRice",
+        "Synthesis: Mr. Joselito A. Kalaw, Head Corporate Services Division, DA-PhilRice",
         "Awarding of Best Papers and Posters",
-        "Vote of thanks: Dr. John C. de Leon Executive Director, DA-PhilRice",
+        "Vote of thanks: Dr. John C. de Leon, Executive Director, DA-PhilRice",
+        "DA-PhilRice Jingle: PalayMusika Chorale Ensemble",
       ],
     },
     {

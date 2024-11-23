@@ -11,7 +11,8 @@ export default function Program1() {
       time: "09:00 AM",
       title: "Opening Program",
       speaker: [
-        "Doxology and National Anthem",
+        "Invocation",
+        "National Anthem",
         "Welcome Remarks and Introduction of the Guest of Honor and Keynote Speaker",
         "Message of the Guest of Honor and Keynote Speaker",
         "Turnover of BPI Foundation Grant for the RiceBIS Community in Masbate",
@@ -30,20 +31,21 @@ export default function Program1() {
     },
     {
       time: "10:30 AM",
-      title: "Filipinnovation and its enabling environment",
+      title: "National Innovation Agenda and Strategy Document 2023-2032",
       speaker: "Ms. Dianne Gail L. Maharjan",
       description: "Director, NEDA Innovation Staff",
     },
     {
       time: "10:50 AM",
-      title: "DOST-PCAARRD’s R&D initiatives",
+      title: "DOST-PCAARRD Rice Industry Strategic S&T Program",
       speaker: "Ms. Leilani D. Pelegrina",
       description:
         "Director, Crops Research Division DOST-Philippine Council for Agriculture, Aquatic, and Natural Resources Research and Development (DOST-PCAARRD)",
     },
     {
       time: "11:10 AM",
-      title: "JIRCAS R&D Thrusts",
+      title:
+        "Introduction of Breeding Strategies to Reduce the Amount of Fertilizer Used in Rice Cultivation",
       speaker: "Dr. Mitsuhiro Obara",
       description:
         "Senior  ResearcherJapan International Research Center for Agricultural Sciences (JIRCAS)",
@@ -64,6 +66,7 @@ export default function Program1() {
         "Dr. Junel B. Soriano, DA-BAR",
         "Ms. Andrea Marie S. Dizon, Davao Beta Spring Inc.",
         "Mr. Ramon T. Lim, DA-PhilRice Trustee",
+        "Dr. Karen Eloisa T. Barroga, DA-PhilRice",
       ],
     },
     {
