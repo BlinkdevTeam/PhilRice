@@ -85,7 +85,7 @@ export default function Program1() {
       {programItems.map((item, index) => (
         <div
           key={index}
-          className="w-9/12 xl:w-full max-w-[1108px] h-auto md:py-8 bg-white mb-4 relative rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 overflow-hidden md:overflow-visible">
+          className="w-11/12 xl:w-full max-w-[1108px] h-auto md:py-8 bg-white mb-4 relative rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 overflow-hidden md:overflow-visible">
           <div className="bg-[#EFB71E] text-white md:rounded-xl font-bold text-[10px] md:text-[22px] lg:text-[22px] xl:text-[35px] w-auto h-auto px-4 py-2 md:py-4 flex md:justify-center md:absolute md:top-[50px] md:left-0 md:transform md:-translate-x-1/2 md:-translate-y-1/2">
             {item.time}
           </div>
