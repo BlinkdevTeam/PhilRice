@@ -41,7 +41,7 @@ export default function ImageCollection() {
           src={Image3}
           className="object-cover w-full h-full cursor-pointer transform transition-transform duration-300 hover:scale-105"
           alt="Ugnay Palay Banner"
-          onClick={() => openOverlay(Image2)}
+          onClick={() => openOverlay(Image3)}
         />
       </div>
 
