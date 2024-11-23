@@ -82,8 +82,8 @@ export default function QrGen() {
           const user = childSnapshot.val();
           if (user.email === email) {
             userFound = true;
-            userFirstName = user.firstNameColumn; // Correct property for first name
-            userLastName = user.lastNameColumn; // Correct property for last name
+            userFirstName = user.firstName; // Correct property for first name
+            userLastName = user.lastName; // Correct property for last name
             userAffiliation = user.affiliationName || user.philriceName; // Fallback to "philriceName"
             userUnit = user.philriceUnit; // Correct property for unit
           }
@@ -194,10 +194,10 @@ export default function QrGen() {
                 id="qr-section"
                 className="flex flex-col items-center mb-8 min-w-[320px] max-w-[375px] h-[608px]">
                 <div className="flex flex-col items-center mt-8 font-bold">
-                  <div className="absolute z-30 mt-[100px] text-[#0C6972] text-2xl mr-2">
+                  <div className="absolute z-30 mt-[95px] text-[#0C6972] text-xl mr-2">
                     YOU'RE ALL SET!
                   </div>
-                  <div className="absolute z-30 mt-[130px] text-sm flex flex-col items-center justify-center text-center mr-2">
+                  <div className="absolute z-30 mt-[125px] text-sm flex flex-col items-center justify-center text-center mr-2">
                     {firstname && lastname
                       ? `${firstname} ${lastname}`
                       : "Guest"}{" "}
