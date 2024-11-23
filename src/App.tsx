@@ -110,7 +110,7 @@ export default function App() {
           <Footer refs={refs} />
         </div>
         <div
-          className="border-[#F3B71C] border-2 rounded-full flex justify-center items-center w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[56px] lg:h-[56px] p-2 cursor-pointer fixed bottom-8 right-8"
+          className="bg-[#000000] bg-opacity-50 rounded-lg flex justify-center items-center w-[33px] h-[33px] md:w-[53px] md:h-[53px] lg:w-[56px] lg:h-[56px] p-2 cursor-pointer fixed bottom-8 right-8"
           onClick={handleScrollToTop}>
           <svg
             width="26"
@@ -120,14 +120,14 @@ export default function App() {
             xmlns="http://www.w3.org/2000/svg">
             <path
               d="M13 26.8425V2.63867"
-              stroke="#F3B71C"
+              stroke="white"
               strokeWidth="5"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M1 13.2858L13 1.66797L25 13.2858"
-              stroke="#F3B71C"
+              stroke="white"
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"

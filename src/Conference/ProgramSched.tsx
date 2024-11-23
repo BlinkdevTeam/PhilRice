@@ -124,7 +124,7 @@ export default function ProgramSched() {
                 <div
                   key={index}
                   className={`flex flex-row justify-center items-center w-full px-2 sm:px-[24px] lg:px-16 py-3 gap-4 rounded-[5px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
-                    activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
+                    activeIndex === index ? "bg-[#F4CC5E]" : "bg-[#F4CC5E]"
                   } cursor-pointer`}
                   onClick={() => setActiveIndex(index)}>
                   {/* <div className="flex items-center justify-center">
@@ -151,7 +151,11 @@ export default function ProgramSched() {
               <div
                 key={index}
                 className={`flex flex-row w-[100%] px-2 sm:px-[24px] lg:px-4 py-2 gap-[10px] lg:gap-4 rounded-[5px] hover:border-white hover:border-b hover:transition-all ease-in-out duration-100 ${
-                  activeIndex === index ? "bg-[#EFB71E]" : "bg-[#EFB71E]"
+                  index === 3
+                    ? "bg-[#F4CC5E]"
+                    : activeIndex === index
+                    ? "bg-[#EFB71E]"
+                    : "bg-[#EFB71E]"
                 } cursor-pointer`}
                 onClick={() => setActiveIndex(index)}>
                 <div className="flex items-center justify-center">

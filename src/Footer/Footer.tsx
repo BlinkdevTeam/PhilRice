@@ -20,7 +20,7 @@ export default function Footer({ refs }: FooterProps) {
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // This adds a smooth scrolling animation
+      behavior: "smooth",
     });
   };
 
