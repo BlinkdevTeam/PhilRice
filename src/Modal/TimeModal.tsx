@@ -50,19 +50,25 @@ const TimeCount = () => {
       <h1 className="text-center text-white text-[18px] md:text-[25px] lg:text-[32px] font-bold">
         Event Starts On
       </h1>
-      <div className="flex flex-row justify-center text-[30px] sm:text-[50px] md:text-[50px] lg:text-[80px]">
+      <div className="flex flex-row justify-start text-[30px] sm:text-[50px] md:text-[50px] lg:text-[80px]">
         <TimeUnit value={timeRemaining.days} label="Days" />
-        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold">:</p>
+        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
+          :
+        </p>
         <TimeUnit
           value={String(timeRemaining.hours).padStart(2, "0")}
           label="Hours"
         />
-        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold">:</p>
+        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
+          :
+        </p>
         <TimeUnit
           value={String(timeRemaining.minutes).padStart(2, "0")}
           label="Minutes"
         />
-        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold">:</p>
+        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
+          :
+        </p>
         <TimeUnit
           value={String(timeRemaining.seconds).padStart(2, "0")}
           label="Seconds"
