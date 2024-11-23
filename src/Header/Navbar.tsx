@@ -50,7 +50,10 @@ const Navbar = ({ refs }: any) => {
             src={Logo}
             alt="PhilRice Logo"
             className="h-10 cursor-pointer"
-            onClick={handleScrollToTop}
+            onClick={() => {
+              navigate("/");
+              handleScrollToTop();
+            }} // Redirect to the root page
           />
         </div>
 
