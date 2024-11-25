@@ -197,15 +197,22 @@ export default function QrGen() {
                 id="qr-section"
                 className="flex flex-col items-center mb-8 min-w-[320px] max-w-[375px] h-[608px]">
                 <div className="flex flex-col items-center mt-8 font-bold">
-                  <div className="absolute z-30 mt-[95px] text-[#0C6972] text-xl mr-2">
+                  <div className="absolute z-30 mt-[95px] text-[#0C6972] text-md mr-2">
                     YOU'RE ALL SET!
                   </div>
-                  <div className="absolute z-30 mt-[125px] text-sm flex flex-col items-center justify-center text-center mr-2">
+                  <div className="absolute z-30 mt-[120px] text-md flex flex-col items-center justify-center text-center mr-2">
                     {firstname && lastname
                       ? `${firstname} ${lastname}`
                       : `${firstname}`}{" "}
                     <br />
-                    <div className="w-[250px]">
+                    <div
+                      className={`w-[240px] flex flex-col justify-center items-center text-center ${
+                        (unitname || affiliationname).length > 50
+                          ? "text-[8px]"
+                          : (unitname || affiliationname).length > 30
+                          ? "text-[9px]"
+                          : "text-[12px] mt-2"
+                      } leading-tight`}>
                       {unitname || affiliationname}
                     </div>
                   </div>
