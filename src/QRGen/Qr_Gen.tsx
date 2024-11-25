@@ -200,7 +200,7 @@ export default function QrGen() {
                   <div className="absolute z-30 mt-[125px] text-sm flex flex-col items-center justify-center text-center mr-2">
                     {firstname && lastname
                       ? `${firstname} ${lastname}`
-                      : "Guest"}{" "}
+                      : `${firstname}`}{" "}
                     <br />
                     <div className="w-[250px]">
                       {unitname || affiliationname}
