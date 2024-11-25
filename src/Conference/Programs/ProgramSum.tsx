@@ -1,5 +1,5 @@
 import React from "react";
-import Sched from "./day1-day3.png";
+import Sched from "./Sum_day1_3.jpg";
 
 export default function ProgramSum() {
   return (
