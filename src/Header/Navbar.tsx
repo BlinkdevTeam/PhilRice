@@ -36,7 +36,8 @@ const Navbar = ({ refs }: any) => {
     });
   };
 
-  const buttons = ["GENERATE QR CODE", "REGISTER"];
+  // const buttons = ["GENERATE QR CODE", "REGISTER"];
+  const buttons = ["REGISTER"];
 
   const handleSeeMore = () => {
     navigate("/qr-code-generator", { state: { section: "qrgenerator" } });

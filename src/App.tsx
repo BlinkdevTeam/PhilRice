@@ -16,6 +16,7 @@ import Footer from "./Footer/Footer";
 import Navbar from "./Header/Navbar";
 import SpeakerPage from "./Speaker/SpeakerPage";
 import Booklet from "./StrategicPlanning/Booklet";
+import SVBooklet from "./Souvenir/Booklet";
 import QrGen from "./QRGen/Qr_Gen";
 import DynamicQR from "./DynamicQR/Dynamic_QR";
 import ProgramSched from "./Conference/ProgramSched";
@@ -105,6 +106,7 @@ export default function App() {
           <Route path="/strat-planning" element={<Booklet />} />
           <Route path="/qr-code-generator" element={<QrGen />} />
           <Route path="/dynamic-qr-code" element={<DynamicQR />} />
+          <Route path="/mockup" element={<SVBooklet />} />
         </Routes>
         <div className="order-last">
           <Footer refs={refs} />
