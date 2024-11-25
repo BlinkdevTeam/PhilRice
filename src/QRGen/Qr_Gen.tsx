@@ -205,16 +205,18 @@ export default function QrGen() {
                       ? `${firstname} ${lastname}`
                       : `${firstname}`}{" "}
                     <br />
-                    <div
-                      className={`w-[240px] flex flex-col justify-center items-center text-center ${
-                        (unitname || affiliationname).length > 50
-                          ? "text-[8px]"
-                          : (unitname || affiliationname).length > 30
-                          ? "text-[9px]"
-                          : "text-[12px] mt-2"
-                      } leading-tight`}>
-                      {unitname || affiliationname}
-                    </div>
+                    {unitname || affiliationname ? (
+                      <div
+                        className={`w-[240px] flex flex-col justify-center items-center text-center ${
+                          (unitname || affiliationname).length > 50
+                            ? "text-[8px]"
+                            : (unitname || affiliationname).length > 30
+                            ? "text-[12px] mt-2"
+                            : "text-[12px] mt-2"
+                        } leading-tight`}>
+                        {unitname || affiliationname}
+                      </div>
+                    ) : null}
                   </div>
                   <img
                     src={QRTicket}
