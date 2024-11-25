@@ -125,8 +125,11 @@ export default function QrGen() {
       }).then((canvas) => {
         const imageUrl = canvas.toDataURL("image/png");
         const link = document.createElement("a");
+        const fileName = firstname
+          ? `${firstname}_qr-code.png`
+          : "qr-section.png";
         link.href = imageUrl;
-        link.download = "qr-section.png";
+        link.download = fileName;
         link.click();
       });
     } else {
