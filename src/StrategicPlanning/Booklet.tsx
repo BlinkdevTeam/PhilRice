@@ -144,7 +144,7 @@ const Book: React.FC = () => {
       <div className="mb-12 xl:mb-0 flex flex-row justify-center items-center gap-36 xl:absolute xl:top-40 order-2 overflow-hidden">
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold px-8 xl:px-0 xl:max-w-[514px]">
           The DA - PhiliRice Plan{" "}
-          <span className="text-[#F3B71C]">2023 - 2024</span>
+          <span className="text-[#F3B71C]">2023 - 2028</span>
           {/* <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
             by: Jayson San Agustin & Lander Guevarra
           </div> */}
@@ -168,7 +168,7 @@ const Book: React.FC = () => {
         </div>
         <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold px-8 xl:px-0 xl:max-w-[514px] hidden xl:inline">
           The DA - PhiliRice Plan{" "}
-          <span className="text-[#F3B71C]">2023 - 2024</span>
+          <span className="text-[#F3B71C]">2023 - 2028</span>
           {/* <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] justify-start items-start">
             by: Jayson San Agustin & Lander Guevarra
           </div> */}

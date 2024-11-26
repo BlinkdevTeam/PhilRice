@@ -7,7 +7,7 @@ const speakersData = [
     image: Speaker1,
     name: "Francisco P. Tiu Laurel Jr.",
     description: "Secretary, Department of <br> Agriculture",
-    title: "PLENARY SESSION 1. Cutting-edge Rice R4D Innovations",
+    title: "Keynote Speaker",
     content:
       "Francisco Tiu Laurel, Jr., the Secretary of Agriculture, was the former President of Frabelle Group of Companies. The conglomerate traces its roots from a deep-sea fishing firm established in 1966. “Kiko” to his friends and colleagues, Francisco Jr. is a hands-on executive. He learned the ropes of his family’s fishing business at the age of 19 and used a multidisciplinary approach to build his company. While at the helm of Frabelle Group, Francisco Jr. likes to keep things simple. He sets bold objectives that are also attainable and relevant – traits that could help him well in his new role as agriculture secretary. Since accepting the offer of President Ferdinand Marcos, Jr. to succeed him as DA Secretary, Sec. Kiko divested from his family’s businesses. Asked why he took the challenge, he said he wanted to give back to Philippine agriculture. His current motto: “Bayan naman.” Currently, Sec. Kiko is a Captain and Commander in the Nava Affiliated Reserve Force NCR (WESPHIL) of the Philippine Navy.",
   },

@@ -47,8 +47,8 @@ export default function SpeakerPage() {
           <div className="font-bold text-center px-16 text-[20px] md:text-[35px] lg:text-[40px]">
             <span className="text-[#0E9046]">Plenary Session 2</span>
             <br />
-            CRCEF Outcomes, Impact, Success Stories,
-            <br /> Innovations, and Future Directions
+            RCEF Outcomes, Impact, Success Stories, <br /> Innovations, and
+            Future Directions
           </div>
           <div className="mt-[200px] md:mt-[80px] lg:mt-[60px] xl:mt-[80px]">
             <SpeakerProfile2 />

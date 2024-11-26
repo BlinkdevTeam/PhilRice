@@ -57,8 +57,8 @@ const Modal = ({ isOpen, onClose, speaker }: any) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center ps-6 pe-5 md:pe-16 lg:pe-24 py-6 overflow-hidden">
-          <div className="text-[#0E9046] text-[15px] md:text-[18px] lg:text-[22px] xl:text-[28px] 2xl:text-[35px] font-bold">
+        <div className="flex flex-col justify-center items-start ps-6 pe-5 md:pe-16 lg:pe-24 py-6 overflow-hidden">
+          <div className="text-[#0E9046] text-[15px] md:text-[18px] lg:text-[22px] xl:text-[31px] 2xl:text-[38px] font-bold">
             {speaker.title}
           </div>
           <div className="text-[12px] md:text-[15px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] pt-4 overflow-y-auto">
