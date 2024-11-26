@@ -62,7 +62,7 @@ export default function StratPlan() {
           <div className="w-full max-w-[1005px]">
             <div className="text-[#0E9046] text-[40px] md:text-[50px] lg:text-[60px] font-bold hidden sm:inline">
               The DA - PhilRice Strategic Plan{" "}
-              <span className="text-[#F3B71C]">2023 - 2024</span>
+              <span className="text-[#F3B71C]">2023 - 2028</span>
             </div>
             {/* <div className="text-[#878787] font-bold text-[18px] md:text-[20px] lg:text-[25px] hidden sm:flex">
               by: Jayson San Agustin & Lander Guevarra
