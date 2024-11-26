@@ -12,6 +12,9 @@ module.exports = {
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(to bottom, #59C3AA, #015A48)",
+        "gr-custom-gradient": "linear-gradient(to bottom, #EFB71E, #015A48)",
+        "yel-custom-gradient": "linear-gradient(to bottom, #EFB71E, #896911)",
+        // "yel-custom-gradient": "linear-gradient(to bottom, #EFB71E, #EFB71E)",
       },
     },
   },

@@ -40,7 +40,7 @@ const SpeakerProfiles = () => {
   };
 
   return (
-    <div className="min-h-screen px-9 flex flex-wrap items-center justify-center">
+    <div className="min-h-auto mt-[40px] px-9 flex flex-wrap items-center justify-center">
       <div className="flex flex-wrap justify-center gap-[250px] md:gap-[100px] lg:gap-[80px]">
         {speakersData.map((speaker, index) => (
           <div
