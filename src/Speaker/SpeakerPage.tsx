@@ -29,7 +29,7 @@ export default function SpeakerPage() {
           faucibus velit. Donec sed elit tellus.
         </div> */}
         <div className="flex flex-col justify-center items-center">
-          <div className="font-bold text-center text-[#0E9046] text-[30px] md:text-[35px] lg:text-[40px] mt-20">
+          <div className="font-bold text-center text-[#0E9046] text-[26px] md:text-[35px] lg:text-[40px] mt-20">
             GUEST OF HONOR AND <br /> KEYNOTE SPEAKER
           </div>
           <div className="-mt-8 md:mt-0">
