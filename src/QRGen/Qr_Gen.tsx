@@ -200,24 +200,34 @@ export default function QrGen() {
                   <div className="absolute z-30 mt-[95px] text-[#0C6972] text-md mr-2">
                     YOU'RE ALL SET!
                   </div>
-                  <div className="absolute z-30 mt-[120px] text-md flex flex-col items-center justify-center text-center mr-2">
-                    {firstname && lastname
-                      ? `${firstname} ${lastname}`
-                      : `${firstname}`}{" "}
-                    <br />
+                  <div className="absolute z-30 mt-[120px] flex flex-col items-center justify-center text-center mr-2">
+                    <div
+                      className={`${
+                        `${firstname} ${lastname}`.length > 30
+                          ? "text-[10px]"
+                          : `${firstname} ${lastname}`.length > 15
+                          ? "text-[12px]"
+                          : "text-md"
+                      }`}>
+                      {firstname && lastname
+                        ? `${firstname} ${lastname}`
+                        : `${firstname}`}
+                    </div>
                     {unitname || affiliationname ? (
                       <div
-                        className={`w-[240px] flex flex-col justify-center items-center text-center ${
+                        className={`w-[240px] flex flex-col justify-center items-center text-center leading-tight ${
                           (unitname || affiliationname).length > 50
                             ? "text-[8px]"
                             : (unitname || affiliationname).length > 30
-                            ? "text-[12px] mt-2"
+                            ? "text-[10px] mt-2"
                             : "text-[12px] mt-2"
-                        } leading-tight`}>
-                        {unitname || affiliationname}
+                        }`}>
+                        {unitname && `${unitname} DA-PhilRice`}
+                        {!unitname && affiliationname}
                       </div>
                     ) : null}
                   </div>
+
                   <img
                     src={QRTicket}
                     alt="QR Ticket"
