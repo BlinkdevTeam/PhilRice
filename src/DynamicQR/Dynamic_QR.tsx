@@ -102,8 +102,17 @@ export default function DynamicQR() {
                 <div className="absolute z-30 mt-[100px] text-[#0C6972] text-2xl mr-2">
                   YOU'RE ALL SET!
                 </div>
-                <div className="absolute z-30 mt-[130px] text-sm flex flex-col items-center justify-center text-center mr-2">
-                  {name || "Guest"} <br />
+                <div className="absolute z-30 mt-[130px] flex flex-col items-center justify-center text-center mr-2">
+                  <div
+                    className={`leading-tight ${
+                      (name || "Guest").length > 30
+                        ? "text-[11px]"
+                        : (name || "Guest").length > 15
+                        ? "text-[13px]"
+                        : "text-sm"
+                    }`}>
+                    {name || "Guest"}
+                  </div>
                   {stationname || affiliationname ? (
                     <div
                       className={`w-[240px] flex flex-col justify-center items-center text-center leading-tight ${
@@ -118,6 +127,7 @@ export default function DynamicQR() {
                     </div>
                   ) : null}
                 </div>
+
                 <img
                   src={QRTicket}
                   alt="QR Ticket"
