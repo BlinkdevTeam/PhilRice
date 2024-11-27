@@ -9,7 +9,7 @@ export default function DynamicQR() {
   const [searchParams] = useSearchParams();
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
   const [name, setName] = useState("");
-  const [unitname, setUnitName] = useState("");
+  const [stationname, setUnitName] = useState("");
   const [affiliationname, setAffiliationName] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -104,7 +104,9 @@ export default function DynamicQR() {
                 </div>
                 <div className="absolute z-30 mt-[130px] text-sm flex flex-col items-center justify-center text-center mr-2">
                   {name || "Guest"} <br />
-                  {unitname || affiliationname || " "}
+                  {stationname
+                    ? `DA-PhilRice ${stationname}`
+                    : affiliationname || ""}
                 </div>
                 <img
                   src={QRTicket}
