@@ -23,7 +23,7 @@ export default function DynamicQR() {
   const userAffiliationName = searchParams
     .get("affiliation")
     ?.replace(/%20/, " ");
-  const userUnitName = searchParams.get("unit")?.replace(/%20/, " ");
+  const userUnitName = searchParams.get("station")?.replace(/%20/, " ");
 
   useEffect(() => {
     if (userName) {
@@ -104,7 +104,7 @@ export default function DynamicQR() {
                 </div>
                 <div className="absolute z-30 mt-[130px] text-sm flex flex-col items-center justify-center text-center mr-2">
                   {name || "Guest"} <br />
-                  {unitname || affiliationname || "No affiliation available"}
+                  {unitname || affiliationname || " "}
                 </div>
                 <img
                   src={QRTicket}
