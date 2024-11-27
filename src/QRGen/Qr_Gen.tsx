@@ -202,7 +202,7 @@ export default function QrGen() {
                   </div>
                   <div className="absolute z-30 mt-[120px] flex flex-col items-center justify-center text-center mr-2">
                     <div
-                      className={`${
+                      className={`w-[240px] flex flex-col justify-center items-center text-center leading-tight ${
                         `${firstname} ${lastname}`.length > 30
                           ? "text-[10px]"
                           : `${firstname} ${lastname}`.length > 15
