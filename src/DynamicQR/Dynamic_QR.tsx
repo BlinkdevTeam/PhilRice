@@ -104,9 +104,19 @@ export default function DynamicQR() {
                 </div>
                 <div className="absolute z-30 mt-[130px] text-sm flex flex-col items-center justify-center text-center mr-2">
                   {name || "Guest"} <br />
-                  {stationname
-                    ? `DA-PhilRice ${stationname}`
-                    : affiliationname || ""}
+                  {stationname || affiliationname ? (
+                    <div
+                      className={`w-[240px] flex flex-col justify-center items-center text-center leading-tight ${
+                        (stationname || affiliationname).length > 50
+                          ? "text-[8px]"
+                          : (stationname || affiliationname).length > 30
+                          ? "text-[10px] mt-2"
+                          : "text-[12px] mt-2"
+                      }`}>
+                      {stationname && `DA-PhilRice ${stationname}`}
+                      {!stationname && affiliationname}
+                    </div>
+                  ) : null}
                 </div>
                 <img
                   src={QRTicket}
