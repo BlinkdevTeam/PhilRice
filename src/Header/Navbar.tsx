@@ -36,12 +36,18 @@ const Navbar = ({ refs }: any) => {
     });
   };
 
+  
+  const buttons = ["SOUVENIR PROGRAM", "REGISTER"];
   // const buttons = ["GENERATE QR CODE", "REGISTER"];
-  const buttons = ["REGISTER"];
+  // const buttons = ["REGISTER"];
 
   const handleSeeMore = () => {
     navigate("/qr-code-generator", { state: { section: "qrgenerator" } });
   };
+
+  const handleSvprogram = () => {
+    window.open("https://drive.google.com/drive/folders/1FKnp-hYMQ3vGiI9QfsYQ7tgMDU36DYfV")
+  }
 
   return (
     <nav className="bg-[#0C6972] p-4 w-full fixed top-0 left-0 z-50 text-xs lg:text-lg">
@@ -246,7 +252,7 @@ const Navbar = ({ refs }: any) => {
                     window.location.href =
                       "https://ugnaypalay.philrice.gov.ph:441/csd/36th/registration-form/ABCDefgHI";
                   } else {
-                    handleSeeMore();
+                    handleSvprogram();
                   }
                   handleCloseMenu();
                 }}
