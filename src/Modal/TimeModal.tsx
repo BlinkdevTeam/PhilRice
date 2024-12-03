@@ -46,35 +46,37 @@ const TimeCount = () => {
 
   return (
     // <div className="flex flex-col items-center justify-center py-4 bg-green-700 rounded-lg w-full -px-2 sm:px-6 md:px-8 lg:px-12 xl:px-12 mx-auto">
-    <div className="flex flex-col items-center justify-center bg-[#0E9046] rounded-lg w-[307px] h-[110px] sm:w-[457px] sm:h-[157px] md:w-[680px] md:h-[161px] lg:w-[1006px] lg:h-[232px]">
-      <h1 className="text-center text-white text-[18px] md:text-[25px] lg:text-[32px] font-bold">
-        Event Starts On
-      </h1>
-      <div className="flex flex-row justify-start text-[30px] sm:text-[50px] md:text-[50px] lg:text-[80px]">
-        <TimeUnit value={timeRemaining.days} label="Days" />
-        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
-          :
-        </p>
-        <TimeUnit
-          value={String(timeRemaining.hours).padStart(2, "0")}
-          label="Hours"
-        />
-        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
-          :
-        </p>
-        <TimeUnit
-          value={String(timeRemaining.minutes).padStart(2, "0")}
-          label="Minutes"
-        />
-        <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
-          :
-        </p>
-        <TimeUnit
-          value={String(timeRemaining.seconds).padStart(2, "0")}
-          label="Seconds"
-        />
+    <>
+      <div className="flex flex-col items-center justify-center bg-[#0E9046] rounded-lg w-[307px] h-[110px] sm:w-[457px] sm:h-[157px] md:w-[680px] md:h-[161px] lg:w-[1006px] lg:h-[232px]">
+        <h1 className="text-center text-white text-[18px] md:text-[25px] lg:text-[32px] font-bold">
+          Event Starts On
+        </h1>
+        <div className="flex flex-row justify-start text-[30px] sm:text-[50px] md:text-[50px] lg:text-[80px]">
+          <TimeUnit value={timeRemaining.days} label="Days" />
+          <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
+            :
+          </p>
+          <TimeUnit
+            value={String(timeRemaining.hours).padStart(2, "0")}
+            label="Hours"
+          />
+          <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
+            :
+          </p>
+          <TimeUnit
+            value={String(timeRemaining.minutes).padStart(2, "0")}
+            label="Minutes"
+          />
+          <p className="px-2 md:px-10 lg:px-6 xl:px-14 text-white font-bold -mt-1 md:-mt-2 lg:-mt-3">
+            :
+          </p>
+          <TimeUnit
+            value={String(timeRemaining.seconds).padStart(2, "0")}
+            label="Seconds"
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
