@@ -39,7 +39,8 @@ export default function Hero() {
       <div className="mt-[-60px] md:mt-[-80px] lg:mt-[-50px]">
         <div className="flex flex-col items-center justify-center bg-[#0E9046] rounded-lg w-[307px] h-[110px] sm:w-[457px] sm:h-[157px] md:w-[680px] md:h-[161px] lg:w-[1006px] lg:h-[100px]">
           <h1 className="text-center text-white text-[18px] md:text-[25px] lg:text-[32px] font-bold">
-            {`${dayTitle} 36th Ugnay Palay National Rice R4D Conference`}
+            {/* {`${dayTitle} 36th Ugnay Palay National Rice R4D Conference`} */}
+            {`Thank you for participating in the 36th Ugnay Palay National Rice R4D Conference.`}
           </h1>
         </div>
         {/* <TimeCount /> */}
